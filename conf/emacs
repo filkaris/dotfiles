@@ -1,0 +1,147 @@
+;; Package manager?
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.Melpa.org/packages/"))
+(package-initialize)
+(require 'use-package)
+
+;; ---- General ----
+;; No sidebar
+(toggle-scroll-bar -1)
+;; No annoying bell
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
+;; Set Calendar first day
+(setq calendar-week-start-day 1)
+;; System locale to use for formatting time values (set orgmode date english)
+(setq system-time-locale "C")         
+;; Don't ask confirmation, just follow link
+(setq vc-follow-symlinks t)
+;; TODO this doesn't work... find out how to make var nil in local buffer
+;; Don't wrap lines
+(setq truncate-lines nil)
+                                     
+                                    
+;; ---- Orgmode ----
+(use-package org
+  :ensure t
+  :config
+  ;; Include markdown export
+  (require 'ox-md nil t)
+  ;; Task keywords
+  ;; TODO Used for individual tasks
+  ;; OPEN Placed on top-level headings
+  ;; WAIT Waiting for action
+  (setq org-todo-keywords
+    '((sequence "TODO" "OPEN" "WAIT" "|" "DONE")))
+  ;; Expand links
+  (global-set-key (kbd "C-c e") 'org-toggle-link-display)
+  ;; Indent heading contents
+  (setq org-startup-indented t)
+  ;; Set publish directory
+  ;; Works only if u define projects
+  ;;(setq org-publish-project-alist
+      ;;'(("org"
+         ;;:base-directory "~/org/"
+         ;;:publishing-function org-html-publish-to-html
+         ;;:publishing-directory "~/org/exports")))
+  ;; Set capture
+  (setq org-default-notes-file "~/org/personal.org")
+  (define-key global-map "\C-cc" 'org-capture)
+  ;; Agenda keymap
+  (define-key global-map "\C-ca" 'org-agenda)
+  ;; Agenda Custom Commands
+  (setq org-agenda-custom-commands
+  '(("1" "Level 1 project headings" 
+     tags-todo 
+     "LEVEL=1"
+     ((org-agenda-files '("~/org/tasks.org")))
+   )))
+  ;; Agenda hide warnings
+  (setq org-deadline-warning-days 0)
+  ;; Set agenda directory
+  (setq org-agenda-files (list "~/org/tasks.org"
+			       "~/org/personal.org"
+			       )))
+
+;; ---- Evil ----
+;; Fix Ctrl-U
+(setq evil-want-C-u-scroll t)
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1)
+  ;; Show line numbers
+  (global-linum-mode)
+  ;; Vim langmap
+  (evil-define-key 'normal 'global
+    (kbd "C-θ") 'evil-scroll-up
+    (kbd "C-δ") 'evil-scroll-down
+    (kbd "C-υ") 'evil-scroll-line-up
+    (kbd "C-ε") 'evil-scroll-line-down
+    "η" "h"
+    "ξ" "j"
+    "κ" "k"
+    "λ" "l"
+    "ς" "w"
+    "β" "b"
+    "Β" "B"
+    "ε" "e"
+    "Ε" "E"
+    "ι" "i"
+    "Ι" "I"
+    "α" "a"
+    "Α" "A"
+    "θ" "u"
+    "ο" "o"
+    "Ο" "O"
+    "υ" 'evil-yank
+    "Υ" 'evil-yank-line
+    "δ" 'evil-delete
+    "Δ" 'evil-delete-line
+    "ψ" 'evil-change
+    "Ψ" 'evil-change-line
+    "σ" 'evil-substitute
+    "Σ" 'evil-change-whole-line
+    "ρ" 'evil-replace
+    "π" 'evil-paste-after
+    "Π" 'evil-paste-before)
+  (use-package evil-surround
+    :ensure t
+    :config
+    (global-evil-surround-mode))
+
+  (use-package evil-indent-textobject
+    :ensure t))
+
+;; ---- Magit ----
+(use-package magit
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x g") 'magit-status))
+
+
+;; DOESNT WORK
+;; ---- nlinum ----
+;;(use-package nlinum-relative
+  ;;:ensure t
+  ;;:config
+  ;;;; something else you want
+  ;;(nlinum-relative-setup-evil)
+  ;;(setq nlinum-highlight-current-line 1)
+  ;;(setq nlinum-format " %d ")
+  ;;(setq nlinum-relative-redisplay-delay .2)
+  ;;(setq nlinum-relative-offset 0)
+  ;;(global-nlinum-relative-mode)
+  ;;(add-hook 'prog-mode-hook #'nlinum-relative-mode))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(custom-enabled-themes (quote (tango-dark)))
+ '(inhibit-startup-screen t)
+ '(tool-bar-mode nil))

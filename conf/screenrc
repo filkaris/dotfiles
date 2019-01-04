@@ -1,0 +1,11 @@
+# Change Default binding from Ctrl-A to `
+escape ``
+# Enable Status bar
+hardstatus alwayslastline "%w"
+# keybindings
+# Toggle between windwos
+bind 'k' other
+# K was kill. Use X instead like tmux
+bind 'x' kill
+# Escape is slow without this
+maptimeout 0

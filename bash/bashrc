@@ -1,0 +1,36 @@
+#!/bin/bash
+
+## Include this file in bashrc
+
+# Get branch prompt
+source ~/.dotfiles/bash/aliases
+source ~/.dotfiles/bash/functions
+source ~/.dotfiles/bash/git-prompt.sh
+
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+if running_in_docker; then
+	export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00;33m\]\$(__git_ps1)\[\033[01;34m\] \$ \[\033[00m\]"
+else
+	export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00;33m\]\$(__git_ps1)\[\033[01;34m\] \$ \[\033[00m\]"
+fi
+
+# Add custom bin folder
+export PATH="$PATH:$HOME/.dotfiles/bin"
+
+# Don't show full path
+export PROMPT_DIRTRIM=3
+
+# Remap Caps Lock to ESC
+setxkbmap -option caps:escape
+# Add this for permanence
+#XKBOPTIONS="caps:escape"
+
+# Handle /dev autocompletion
+dev_list=$( ls ~/.dotfiles/dev )
+complete -W "$dev_list" 'dev'
+
+# Composer autocompletion
+complete -F _composer_scripts composer

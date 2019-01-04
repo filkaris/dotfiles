@@ -1,0 +1,92 @@
+" Include plugins (Download Vundle first): git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+source ~/.dotfiles/vim/functions.vim
+source ~/.dotfiles/vim/config.vim
+source ~/.dotfiles/vim/plugins.vim
+
+"""""""""""""""""""" KEY MAPPINGS"""""""""""""""""""
+
+"""""" LEADER MAPPINGS """"""
+"" Set Leader 
+let mapleader = ","
+"" Pretty Format JSON
+nmap <Leader>j :<C-U>%!python -m json.tool<CR>
+"" Copy to clipboard register
+nmap <Leader>y "+y
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+"" Indent inside }
+nmap <Leader>> >i}
+nmap <Leader>< <i}
+"" Easy case insensitive search
+nmap <Leader>/ /\c
+"" Toggle fold method
+nmap <silent> <Leader>f :<C-U>call ToggleFold()<CR>
+"" Grep current word
+" Copy Current word
+" Grep it (custom command set to git grep), populate quickfix list
+" OK, open quickfix window, go to first result
+nmap <Leader>g yiw:<C-U>grep 0<CR><CR>:cope<CR><CR>
+
+"""""" CTRL MAPPINGS """"""
+"" Fzf
+"nmap <C-J> :e **/*
+nmap <C-J> :<C-U>b 
+nmap <C-H> :<C-U>Files<CR>
+"" Switch between files homerow
+nnoremap <C-K> <C-^>
+"" Mimic org mode, expand folds with tab
+"" TAB: if fold closed, focus it, else go on top
+nnoremap <expr> <Tab> foldclosed(".")==-1 ? 'zazz' : 'zazt'
+nnoremap <Leader><Tab> zO
+"" SHIFT TAB: filetype dependent behavior
+autocmd FileType php,xml nnoremap <silent><buffer> <S-Tab> :<C-U>set foldlevel=1<CR>
+autocmd FileType php,xml set foldlevel=1
+autocmd FileType javascript nnoremap <silent><buffer> <S-Tab> :<C-U>set foldlevel=1<CR>
+autocmd FileType javascript set foldlevel=1
+"" C-I is also tab, so remap it to C-P
+nnoremap <C-P> <C-I>
+
+" Quickfix list shortcuts
+"Using quickfix (c) not location (l) because it's global
+"and I'm mostly working with one search at a time
+" Next-previous
+nnoremap <C-Q>j :<C-U>cn<CR>
+nnoremap <C-Q>k :<C-U>cp<CR>
+nnoremap <C-Q><C-J> :<C-U>cnew<CR>
+nnoremap <C-Q><C-K> :<C-U>col<CR>
+" :chi - history
+
+"" PHP Syntax check
+nnoremap <silent> <F2> :call GoToError()<CR>
+nnoremap <F5> :!php -l %<CR> 
+
+"" Make long jk movements (more than 1 ) be jumps
+nnoremap <silent> k :<C-U>execute 'normal!' (v:count > 1 ? "m'" . v:count : '') . 'k'<CR>
+nnoremap <silent> j :<C-U>execute 'normal!' (v:count > 1 ? "m'" . v:count : '') . 'j'<CR>
+
+"" Map H and L to start/end of line
+nnoremap H ^
+nnoremap L g_
+nnoremap Q @q
+
+"""""""""""""""""""" VISUAL MAPPINGS """""""""""""""""""
+"" Search selected text
+vnoremap // y/<C-R>"<CR>
+
+"""""""""""""""""""" CUSTOM COMMANDS """""""""""""""""""
+command Q q
+command W w
+" 'command' cannot use autocomplete
+cnoreabbrev E e
+
+"" Read all into buffer
+"nmap <Leader>r :ar *<CR>
+"" Surround braces/parens with spaces
+"nmap <Leader><space>] ysi]<space><space>
+"nmap <Leader><space>) ysi)<space><space>
+"" Append ;
+"nmap <Leader>; A;
+"" Ability to toggle underscore on demand 
+"nmap <silent> <Leader>- :<C-U>call ToggleUnderscore()<CR>
+"" Generate random string
+"nmap <Leader>g :r! openssl rand -base64 12<CR>

@@ -1,0 +1,40 @@
+#!/bin/bash
+DIR=$( pwd )
+
+# Link all conf files to home directory
+if [ ! -f ~/.gitconfig ]; then
+    ln -s "$DIR/conf/gitconfig" ~/.gitconfig
+fi
+if [ ! -f ~/.emacs ]; then
+    ln -s "$DIR/conf/emacs" ~/.emacs
+fi
+if [ ! -f ~/.vimrc ]; then
+    ln -s "$DIR/conf/vimrc" ~/.vimrc
+fi
+if [ ! -f ~/.tmux.conf ]; then
+    ln -s "$DIR/conf/tmux.conf" ~/.tmux.conf
+fi
+if [ ! -f ~/.ideavimrc ]; then
+    ln -s "$DIR/conf/ideavimrc" ~/.ideavimrc
+fi
+if [ ! -f ~/.screenrc ]; then
+    ln -s "$DIR/conf/screenrc" ~/.screenrc
+fi
+
+# If vundle doesn't exist, clone and it
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+# Install vim plugins 
+vim +BundleInstall +BundleClean +BundleClean +quitall
+
+# Include our files in bashrc
+# grep -q returns no output so we can only get the $? value (0=true)
+# grep -E is like egrep. Extended regex. I use it to be able to use |
+if ! grep -Eq '(source|\.) ~/.dotfiles/bash/bashrc' ~/.bashrc; then
+	echo 'source ~/.dotfiles/bash/bashrc' >> ~/.bashrc
+fi
+if ! grep -Eq '(source|\.) ~/.dotfiles/bash/aliases' ~/.bashrc; then
+	echo 'source ~/.dotfiles/bash/aliases' >> ~/.bashrc
+fi
+

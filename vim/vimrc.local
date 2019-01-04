@@ -1,0 +1,4 @@
+source ~/.dotfiles/vim/ide.vim
+
+" Use to diff agains commit | :r! git rev-parse master
+"let g:gitgutter_diff_base='d83f79a1bc0910f79e5d1166b552d596cee3c036'

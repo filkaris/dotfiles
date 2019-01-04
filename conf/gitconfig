@@ -1,0 +1,11 @@
+[user]
+	email = phil.230@gmail.com
+	name = Filippos Karailanidis
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	hist = log --pretty=format:'%C(green)%h %C(blue)%ad%Creset | %C(normal)%s%d %C(magenta)<%an>%Creset' --graph --date=short
+[push]
+	default = simple

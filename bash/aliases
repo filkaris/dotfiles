@@ -1,0 +1,26 @@
+# Local vim
+alias v='nvim -u .vimrc'
+alias vi='vim -u NONE'
+alias vim='nvim -u ~/.vimrc'
+
+# CD Shortcuts
+alias d='cd ~/.dotfiles'
+
+# Edit shortcuts
+alias hosts='sudo vim /etc/hosts'
+
+#-------------
+dev() {
+    source ~/.dotfiles/dev/$1
+}
+# Typical code search. Maybe vim has better way?
+fcode() {
+    #Ideas for improvement:
+    # look in specific filetype only
+    #find * -name "*.php" | xargs grep -A 4 --color -rn hideAllFilters
+    # options! -t php, -A -B (grep)
+	grep --color=always -rn "$1" * | less -r
+}
+fcode2() {
+    grep -rn "$1" * | sed -e "s/^\([^:]*:[0-9]*:\).*\(.\{10\}\)\($1\)\(.\{0,50\}\).*$/\1 ___ \2\3\4/" | less -r
+}

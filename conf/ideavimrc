@@ -1,0 +1,18 @@
+"" Options
+set surround
+set clipboard
+set relativenumber
+
+"" Copy to clipboard register
+let mapleader = ","
+nmap <Leader>y "+y
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+
+"" PHPSTORM
+
+"" Folds: Cannot toggle, leave as is for now
+nnoremap <Tab> :<C-U> action ExpandAllToLevel2<CR>
+nnoremap <S-Tab> :<C-U> action ExpandAllToLevel1<CR>
+
+"" Navigation etc
