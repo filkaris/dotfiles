@@ -11,14 +11,18 @@ set statusline+=[IDE]
 "set errorformat=%E%n)\ %.%#,%Z%f:%l,%C%m,%C,%-G%.%#
 
 " Plugin configuration
-"" Run current test
-nmap <M-t> ?function<CR>wyiw:<C-U>!vendor/bin/phpunit --filter 0<CR>
+"" Find and run test
+nmap <M-S-t> ?function<CR>w"tyiw:<C-U>!vendor/bin/phpunit --filter t<CR>
+"" Run last test
+nmap <M-t> :<C-U>!vendor/bin/phpunit --filter t<CR>
 "" Copy to clipboard: watch tests for file (paste in terminal)
 nmap <Leader>t :let @+='watch --color vendor/bin/phpunit '.@%.' --color=always'<CR>
 "" Light mode tweaks
-nmap <Leader>l :hi Folded ctermbf=7<CR>:hi Normal ctermfg=0<CR>
+nmap <Leader>l :hi Folded ctermbg=7<CR>:hi ModeMsg ctermfg=0<CR>
 "" Dark mode tweaks
-nmap <Leader>d :hi Folded ctermbf=black<CR>:hi Normal ctermfg=1<CR>
+nmap <Leader>d :hi Folded ctermbg=0<CR>:hi ModeMsg ctermfg=1<CR>
+"" Quick fix on save
+nmap <Leader>a :let b:ale_fix_on_save=0<CR>
 
 " PHPACTOR
 " set omnicomplete function
