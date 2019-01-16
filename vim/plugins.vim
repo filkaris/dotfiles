@@ -51,6 +51,11 @@ Plugin 'w0rp/ale'
 " JSX IDE
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+" Typescript
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+"Plugin 'ncm2/ncm2-tern' "run npm install
+"Plugin 'mhartington/nvim-typescript'
 
 call vundle#end()		" required
 filetype plugin indent on	" required
