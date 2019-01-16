@@ -35,6 +35,13 @@ nnoremap <M-c> :<C-U>call phpactor#ContextMenu()<CR>
 " TEMP
 nnoremap <M-m> :<C-U>!chmod a+x vendor/bin/* node_modules/.bin/* node_modules/eslint/bin/*<CR>
 
+" NCM2
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
 " GUTENTAGS 
 " CTAGS, works with plugin. To work manually, just run ctags --exclude=node_modules/* --exclude... --append FILENAME (to update just one file)
 " DO NOT GENERATE CTAGS ID ALREADY EXISTS
