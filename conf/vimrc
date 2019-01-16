@@ -45,6 +45,8 @@ autocmd FileType javascript nnoremap <silent><buffer> <S-Tab> :<C-U>set foldleve
 autocmd FileType javascript set foldlevel=1
 "" C-I is also tab, so remap it to C-P
 nnoremap <C-P> <C-I>
+"" Clear highlight
+nnoremap <C-L> :<C-U>noh<CR>
 
 " Quickfix list shortcuts
 "Using quickfix (c) not location (l) because it's global
