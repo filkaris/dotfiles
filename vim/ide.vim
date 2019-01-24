@@ -12,7 +12,7 @@ set statusline+=[IDE]
 
 " Plugin configuration
 "" Find and run test
-nmap <M-S-t> ?function<CR>w"tyiw:<C-U>!vendor/bin/phpunit --filter t<CR>
+nmap <M-S-t> ?function\\|class<CR>w"tyiw:<C-U>!vendor/bin/phpunit --filter t<CR>
 "" Run last test
 nmap <M-t> :<C-U>!vendor/bin/phpunit --filter t<CR>
 "" Copy to clipboard: watch tests for file (paste in terminal)

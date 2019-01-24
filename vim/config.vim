@@ -11,13 +11,6 @@ filetype plugin indent on
 " Enable hidden buffers
 set hidden
 
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
-
 " Open new window on the right
 set splitright
 
@@ -29,13 +22,9 @@ hi StatusLine ctermfg=5
 " Disable annoying bells
 set visualbell
 set t_vb=
+
 " Disable automatic commenting when pressing o
 autocmd FileType * setlocal formatoptions-=ro
-" PHP manual in php files (=my life is complete)
-" sudo pear install doc.php.net/pman
-autocmd FileType php set keywordprg=pman
-" PHP Setting, NO dollar sign
-autocmd FileType php set iskeyword-=$
 
 " FOLDING
 let g:javaScript_fold=1   
@@ -43,10 +32,33 @@ let g:php_folding=1
 let g:xml_syntax_folding = 1
 set foldmethod=syntax
 hi Folded ctermbg=8
-autocmd FileType javascript setlocal foldnestmax=2
-autocmd FileType php setlocal foldnestmax=2
 "" This solves foldtext problem
 "" Edited out JS folding /usr/share/vim/vim74/syntax/javascript.vim
+
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+"""""""""""""""""""" FILETYPE SPECIFIC """""""""""""""""""
+"" PHP ""
+" PHP manual in php files (=my life is complete)
+" sudo pear install doc.php.net/pman
+autocmd FileType php set keywordprg=pman
+" PHP Setting, NO dollar sign
+autocmd FileType php set iskeyword-=$
+autocmd FileType php setlocal foldnestmax=2
+
+"" JS/TS ""
+autocmd FileType javascript setlocal foldnestmax=2
+" 2 space ident
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+
+"" YAML
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " grep settings
 if isdirectory('.git') && executable('git')
