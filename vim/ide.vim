@@ -11,6 +11,10 @@ set statusline+=[IDE]
 "set errorformat=%E%n)\ %.%#,%Z%f:%l,%C%m,%C,%-G%.%#
 
 " Plugin configuration
+"" Git Blame
+nmap <C-G>b :<C-U>!git blame %<CR>
+"" Git Rename (mv)
+nmap <C-G>m :<C-U>!git mv % %
 "" Find and run test
 nmap <M-S-t> ?function\\|class<CR>w"tyiw:<C-U>!vendor/bin/phpunit --filter t<CR>
 "" Run last test
