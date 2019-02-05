@@ -23,3 +23,7 @@ fcode() {
 fcode2() {
     grep -rn "$1" * | sed -e "s/^\([^:]*:[0-9]*:\).*\(.\{10\}\)\($1\)\(.\{0,50\}\).*$/\1 ___ \2\3\4/" | less -r
 }
+
+## Dev
+alias grb='git rebase --continue'
+
