@@ -25,5 +25,4 @@ fcode2() {
 }
 
 ## Dev
-alias grb='git rebase --continue'
-
+alias grc='git rebase --continue'

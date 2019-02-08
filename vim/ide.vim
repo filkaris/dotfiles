@@ -43,6 +43,10 @@ nnoremap <M-m> :<C-U>!chmod a+x vendor/bin/* node_modules/.bin/* node_modules/es
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
+" Tsuquyomi
+" Disable auto quickfix on save
+let g:tsuquyomi_disable_quickfix = 1
+
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
 
@@ -60,7 +64,7 @@ set statusline+=%{gutentags#statusline('\ [',']')}
 
 " ALE
 let g:ale_enabled=1
-let g:ale_linters={'php':['php','phpcs','phpstan'], 'javascript':['eslint']}
+let g:ale_linters={'php':['php','phpcs','phpstan'], 'javascript':['eslint'], 'typescript':['eslint','tsserver']}
 let g:ale_fixers={'php':['phpcbf'],'javascript':['prettier'],'typescript':['prettier']}
 let g:ale_fix_on_save = 1
 "let g:ale_php_phpcs_executable='php vendor/bin/phpcs'

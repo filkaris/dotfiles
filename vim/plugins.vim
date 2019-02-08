@@ -51,11 +51,15 @@ Plugin 'w0rp/ale'
 " JSX IDE
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-" Typescript
+"" Typescript
+" .ts syntax
 Plugin 'leafgarland/typescript-vim'
+" .tsx syntax
 Plugin 'peitalin/vim-jsx-typescript'
-"Plugin 'ncm2/ncm2-tern' "run npm install
-"Plugin 'mhartington/nvim-typescript'
+" Omni-complete WORKS BUT SLOWS STUFF DOWN
+Plugin 'Quramy/tsuquyomi'
+" Omni-complete dependency
+Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()		" required
 filetype plugin indent on	" required
