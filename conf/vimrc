@@ -74,6 +74,8 @@ nnoremap Q @q
 """""""""""""""""""" VISUAL MAPPINGS """""""""""""""""""
 "" Search selected text
 vnoremap // y/<C-R>"<CR>
+"" Paste Copied buffer, not Deleted
+vnoremap P "0p
 
 """""""""""""""""""" CUSTOM COMMANDS """""""""""""""""""
 command Q q
