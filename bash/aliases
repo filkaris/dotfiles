@@ -26,3 +26,19 @@ fcode2() {
 
 ## Dev
 alias grc='git rebase --continue'
+
+# Git Dynamic pick branch
+function gith()
+{
+    if [ -d ./.git ] && $(type selecta &>/dev/null); then
+        git br | selecta | xargs git co
+    fi
+}
+
+# Git Switch between branches
+function gitk()
+{
+    if [ -d ./.git ]; then
+        git co -
+    fi
+}

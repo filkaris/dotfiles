@@ -34,3 +34,23 @@ complete -W "$dev_list" 'dev'
 
 # Composer autocompletion
 complete -F _composer_scripts composer
+
+# VIM-LIKE BINDINGS FOR READLINE
+# We also have the option to run them as scripts with -x,
+# but this way the prompt doesn't show up again, it's as if
+# the command run "inside" somehow.
+# This way we delete anything else and plainly write the 
+# command and execute it
+
+# Dynamic branch select
+bind 'set convert-meta on'
+if type gith &>/dev/null; then
+    bind '"\C-h": "\C-e\C-ugith\n"'
+fi
+# Switch between branches
+if type gitk &>/dev/null; then
+    bind '"\C-k": "\C-e\C-ugitk\n"'
+fi
+if type ranger &>/dev/null; then
+    bind '"\M-w": "\C-e\C-uranger\n"'
+fi
