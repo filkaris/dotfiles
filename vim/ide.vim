@@ -22,9 +22,9 @@ nmap <M-t> :<C-U>!vendor/bin/phpunit --filter t<CR>
 "" Copy to clipboard: watch tests for file (paste in terminal)
 nmap <Leader>t :let @+='watch --color vendor/bin/phpunit '.@%.' --color=always'<CR>
 "" Light mode tweaks
-nmap <Leader>l :hi Folded ctermbg=7<CR>:hi ModeMsg ctermfg=0<CR>
+nmap <Leader>l :hi Folded ctermbg=7<CR>
 "" Dark mode tweaks
-nmap <Leader>d :hi Folded ctermbg=0<CR>:hi ModeMsg ctermfg=1<CR>
+nmap <Leader>d :hi Folded ctermbg=0<CR>
 "" Quick fix on save
 nmap <Leader>a :let b:ale_fix_on_save=0<CR>
 
@@ -74,6 +74,24 @@ let g:ale_php_phpstan_executable='vendor/bin/phpstan'
 "let g:ale_javascript_prettier_executable=''
 "ALE move through errors
 nnoremap <M-j> :<C-U>ALENextWrap<CR>zo
+function! ToggleAleWindow()
+    if !exists("b:ale_open_list")
+        let b:ale_open_list=0
+    endif
+    if empty(b:ale_open_list)
+        let b:ale_open_list=1
+        ALELint
+    else
+        let b:ale_open_list=0
+        only
+    endif
+endfunction
+"Close window 
+augroup CloseLoclistWindowGroup
+    autocmd!
+    autocmd QuitPre * if empty(&buftype) | lclose | endif
+augroup END   
+nnoremap <M-l> :<C-U>call ToggleAleWindow()<CR>
 nnoremap <Leader>a :let b:ale_fix_on_save=0<CR>
 
 function! LinterStatus() abort
