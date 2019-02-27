@@ -1,6 +1,7 @@
 # Local vim
 alias v='nvim -u .vimrc'
 alias vi='vim -u NONE'
+alias viminit='cp ~/.dotfiles/vim/vimrc.local ./.vimrc'
 
 # CD Shortcuts
 alias d='cd ~/.dotfiles'

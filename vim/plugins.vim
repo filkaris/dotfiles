@@ -40,6 +40,9 @@ Plugin 'ncm2/ncm2'
 Plugin 'roxma/nvim-yarp'
 Plugin 'phpactor/phpactor' "run composer install
 Plugin 'phpactor/ncm2-phpactor'
+" Simple wrapper. CSS completion is vim native
+Plugin 'ncm2/ncm2-cssomni'
+
 " Linting
 Plugin 'w0rp/ale'
 " Quickfix PHPUnit TODO
