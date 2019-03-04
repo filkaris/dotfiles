@@ -101,3 +101,15 @@ function! LinterStatus() abort
 endfunction
 
 set statusline+=%{LinterStatus()}
+
+" GOLANG
+au BufWritePost *.go !go build %
+au FileType go nnoremap <M-CR> yiw:<C-U>GoImport 0<CR>
+
+" Snippets
+iabbrev php <?php <CR>
+            \declare(strict_types=1);<CR>
+            \<CR>
+            \class NewClass<CR>
+            \{<CR>
+            \}
