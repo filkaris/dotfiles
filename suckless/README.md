@@ -23,6 +23,8 @@ The thing is that once applied to vanilla version 0.8.1, they dont have color
 The one that works well though is shiva/st... 
 
 What to do? Keep outdated fork that works well? For now probably
+! We also have this stupid "one clipboard" this way
+
 Or use vanilla and keep up with versions and versioned patches? Which I have to resolve this way
 ```
 git co 0.8.1

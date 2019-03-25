@@ -181,3 +181,5 @@ exec --no-startup-id nm-applet
 focus_follows_mouse no
 # Web search 
 bindsym $mod+Shift+d exec surf duckduckgo.com/?q=$(echo "" | dmenu -p "Web Search" | sed -e 's/ /%20/g')
+# New workspace
+bindsym $mod+n exec ~/.dotfiles/scripts/new_workspace.sh
