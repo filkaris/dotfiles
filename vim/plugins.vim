@@ -64,6 +64,9 @@ Plugin 'Quramy/tsuquyomi'
 " Omni-complete dependency
 Plugin 'Shougo/vimproc.vim'
 
+" GoLang IDE
+Plugin 'fatih/vim-go'
+
 call vundle#end()		" required
 filetype plugin indent on	" required
 

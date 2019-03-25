@@ -20,6 +20,9 @@ fi
 if [ ! -f ~/.screenrc ]; then
     ln -s "$DIR/conf/screenrc" ~/.screenrc
 fi
+if [ ! -f ~/.config/i3/config ]; then
+    ln -s "$DIR/conf/i3" ~/.config/i3/config
+fi
 
 # If vundle doesn't exist, clone and it
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
