@@ -33,6 +33,10 @@ function gith()
 {
     if [ -d ./.git ] && $(type selecta &>/dev/null); then
         git br | selecta | xargs git co
+    else 
+        if [ -d ./.git ] && $(type dmenu &>/dev/null); then
+            git br | dmenu | xargs git co
+        fi
     fi
 }
 
