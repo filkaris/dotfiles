@@ -54,3 +54,6 @@ fi
 if type ranger &>/dev/null; then
     bind '"\M-w": "\C-e\C-uranger\n"'
 fi
+if type st &>/dev/null; then
+    bind '"\M-": "\C-e\C-ust &\n"'
+fi
