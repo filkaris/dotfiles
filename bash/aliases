@@ -1,5 +1,5 @@
 # Local vim
-alias v='if [ -f .vimrc ]; then nvim -u .vimrc; else nvim; fi'
+alias v='if [ -f .vimrc ]; then nvim -u .vimrc; else nvim -u ~/.vimrc; fi'
 alias vi='vim -u NONE'
 alias viminit='cp ~/.dotfiles/vim/vimrc.local .vimrc'
 
