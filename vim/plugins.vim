@@ -34,7 +34,7 @@ Plugin 'lumiliet/vim-twig'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 " Ctags
-Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'ludovicchabant/vim-gutentags' "install ctags binary
 " Autocompletion
 Plugin 'ncm2/ncm2'
 Plugin 'roxma/nvim-yarp'
@@ -62,7 +62,7 @@ Plugin 'peitalin/vim-jsx-typescript'
 " Omni-complete WORKS BUT SLOWS STUFF DOWN
 Plugin 'Quramy/tsuquyomi'
 " Omni-complete dependency
-Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimproc.vim' "run make
 
 " GoLang IDE
 Plugin 'fatih/vim-go'
