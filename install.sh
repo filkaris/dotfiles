@@ -23,6 +23,9 @@ fi
 if [ ! -f ~/.config/i3/config ]; then
     ln -s "$DIR/conf/i3" ~/.config/i3/config
 fi
+if [ ! -f ~/.config/i3blocks/config ]; then
+    ln -s "$DIR/conf/i3blocks" ~/.config/i3blocks/config
+fi
 
 # If vundle doesn't exist, clone and it
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then

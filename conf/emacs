@@ -1,3 +1,4 @@
+;; When first installing, just do M-x package-install use-package
 ;; Package manager?
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
