@@ -33,7 +33,7 @@ nmap <Leader>a :let b:ale_fix_on_save=0<CR>
 autocmd FileType php setlocal omnifunc=phpactor#Complete
 " Add Use statements
 " Edit > Keyboard Shortcuts > Enable menu access keys
-nnoremap <M-CR> :<C-U>call phpactor#UseAdd()<CR>
+autocmd BufEnter *.php nnoremap <M-CR> :<C-U>call phpactor#UseAdd()<CR>
 nnoremap <M-r> :<C-U>call phpactor#Transform()<CR>
 nnoremap <M-c> :<C-U>call phpactor#ContextMenu()<CR>
 " TEMP
@@ -42,6 +42,9 @@ nnoremap <M-m> :<C-U>!chmod a+x vendor/bin/* node_modules/.bin/* node_modules/es
 " NCM2
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" JS file Import
+autocmd BufEnter *.js,*.ts,*.tsx nnoremap <M-CR> yiw:r !cat tags \| egrep '^0' \| awk '{print $2;}'<CR>
 
 " Tsuquyomi
 " Disable auto quickfix on save
@@ -56,7 +59,7 @@ set completeopt=noinsert,menuone,noselect
 let g:gutentags_enabled=1
 let g:gutentags_generate_on_new=0
 " Exclude folders
-let g:gutentags_ctags_exclude=['node_modules/*','public/*','var/cache/*','*.css']
+let g:gutentags_ctags_exclude=['node_modules/*','public/*','var/cache/*','*.css','*.min.js','build/*','vendor/*.json']
 " Add js syntax, removes all other tags
 "let g:gutentags_ctags_extra_args=['--regex-javascript=/^[\ \t]*(export)?[\ \t]*function[\ \t]+([a-zA-Z0-9_]+)/\\2/f,functions/']
 " Show [ctags] in statusline to see when it is indexing
