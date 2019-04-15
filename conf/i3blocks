@@ -12,13 +12,13 @@ markup=none
 [memory]
 label=MEM
 separator=false
-interval=30
+interval=15
 
 [memory]
 label=
 instance=swap
 separator=true
-interval=30
+interval=15
 
 [battery]
 label=⚡
