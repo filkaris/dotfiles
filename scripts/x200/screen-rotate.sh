@@ -1,8 +1,8 @@
 #!/bin/bash
-tablet="13"
+tablet="Wacom Serial Penabled 1FG Touchscreen Finger touch"
 
 # Get the current orientation of the tablet
-rotate=$(xsetwacom get $tablet Rotate)
+rotate=$(xsetwacom get "$tablet" Rotate)
 
 # Work out the next tablet and screen orientations (rotating clockwise)
 case "$rotate" in
