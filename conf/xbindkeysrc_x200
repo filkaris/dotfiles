@@ -18,6 +18,9 @@
 "~/.dotfiles/scripts/x200/screen-rotate.sh"
   XF86Launch6
 
+"~/.dotfiles/scripts/x200/touch-calibrate.sh"
+  XF86Launch5
+
 
 #"xbindkeys_show" 
   #control+shift + q
