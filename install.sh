@@ -11,6 +11,9 @@ fi
 if [ ! -f ~/.vimrc ]; then
     ln -s "$DIR/conf/vimrc" ~/.vimrc
 fi
+if [ ! -f ~/.config/phpactor/phpactor.yml ]; then
+    ln -s "$DIR/conf/phpactor.yml" ~/.config/phpactor/phpactor.yml
+fi
 if [ ! -f ~/.tmux.conf ]; then
     ln -s "$DIR/conf/tmux.conf" ~/.tmux.conf
 fi
