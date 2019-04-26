@@ -11,6 +11,9 @@ fi
 if [ ! -f ~/.vimrc ]; then
     ln -s "$DIR/conf/vimrc" ~/.vimrc
 fi
+if [ ! -f ~/.config/phpactor/phpactor.yml ]; then
+    ln -s "$DIR/conf/phpactor.yml" ~/.config/phpactor/phpactor.yml
+fi
 if [ ! -f ~/.tmux.conf ]; then
     ln -s "$DIR/conf/tmux.conf" ~/.tmux.conf
 fi
@@ -22,6 +25,9 @@ if [ ! -f ~/.screenrc ]; then
 fi
 if [ ! -f ~/.config/i3/config ]; then
     ln -s "$DIR/conf/i3" ~/.config/i3/config
+fi
+if [ ! -f ~/.config/i3blocks/config ]; then
+    ln -s "$DIR/conf/i3blocks" ~/.config/i3blocks/config
 fi
 
 # If vundle doesn't exist, clone and it

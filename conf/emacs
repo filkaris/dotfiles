@@ -1,3 +1,4 @@
+;; When first installing, just do M-x package-install use-package
 ;; Package manager?
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -120,6 +121,7 @@
   :config
   (global-set-key (kbd "C-x g") 'magit-status))
 
+(load "ox-reveal")
 
 ;; DOESNT WORK
 ;; ---- nlinum ----

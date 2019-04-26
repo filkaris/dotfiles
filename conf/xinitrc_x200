@@ -1,0 +1,12 @@
+
+# Remap Caps lock to ESC
+setxkbmap -option caps:escape
+
+# Calibrate Touchscreen (finger)
+# Initial (set 13 resetarea)
+# xsetwacom set 13 area 0 0 26312 16520
+xsetwacom set 13 area 1042 1290 24447 15250
+
+xbindkeys
+
+exec i3

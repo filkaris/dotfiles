@@ -10,6 +10,8 @@ scriptencoding utf-8
 filetype plugin indent on
 " Enable hidden buffers
 set hidden
+" No endofline
+set nofixendofline
 
 " Open new window on the right
 set splitright
