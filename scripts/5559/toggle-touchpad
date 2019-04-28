@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+# Step 1: Find Touchpad ID from xinput list
+# In my case it had 2 Touchpads. Find which works and grep it
+tpid=`xinput list | grep Touchpad | sed 's/.*id\=\([0-9]\+\).*/\1/g'`
+
+# Step 2: Find out if touchpad is enabled or not
+declare -i status
+status=`xinput list-props ${tpid} | grep Device\ Enabled | sed -e 's/.*\:[ \t]\+//g'`
+
+# Step 3 enable/disable touchpad accordingly
+if [ 0 -eq ${status} ] ; then
+    xinput enable ${tpid}
+    # Restart syndaemon
+    kill `ps aux | grep syndaemon | awk 'NR==1{print $2}'`
+    syndaemon -i 0.8 -KRd
+else
+    xinput disable ${tpid}
+fi
+
+# TODO: Step 4: xinput resets our layout with escape, so we have to reset it
+#source ~/.dotfiles/bash/bashrc
+#setxkbmap -option caps:escape
+#sbash
