@@ -61,7 +61,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+- split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+#bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -174,8 +174,11 @@ exec --no-startup-id nm-applet
 # Don'f focus a window just on mouse hover
 focus_follows_mouse no
 
-# Assign Pinta to Ws10
+# Assign Pinta to Ws 10
 for_window [class="Pinta"] move workspace $ws10
+
+# Assign Viber to Ws 9
+for_window [class="Viber"] move workspace $ws9
 
 ## KeyBinds
 
@@ -191,6 +194,10 @@ bindsym $mod+Shift+d exec $BROWSER duckduckgo.com/?q=$(echo "" | dmenu -p "Web S
 # New workspace
 bindsym $mod+n exec ~/.dotfiles/scripts/i3/new_workspace.sh
 
-# Open Pinta
+# Open Viber 
+bindsym $mod+v exec --no-startup-id "if [[ ! $(pgrep viber) ]]; then viber; fi" ; workspace $ws9
+
+# Open Pinta with x200 button
 bindcode 195 exec --no-startup-id "if [[ ! $(pgrep mono) ]]; then pinta; fi" ; workspace $ws10
+
 
