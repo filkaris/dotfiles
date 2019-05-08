@@ -15,6 +15,7 @@ set nofixendofline
 
 " Open new window on the right
 set splitright
+set splitbelow
 
 " Always Show filename
 set laststatus=2
