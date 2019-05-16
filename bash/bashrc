@@ -44,12 +44,17 @@ complete -F _composer_scripts composer
 
 # Dynamic branch select
 bind 'set convert-meta on'
+# Dmenu branches
 if type gith &>/dev/null; then
     bind '"\C-h": "\C-e\C-ugith\n"'
 fi
 # Switch between branches
 if type gitk &>/dev/null; then
     bind '"\C-k": "\C-e\C-ugitk\n"'
+fi
+# Dmenu Projects
+if type gitp &>/dev/null; then
+    bind '"\C-p": "\C-e\C-ugitp\n"'
 fi
 if type ranger &>/dev/null; then
     bind '"\M-w": "\C-e\C-uranger\n"'

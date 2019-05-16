@@ -47,3 +47,9 @@ function gitk()
         git co -
     fi
 }
+function gitp()
+{
+    if $(type dmenu &>/dev/null); then
+        cd $HOME/projects/$(ls ~/projects | dmenu -p 'Project:')  
+    fi
+}
