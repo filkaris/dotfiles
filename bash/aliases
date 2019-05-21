@@ -51,5 +51,9 @@ function gitp()
 {
     if $(type dmenu &>/dev/null); then
         cd $HOME/projects/$(ls ~/projects | dmenu -p 'Project:')  
+    else 
+        if $(type selecta &>/dev/null); then
+            cd $HOME/projects/$(ls ~/projects | selecta)  
+        fi
     fi
 }
