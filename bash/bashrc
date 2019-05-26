@@ -18,13 +18,15 @@ else
 fi
 
 # Add custom bin folder
-export PATH="$PATH:$HOME/.dotfiles/bin"
+# SHOULD BE CALLED IN .profile
+#export PATH="$PATH:$HOME/.dotfiles/bin"
 
 # Don't show full path
 export PROMPT_DIRTRIM=3
 
 # Remap Caps Lock to ESC
-setxkbmap -option caps:escape
+# SHOULD BE CALLED IN .xinitrc
+#setxkbmap -option caps:escape
 # Add this for permanence
 #XKBOPTIONS="caps:escape"
 
