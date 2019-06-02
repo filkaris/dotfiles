@@ -1,7 +1,7 @@
 ## x200 Tablet Buttons
 
 # Reload - Cycle through brightness
-"~/.dotfiles/scripts/x200/cycle-brightness.sh" 
+"~/.dotfiles/scripts/x200/pinta-undo.sh" 
     XF86Launch5 
 
 # Rotate - Screen rotate toggle
@@ -9,7 +9,7 @@
     XF86Launch6 
 
 # Shortcut - Touch recalibrate
-"~/.dotfiles/scripts/x200/touch-calibrate.sh" 
+"~/.dotfiles/scripts/x200/cycle-brightness.sh" 
     XF86Launch7 
 
 # Lockpad - Open Paint workspace
