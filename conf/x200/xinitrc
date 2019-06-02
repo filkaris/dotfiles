@@ -1,11 +1,13 @@
 
 # Remap Caps lock to ESC
 setxkbmap -option caps:escape
+# Set keyboard language
+setxkbmap -layout us,gr -option grp:alt_shift_toggle
 
 # Calibrate Touchscreen (finger)
 # Initial (set 13 resetarea)
 # xsetwacom set 13 area 0 0 26312 16520
-xsetwacom set 13 area 1042 1290 24447 15250
+~/.dotfiles/scripts/x200/touch-calibrate.sh
 
 xbindkeys
 

@@ -200,17 +200,3 @@ bindsym $mod+n exec ~/.dotfiles/scripts/i3/new_workspace.sh
 # Open Viber 
 bindsym $mod+v exec --no-startup-id "if [[ ! $(pgrep viber) ]]; then viber; fi" ; workspace $ws9
 
-# x200 Open Pinta with tablet button
-bindcode 195 exec --no-startup-id "if [[ ! $(pgrep mono) ]]; then pinta; fi" ; workspace $ws10
-
-# 5559 touchpad disable
-bindsym F7 exec ~/.dotfiles/scripts/5559/toggle-touchpad
-
-# 5559 brightness controls
-bindsym XF86MonBrightnessUp exec light -A 10
-bindsym XF86MonBrightnessDown exec light -U 10
-
-# 5559 volume controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 

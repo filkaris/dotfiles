@@ -1,0 +1,19 @@
+## 5559 bindings
+
+# touchpad disable
+"~/.dotfiles/scripts/5559/toggle-touchpad"
+    F7 
+
+# brightness controls
+"light -A 10"
+    XF86MonBrightnessUp 
+"light -U 10"
+    XF86MonBrightnessDown 
+
+# volume controls
+"pactl -- set-sink-volume 0 +5%" 
+    XF86AudioRaiseVolume 
+"pactl -- set-sink-volume 0 -5%" 
+    XF86AudioLowerVolume 
+"pactl set-sink-mute 0 toggle" 
+    XF86AudioMute 
