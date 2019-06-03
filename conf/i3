@@ -200,3 +200,5 @@ bindsym $mod+n exec ~/.dotfiles/scripts/i3/new_workspace.sh
 # Open Viber 
 bindsym $mod+v exec --no-startup-id "if [[ ! $(pgrep viber) ]]; then viber; fi" ; workspace $ws9
 
+# Refresh keyboard layout settings
+bindsym $mod+q exec --no-startup-id "setxkbmap -option caps:escape; setxkbmap -layout us,gr -option grp:alt_shift_toggle"
