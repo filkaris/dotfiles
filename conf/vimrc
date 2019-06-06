@@ -30,8 +30,9 @@ nmap <Leader>g yiw:<C-U>grep 0<CR><CR>:cope<CR><CR>
 """""" CTRL MAPPINGS """"""
 "" Fzf
 "nmap <C-J> :e **/*
-nmap <C-J> :<C-U>Buffer<CR>
-nmap <C-H> :<C-U>GFiles<CR>
+nmap <C-j> :<C-U>Buffer<CR>
+nmap <C-h> :<C-U>GFiles<CR>
+nmap <M-h> :<C-U>Files<CR>
 "" Switch between files homerow
 nnoremap <C-K> <C-^>
 "" Mimic org mode, expand folds with tab
