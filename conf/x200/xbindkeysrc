@@ -15,3 +15,13 @@
 # Lockpad - Open pinta workspace
 "if [[ ! $(pgrep mono) ]]; then pinta; fi; i3-msg workspace 10"
     XF86Launch8 
+
+## PrintScreen
+
+# PrintScreen
+"~/.dotfiles/scripts/x200/print-screen.sh" 
+    Print 
+
+# PrintScreen Area
+"~/.dotfiles/scripts/x200/print-screen-area.sh" 
+    Shift+Print 
