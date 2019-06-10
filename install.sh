@@ -1,5 +1,6 @@
 #!/bin/bash
 DIR=$( pwd )
+PC=$(uname -n)
 
 # Link all conf files to home directory
 if [ ! -f ~/.gitconfig ]; then
@@ -28,6 +29,13 @@ if [ ! -f ~/.config/i3/config ]; then
 fi
 if [ ! -f ~/.config/i3blocks/config ]; then
     ln -s "$DIR/conf/i3blocks" ~/.config/i3blocks/config
+fi
+if [ $PC == "archpad" ]; then
+    ln -sf "$DIR/conf/x200/xbindkeysrc" ~/.xbindkeysrc
+    ln -sf "$DIR/conf/x200/xinitrc" ~/.xinitrc
+fi
+if [ $PC == "filippos-5559" ]; then
+    ln -sf "$DIR/conf/x200/xbindkeysrc" ~/.xbindkeysrc
 fi
 
 # If vundle doesn't exist, clone and it

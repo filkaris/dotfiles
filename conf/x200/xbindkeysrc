@@ -1,0 +1,27 @@
+## x200 Tablet Buttons
+
+# Reload - Undo (for pinta)
+"~/.dotfiles/scripts/x200/send-ctrl-z.sh" 
+    XF86Launch5 
+
+# Rotate - Screen rotate toggle
+"~/.dotfiles/scripts/x200/screen-rotate.sh" 
+    XF86Launch6 
+
+# Shortcut - Cycle through brightnes
+"~/.dotfiles/scripts/x200/cycle-brightness.sh" 
+    XF86Launch7 
+
+# Lockpad - Open pinta workspace
+"if [[ ! $(pgrep mono) ]]; then pinta; fi; i3-msg workspace 10"
+    XF86Launch8 
+
+## PrintScreen
+
+# PrintScreen
+"~/.dotfiles/scripts/x200/print-screen.sh" 
+    Print 
+
+# PrintScreen Area
+"~/.dotfiles/scripts/x200/print-screen-area.sh" 
+    Shift+Print 

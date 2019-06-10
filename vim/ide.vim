@@ -21,12 +21,14 @@ nmap <M-S-t> ?function\\|class<CR>w"tyiw:<C-U>!vendor/bin/phpunit --filter t<CR
 nmap <M-t> :<C-U>!vendor/bin/phpunit --filter t<CR>
 "" Copy to clipboard: watch tests for file (paste in terminal)
 nmap <Leader>t :let @+='watch --color vendor/bin/phpunit '.@%.' --color=always'<CR>
-"" Light mode tweaks
+"" Light mode tweaks for mate terminal
 nmap <Leader>l :hi Folded ctermbg=7<CR>
-"" Dark mode tweaks
+"" Dark mode tweaks for mate terminal
 nmap <Leader>d :hi Folded ctermbg=0<CR>
 "" Quick fix on save
 nmap <Leader>a :let b:ale_fix_on_save=0<CR>
+"" st solarized defaults for autocomplete
+hi Pmenu ctermfg=2 ctermbg=0
 
 " PHPACTOR
 " set omnicomplete function

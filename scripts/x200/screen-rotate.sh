@@ -1,4 +1,8 @@
 #!/bin/bash
+# depends:
+#  xsetwacom
+#  xranrd
+
 stylus="Wacom Serial Penabled 1FG Touchscreen Pen stylus"
 eraser="Wacom Serial Penabled 1FG Touchscreen Pen eraser"
 touch="Wacom Serial Penabled 1FG Touchscreen Finger touch"
