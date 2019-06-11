@@ -27,6 +27,8 @@ nmap <silent> <Leader>f :<C-U>call ToggleFold()<CR>
 " OK, open quickfix window, go to first result
 nmap <Leader>g yiw:<C-U>grep 0<CR><CR>:cope<CR><CR>
 
+vmap <Leader>s :sort<CR>
+
 """""" CTRL MAPPINGS """"""
 "" Fzf
 "nmap <C-J> :e **/*
