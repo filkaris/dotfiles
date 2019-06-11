@@ -22,9 +22,9 @@ nmap <M-t> :<C-U>!vendor/bin/phpunit --filter t<CR>
 "" Copy to clipboard: watch tests for file (paste in terminal)
 nmap <Leader>t :let @+='watch --color vendor/bin/phpunit '.@%.' --color=always'<CR>
 "" Light mode tweaks for mate terminal
-nmap <Leader>l :hi Folded ctermbg=7<CR>
+nmap <Leader>l :hi Folded ctermbg=7<CR>:hi Pmenu ctermbg=7<CR>
 "" Dark mode tweaks for mate terminal
-nmap <Leader>d :hi Folded ctermbg=0<CR>
+nmap <Leader>d :hi Folded ctermbg=0<CR>:hi Pmenu ctermbg=0<CR>
 "" Quick fix on save
 nmap <Leader>a :let b:ale_fix_on_save=0<CR>
 "" st solarized defaults for autocomplete
