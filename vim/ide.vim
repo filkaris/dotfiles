@@ -15,12 +15,6 @@ set statusline+=[IDE]
 nmap <C-G>b :<C-U>!git blame %<CR>
 "" Git Rename (mv)
 nmap <C-G>m :<C-U>!git mv % %
-"" Find and run test
-nmap <M-S-t> ?function\\|class<CR>w"tyiw:<C-U>!vendor/bin/phpunit --filter t<CR>
-"" Run last test
-nmap <M-t> :<C-U>!vendor/bin/phpunit --filter t<CR>
-"" Copy to clipboard: watch tests for file (paste in terminal)
-nmap <Leader>t :let @+='watch --color vendor/bin/phpunit '.@%.' --color=always'<CR>
 "" Light mode tweaks for mate terminal
 nmap <Leader>l :hi Folded ctermbg=7<CR>:hi Pmenu ctermbg=7<CR>
 "" Dark mode tweaks for mate terminal
@@ -40,6 +34,20 @@ nnoremap <M-r> :<C-U>call phpactor#Transform()<CR>
 nnoremap <M-c> :<C-U>call phpactor#ContextMenu()<CR>
 " TEMP
 nnoremap <M-m> :<C-U>!chmod a+x vendor/bin/* node_modules/.bin/* node_modules/eslint/bin/*<CR>
+nnoremap <M-t> :<C-U>echo " (t) Run Last Test\n (r) Run Current Test\n (f) Run Current File\n (w) Watch file (copy command to clipboard)\nEnter Option: " \| call Test(getchar())<CR>
+function! Test(name)
+    if nr2char(a:name) == 't'
+        execute "!vendor/bin/phpunit --filter ".@t
+    elseif nr2char(a:name) == 'r'
+        execute "normal! ?public.function\<CR>2w\"tyw"
+        execute "!vendor/bin/phpunit --filter ".@t
+    elseif nr2char(a:name) == 'f'
+        execute "!vendor/bin/phpunit ".@%
+    elseif nr2char(a:name) == 'w'
+        let @+='watch --color vendor/bin/phpunit '.@%.' --color=always'
+    endif
+endfunction
+
 
 " NCM2
 " enable ncm2 for all buffers
@@ -108,7 +116,7 @@ endfunction
 set statusline+=%{LinterStatus()}
 
 " GOLANG
-au BufWritePost *.go !go build %
+" au BufWritePost *.go !go build %
 au FileType go nnoremap <M-CR> yiw:<C-U>GoImport 0<CR>
 
 " Snippets
