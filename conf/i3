@@ -202,3 +202,23 @@ bindsym $mod+v exec --no-startup-id "if [[ ! $(pgrep viber) ]]; then viber; fi" 
 
 # Refresh keyboard layout settings
 bindsym $mod+q exec --no-startup-id "setxkbmap -option caps:escape; setxkbmap -layout us,gr -option grp:alt_shift_toggle"
+
+# Shutdown menu
+set $Locker i3lock && sleep 1
+
+set $mode_system System (s) shutdown, (r) reboot, (l) lock, (e) logout, (u) suspend, (h) hibernate
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym u exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym q mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
