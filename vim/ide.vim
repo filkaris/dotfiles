@@ -34,8 +34,10 @@ nnoremap <M-r> :<C-U>call phpactor#Transform()<CR>
 nnoremap <M-c> :<C-U>call phpactor#ContextMenu()<CR>
 " TEMP
 nnoremap <M-m> :<C-U>!chmod a+x vendor/bin/* node_modules/.bin/* node_modules/eslint/bin/*<CR>
-nnoremap <M-t> :<C-U>echo " (t) Run Last Test\n (r) Run Current Test\n (f) Run Current File\n (w) Watch file (copy command to clipboard)\nEnter Option: " \| call Test(getchar())<CR>
-function! Test(name)
+
+" Testing
+au FileType php nnoremap <M-t> :<C-U>echo " (t) Run Last Test\n (r) Run Current Test\n (f) Run Current File\n (w) Watch file (copy command to clipboard)\nEnter Option: " \| call PHPTestPrompt(getchar())<CR>
+function! PHPTestPrompt(name)
     if nr2char(a:name) == 't'
         execute "!vendor/bin/phpunit --filter ".@t
     elseif nr2char(a:name) == 'r'
@@ -47,6 +49,23 @@ function! Test(name)
         let @+='watch --color vendor/bin/phpunit '.@%.' --color=always'
     endif
 endfunction
+
+"Go
+" Testing
+au FileType go nnoremap <M-t> :<C-U>echo " (t) Run Last Test\n (r) Run Current Test\n (f) Run Current File\n (w) Watch file (copy command to clipboard)\nEnter Option: " \| call GoTestPrompt(getchar())<CR>
+function! GoTestPrompt(name)
+    if nr2char(a:name) == 't'
+        execute "!go test -run ".@t." ".@%
+    elseif nr2char(a:name) == 'r'
+        execute "normal! ?^func\<CR>w\"tyw"
+        execute "!go test -run ".@t." ".@%
+    elseif nr2char(a:name) == 'f'
+        execute "!go test ".@%
+    elseif nr2char(a:name) == 'w'
+        let @+='watch --color go test '.@%.' --color=always'
+    endif
+endfunction
+
 
 
 " NCM2
@@ -77,7 +96,7 @@ set statusline+=%{gutentags#statusline('\ [',']')}
 
 " ALE
 let g:ale_enabled=1
-let g:ale_linters={'php':['php','phpcs','phpstan'], 'javascript':['eslint'], 'typescript':['eslint','tsserver'], 'bash':['shellcheck']}
+let g:ale_linters={'php':['php','phpcs','phpstan'], 'javascript':['eslint'], 'typescript':['eslint','tsserver'], 'bash':['shellcheck'], 'go':['gofmt','golint','golangci-lint']}
 let g:ale_fixers={'php':['phpcbf'],'javascript':['prettier'],'typescript':['prettier']}
 let g:ale_fix_on_save = 1
 "let g:ale_php_phpcs_executable='php vendor/bin/phpcs'
@@ -85,6 +104,8 @@ let g:ale_php_phpstan_executable='vendor/bin/phpstan'
 "let g:ale_phpcbf_executable='php vendor/bin/phpcbf'
 "let g:ale_javascript_eslint_executable=''
 "let g:ale_javascript_prettier_executable=''
+let g:ale_go_golangci_lint_executable='/home/fkarailanidis/go/bin/golangci-lint'
+let g:ale_go_golangci_lint_package=1
 "ALE move through errors
 nnoremap <M-j> :<C-U>ALENextWrap<CR>zo
 function! ToggleAleWindow()

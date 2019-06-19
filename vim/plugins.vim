@@ -66,6 +66,7 @@ Plugin 'Shougo/vimproc.vim' "run make
 
 " GoLang IDE
 Plugin 'fatih/vim-go'
+Plugin 'ncm2/ncm2-go'
 
 call vundle#end()		" required
 filetype plugin indent on	" required
