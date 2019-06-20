@@ -96,8 +96,8 @@ set statusline+=%{gutentags#statusline('\ [',']')}
 
 " ALE
 let g:ale_enabled=1
-let g:ale_linters={'php':['php','phpcs','phpstan'], 'javascript':['eslint'], 'typescript':['eslint','tsserver'], 'bash':['shellcheck'], 'go':['gofmt','golint','golangci-lint']}
-let g:ale_fixers={'php':['phpcbf'],'javascript':['prettier'],'typescript':['prettier']}
+let g:ale_linters={'php':['php','phpcs','phpstan'], 'javascript':['eslint'], 'typescript':['eslint','tsserver'], 'bash':['shellcheck'], 'go':['golangci-lint']}
+let g:ale_fixers={'php':['phpcbf'],'javascript':['prettier'],'typescript':['prettier'], 'go':['gofmt']}
 let g:ale_fix_on_save = 1
 "let g:ale_php_phpcs_executable='php vendor/bin/phpcs'
 let g:ale_php_phpstan_executable='vendor/bin/phpstan'
@@ -106,6 +106,7 @@ let g:ale_php_phpstan_executable='vendor/bin/phpstan'
 "let g:ale_javascript_prettier_executable=''
 let g:ale_go_golangci_lint_executable='/home/fkarailanidis/go/bin/golangci-lint'
 let g:ale_go_golangci_lint_package=1
+let g:ale_go_gopls_executable='/home/fkarailanidis/go/bin/gopls'
 "ALE move through errors
 nnoremap <M-j> :<C-U>ALENextWrap<CR>zo
 function! ToggleAleWindow()
