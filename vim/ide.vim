@@ -24,16 +24,15 @@ nmap <Leader>a :let b:ale_fix_on_save=0<CR>
 "" st solarized defaults for autocomplete
 hi Pmenu ctermfg=2 ctermbg=0
 
-" PHPACTOR
+" PHP
+" For Alt: Edit > Keyboard Shortcuts > Enable menu access keys
 " set omnicomplete function
 autocmd FileType php setlocal omnifunc=phpactor#Complete
 " Add Use statements
-" Edit > Keyboard Shortcuts > Enable menu access keys
 autocmd BufEnter *.php nnoremap <M-CR> :<C-U>call phpactor#UseAdd()<CR>
-nnoremap <M-r> :<C-U>call phpactor#Transform()<CR>
 nnoremap <M-c> :<C-U>call phpactor#ContextMenu()<CR>
-" TEMP
-nnoremap <M-m> :<C-U>!chmod a+x vendor/bin/* node_modules/.bin/* node_modules/eslint/bin/*<CR>
+vnoremap <M-e> <ESC>:<C-U>call phpactor#ExtractMethod()<CR>
+nnoremap <M-r> :<C-U>call phpactor#Transform()<CR>
 
 " Testing
 au FileType php nnoremap <M-t> :<C-U>echo " (t) Run Last Test\n (r) Run Current Test\n (f) Run Current File\n (w) Watch file (copy command to clipboard)\nEnter Option: " \| call PHPTestPrompt(getchar())<CR>
@@ -96,8 +95,8 @@ set statusline+=%{gutentags#statusline('\ [',']')}
 
 " ALE
 let g:ale_enabled=1
-let g:ale_linters={'php':['php','phpcs','phpstan'], 'javascript':['eslint'], 'typescript':['eslint','tsserver'], 'bash':['shellcheck'], 'go':['gofmt','golint','golangci-lint']}
-let g:ale_fixers={'php':['phpcbf'],'javascript':['prettier'],'typescript':['prettier']}
+let g:ale_linters={'php':['php','phpcs','phpstan'], 'javascript':['eslint'], 'typescript':['eslint','tsserver'], 'bash':['shellcheck'], 'go':['golangci-lint']}
+let g:ale_fixers={'php':['phpcbf'],'javascript':['prettier'],'typescript':['prettier'], 'go':['gofmt']}
 let g:ale_fix_on_save = 1
 "let g:ale_php_phpcs_executable='php vendor/bin/phpcs'
 let g:ale_php_phpstan_executable='vendor/bin/phpstan'
@@ -106,6 +105,7 @@ let g:ale_php_phpstan_executable='vendor/bin/phpstan'
 "let g:ale_javascript_prettier_executable=''
 let g:ale_go_golangci_lint_executable='/home/fkarailanidis/go/bin/golangci-lint'
 let g:ale_go_golangci_lint_package=1
+let g:ale_go_gopls_executable='/home/fkarailanidis/go/bin/gopls'
 "ALE move through errors
 nnoremap <M-j> :<C-U>ALENextWrap<CR>zo
 function! ToggleAleWindow()
