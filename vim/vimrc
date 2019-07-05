@@ -39,13 +39,16 @@ nmap <M-h> :<C-U>Files<CR>
 nnoremap <C-K> <C-^>
 "" Mimic org mode, expand folds with tab
 "" TAB: if fold closed, focus it, else go on top
-nnoremap <expr> <Tab> foldclosed(".")==-1 ? 'zazz' : 'zazt'
+""nnoremap <expr> <Tab> foldclosed(".")==-1 ? 'zazz' : 'zazt'
+nnoremap <Tab> zazz
 nnoremap <Leader><Tab> zO
 "" SHIFT TAB: filetype dependent behavior
 autocmd FileType php,xml nnoremap <silent><buffer> <S-Tab> :<C-U>set foldlevel=1<CR>
 autocmd FileType php,xml set foldlevel=1
 autocmd FileType javascript nnoremap <silent><buffer> <S-Tab> :<C-U>set foldlevel=1<CR>
 autocmd FileType javascript set foldlevel=1
+autocmd FileType go nnoremap <silent><buffer> <S-Tab> :<C-U>set foldlevel=0<CR>
+autocmd FileType go set foldlevel=0
 "" C-I is also tab, so remap it to C-P
 nnoremap <C-P> <C-I>
 "" Clear highlight
