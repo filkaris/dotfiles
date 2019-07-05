@@ -59,6 +59,9 @@ autocmd FileType javascript setlocal foldnestmax=2
 " 2 space ident
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
+"" Golang ""
+autocmd FileType go setlocal foldnestmax=1
+
 "" YAML
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

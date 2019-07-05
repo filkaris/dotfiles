@@ -50,6 +50,8 @@ function! PHPTestPrompt(name)
 endfunction
 
 "Go
+" Stupid gofmt
+let g:go_fmt_experimental = 1
 " Testing
 au FileType go nnoremap <M-t> :<C-U>echo " (t) Run Last Test\n (r) Run Current Test\n (f) Run Current File\n (w) Watch file (copy command to clipboard)\nEnter Option: " \| call GoTestPrompt(getchar())<CR>
 function! GoTestPrompt(name)
