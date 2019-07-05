@@ -13,7 +13,7 @@
     XF86Launch7 
 
 # Lockpad - Open pinta workspace
-"if [[ ! $(pgrep mono) ]]; then pinta; fi; i3-msg workspace 10"
+"if [[ ! $(pgrep gimp) ]]; then gimp; fi; i3-msg workspace 10"
     XF86Launch8 
 
 ## PrintScreen

@@ -22,13 +22,13 @@ chmod 644 /home/$USERNAME/.ssh/authorized_keys
 
 # Set up firewall
 ufw allow OpenSSH
-ufw allow http
 ufw enable
 
 # All these below should be inside docker container
 
 # Install application environment
 apt install nginx
+ufw allow Nginx\ Full
 # nginx
 # copied minimal setup from symofny
 # using user filkaris instead of www-data
@@ -46,3 +46,67 @@ apt install \
     php7.3-curl \
     unzip 
 
+# Install certbot
+apt install software-properties-common
+add-apt-repository universe
+add-apt-repository ppa:certbot/certbot
+apt update
+apt install certbot python-certbot-nginx
+certbot --nginx
+
+#nginx conf for symfony
+#server {
+#    if ($host = www.goalsetting.club) {
+#        return 301 https://goalsetting.club$request_uri;
+#    } # managed by Certbot
+#
+#    server_name goalsetting.club www.goalsetting.club;
+#    root /home/filkaris/goal-setting-club/current/public;
+#
+#    location / {
+#        try_files $uri /index.php$is_args$args;
+#    }
+#
+#    location ~ ^/index\.php(/|$) {
+#        fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+#        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+#        include fastcgi_params;
+#        fastcgi_param APP_ENV prod;
+#        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+#        fastcgi_param DOCUMENT_ROOT $realpath_root;
+#        internal;
+#    }
+#
+#
+#    # return 404 for all other php files not matching the front controller
+#    # this prevents access to other php files you don't want to be accessible.
+#    location ~ \.php$ {
+#        return 404;
+#    }
+#
+#    error_log /var/log/nginx/project_error.log;
+#    access_log /var/log/nginx/project_access.log;
+#
+#
+#    listen 443 ssl; # managed by Certbot
+#    ssl_certificate /etc/letsencrypt/live/goalsetting.club/fullchain.pem; # man aged by Certbot
+#    ssl_certificate_key /etc/letsencrypt/live/goalsetting.club/privkey.pem; # m anaged by Certbot
+#    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+#    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+#}
+#server {
+#    if ($host = www.goalsetting.club) {
+#        return 301 https://goalsetting.club$request_uri;
+#    } # managed by Certbot
+#
+#
+#    if ($host = goalsetting.club) {
+#        return 301 https://$host$request_uri;
+#    } # managed by Certbot
+#
+#
+#    server_name goalsetting.club www.goalsetting.club;
+#    listen 80;
+#    return 404; # managed by Certbot
+#}
+#
