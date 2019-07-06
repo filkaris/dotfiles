@@ -54,6 +54,11 @@ apt update
 apt install certbot python-certbot-nginx
 certbot --nginx
 
+# (Application specific)
+# Installed ckeditor which is a js dep. A better option is through webpack
+php bin/console ckeditor:install
+php bin/console assets:install public
+
 #nginx conf for symfony
 #server {
 #    if ($host = www.goalsetting.club) {
