@@ -25,3 +25,11 @@
 # PrintScreen Area
 "~/.dotfiles/scripts/x200/print-screen-area.sh" 
     Shift+Print 
+
+# volume controls
+"pactl -- set-sink-volume 0 +5%" 
+    XF86AudioRaiseVolume 
+"pactl -- set-sink-volume 0 -5%" 
+    XF86AudioLowerVolume 
+"pactl set-sink-mute 0 toggle" 
+    XF86AudioMute 
