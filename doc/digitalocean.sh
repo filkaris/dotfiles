@@ -41,7 +41,7 @@ apt install \
     php7.3-mbstring \
     php7.3-xml \
     php7.3-intl \
-    php7.3-sqlite3 \
+    php7.3-mysql \
     php7.3-zip \
     php7.3-curl \
     unzip 
@@ -54,10 +54,10 @@ apt update
 apt install certbot python-certbot-nginx
 certbot --nginx
 
-# (Application specific)
-# Installed ckeditor which is a js dep. A better option is through webpack
-php bin/console ckeditor:install
-php bin/console assets:install public
+## APPLICATION SPECIFIC
+# Install mariadb docker 
+# edit .env
+docker-compose up -d
 
 #nginx conf for symfony
 #server {
