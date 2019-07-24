@@ -31,8 +31,11 @@ autocmd FileType php setlocal omnifunc=phpactor#Complete
 " Add Use statements
 autocmd BufEnter *.php nnoremap <M-CR> :<C-U>call phpactor#UseAdd()<CR>
 nnoremap <M-c> :<C-U>call phpactor#ContextMenu()<CR>
-vnoremap <M-e> <ESC>:<C-U>call phpactor#ExtractMethod()<CR>
 nnoremap <M-r> :<C-U>call phpactor#Transform()<CR>
+" Extract Selection
+vnoremap <M-e> <ESC>:<C-U>call phpactor#ExtractMethod()<CR>
+" Try catch block
+vnoremap <M-t> <ESC>`<Otry {<ESC>`>o}<ESC>>i}<C-o>a catch (\Exception $e) {<CR>dd($e);<CR>}<ESC>
 
 " Testing
 au FileType php nnoremap <M-t> :<C-U>echo " (t) Run Last Test\n (r) Run Current Test\n (f) Run Current File\n (w) Watch file (copy command to clipboard)\nEnter Option: " \| call PHPTestPrompt(getchar())<CR>
