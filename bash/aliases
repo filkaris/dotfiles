@@ -35,7 +35,7 @@ function gith()
         git br | selecta | xargs git co
     else 
         if [ -d ./.git ] && $(type dmenu &>/dev/null); then
-            git br | dmenu | xargs git co
+            git br | dmenu -l 5 | xargs git co
         fi
     fi
 }
