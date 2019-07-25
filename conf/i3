@@ -203,6 +203,9 @@ bindsym $mod+v exec --no-startup-id "if [[ ! $(pgrep viber) ]]; then viber; fi" 
 # Refresh keyboard layout settings
 bindsym $mod+q exec --no-startup-id "setxkbmap -option caps:escape; setxkbmap -layout us,gr -option grp:alt_shift_toggle"
 
+# Start/Stop Screencast (Capture)
+bindsym $mod+c exec --no-startup-id ~/.dotfiles/scripts/x200/screencast.sh
+
 # Shutdown menu
 set $Locker i3lock && sleep 1
 
