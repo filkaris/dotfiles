@@ -146,7 +146,7 @@ set statusline+=%{LinterStatus()}
 au FileType go nnoremap <M-CR> yiw:<C-U>GoImport 0<CR>
 
 " Snippets
-iabbrev php <?php <CR>
+iabbrev phpp <?php <CR>
             \declare(strict_types=1);<CR>
             \<CR>
             \class NewClass<CR>
