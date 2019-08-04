@@ -39,3 +39,20 @@ Node
     WORKDIR /app
     COPY . /app
     RUN yarn install && yarn server
+
+### Implementation - Dockerizing React
+
+Approach 1: 
+just code outside
+Dockerfile to copy code inside
+npm install, npm start
+
+works, no autoreload because its not mounted as volume
+
+Approach 2:
+docker-compose
+
+works!! with autoreload!
+
+Will just use this instead of yarn server probably
+
