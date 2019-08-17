@@ -28,3 +28,8 @@ if [ $BRIGHTNESS -ge 3 ]; then
     exit 0;
 fi;
 
+if [ $BRIGHTNESS -le 3 ]; then
+    $HOME/.dotfiles/scripts/x200/set-brightness.sh 15
+    exit 0;
+fi;
+

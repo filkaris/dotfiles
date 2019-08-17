@@ -8,6 +8,9 @@
 # 5559 natural scrolling
 exec_always --no-startup-id synclient VertScrollDelta=-30
 
+# Autostart dunst (notification daemon)
+exec --no-startup-id dunst
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
