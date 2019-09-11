@@ -68,6 +68,9 @@ Plugin 'Shougo/vimproc.vim' "run make
 Plugin 'fatih/vim-go'
 Plugin 'ncm2/ncm2-go'
 
+" ELM
+Plugin 'ElmCast/elm-vim'
+
 call vundle#end()		" required
 filetype plugin indent on	" required
 

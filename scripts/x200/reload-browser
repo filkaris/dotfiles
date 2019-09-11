@@ -1,0 +1,17 @@
+#!/bin/sh
+# reloading the current browser tab
+# Eric Radman, 2014
+
+usage() {
+    echo "Usage: $(basename $0) Firefox [Chrome ...]"
+    exit 1
+}
+[ $# -lt 1 ] && usage
+
+for app in "$@"
+do
+    xdotool search --onlyvisible --class "$app" key \
+        --window %@ 'ctrl+r' || {
+        1>&2 echo "unable to signal an application named \"$app\""
+    }
+done
