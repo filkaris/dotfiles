@@ -17,3 +17,8 @@
     XF86AudioLowerVolume 
 "pactl set-sink-mute 0 toggle" 
     XF86AudioMute 
+
+"mate-screenshot -a"
+    Shift+Print 
+"mate-screenshot"
+    Print
