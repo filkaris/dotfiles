@@ -209,6 +209,13 @@ bindsym $mod+q exec --no-startup-id "setxkbmap -option caps:escape; setxkbmap -l
 # Start/Stop Screencast (Capture)
 bindsym $mod+c exec --no-startup-id ~/.dotfiles/scripts/x200/screencast.sh
 
+# Record mouse/keyboard macro
+#bindsym $mod+z exec --no-startup-id xmacrorec2 -k 9 > ~/tmp-macro
+# Play macro
+#bindsym $mod+x exec --no-startup-id cat ~/tmp-macro | xmacroplay 
+# Take screenshot with firefox
+bindsym $mod+x exec --no-startup-id cat ~/.dotfiles/macros/firefox-screenshot | xmacroplay 
+
 # Shutdown menu
 set $Locker i3lock && sleep 1
 
