@@ -71,6 +71,9 @@ Plugin 'ncm2/ncm2-go'
 " ELM
 Plugin 'ElmCast/elm-vim'
 
+" Markdown folding
+Plugin 'masukomi/vim-markdown-folding'
+
 call vundle#end()		" required
 filetype plugin indent on	" required
 

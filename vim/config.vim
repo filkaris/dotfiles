@@ -62,6 +62,9 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 "" Golang ""
 autocmd FileType go setlocal foldnestmax=1
 
+"" Markdown ""
+au FileType markdown nnoremap <Tab> zA
+
 "" YAML
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
