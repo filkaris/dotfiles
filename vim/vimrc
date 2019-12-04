@@ -10,6 +10,8 @@ source ~/.dotfiles/vim/plugins.vim
 let mapleader = ","
 "" Pretty Format JSON
 nmap <Leader>j :<C-U>%!python -m json.tool<CR>
+"" Search but do not jimp
+nmap <Leader>* *``
 "" Copy to clipboard register
 nmap <Leader>y "+y
 nmap <Leader>p "+p
