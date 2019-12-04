@@ -50,7 +50,7 @@ function gitk()
 function gitp()
 {
     if $(type dmenu &>/dev/null); then
-        cd $HOME/projects/$(ls ~/projects | dmenu -p 'Project:')  
+        cd $HOME/projects/$(ls ~/projects | dmenu -l 5 -p 'Project:')  
     else 
         if $(type selecta &>/dev/null); then
             cd $HOME/projects/$(ls ~/projects | selecta)  
