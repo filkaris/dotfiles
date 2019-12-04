@@ -31,11 +31,11 @@ alias grc='git rebase --continue'
 # Git Dynamic pick branch
 function gith()
 {
-    if [ -d ./.git ] && $(type selecta &>/dev/null); then
-        git br | selecta | xargs git co
+    if [ -d ./.git ] && $(type dmenu &>/dev/null); then
+        git br | dmenu -l 5 | xargs git co
     else 
-        if [ -d ./.git ] && $(type dmenu &>/dev/null); then
-            git br | dmenu -l 5 | xargs git co
+        if [ -d ./.git ] && $(type selecta &>/dev/null); then
+            git br | selecta | xargs git co
         fi
     fi
 }
