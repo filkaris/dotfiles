@@ -1,14 +1,14 @@
 ## x220 bindings
 
-# touchpad disable
-#"~/.dotfiles/scripts/5559/toggle-touchpad"
-    #F7 
+# touchpad toggle
+"~/.dotfiles/scripts/x220/toggle-touchpad"
+    XF86TouchpadToggle
 
 # brightness controls
-#"light -A 10"
-    #XF86MonBrightnessUp 
-#"light -U 10"
-    #XF86MonBrightnessDown 
+"light -A 10"
+    XF86MonBrightnessUp 
+"light -U 10"
+    XF86MonBrightnessDown 
 
 # volume controls
 "amixer set Master 5%+" 
@@ -17,9 +17,14 @@
     XF86AudioLowerVolume 
 "amixer set Master toggle" 
     XF86AudioMute 
+"amixer set Capture toggle" 
+    XF86AudioMicMute 
 
 #"mate-screenshot -a"
     #Shift+Print 
 #"mate-screenshot"
     #Print
 
+# Extra key to shift
+#"xdotool key shift"
+    #less

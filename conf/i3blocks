@@ -10,7 +10,7 @@ separator_block_width=15
 markup=none
 
 [memory]
-label=MEM
+label=MEM 
 separator=false
 interval=15
 
@@ -21,7 +21,7 @@ separator=true
 interval=15
 
 [battery]
-label=⚡
+label=BAT 
 interval=30
 
 [time]
