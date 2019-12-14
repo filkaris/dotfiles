@@ -1,0 +1,9 @@
+
+# Remap Caps lock to ESC
+setxkbmap -option caps:escape
+# Set keyboard language
+setxkbmap -layout us,gr -option grp:alt_shift_toggle
+
+xbindkeys
+
+exec i3

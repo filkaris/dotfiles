@@ -34,6 +34,10 @@ if [ $PC == "archpad" ]; then
     ln -sf "$DIR/conf/x200/xbindkeysrc" ~/.xbindkeysrc
     ln -sf "$DIR/conf/x200/xinitrc" ~/.xinitrc
 fi
+if [ $PC == "archway" ]; then
+    ln -sf "$DIR/conf/x220/xbindkeysrc" ~/.xbindkeysrc
+    ln -sf "$DIR/conf/x220/xinitrc" ~/.xinitrc
+fi
 if [ $PC == "philip-laptop-5559" ]; then
     ln -sf "$DIR/conf/x200/xbindkeysrc" ~/.xbindkeysrc
 fi
