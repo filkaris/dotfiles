@@ -24,6 +24,9 @@ fi
 if [ ! -f ~/.screenrc ]; then
     ln -s "$DIR/conf/screenrc" ~/.screenrc
 fi
+if [ ! -f ~/.Xresources ]; then
+    ln -s "$DIR/conf/Xresources" ~/.Xresources
+fi
 if [ ! -f ~/.config/i3/config ]; then
     ln -s "$DIR/conf/i3" ~/.config/i3/config
 fi
