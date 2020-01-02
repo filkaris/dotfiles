@@ -1,3 +1,4 @@
 *.swp
 dev/*
 !dev/example
+!dev/*-dist

@@ -1,0 +1,33 @@
+#!/bin/bash 
+
+SESSION='alexop'
+MYPATH="$HOME/projects/alexopoulos/"
+
+cd $MYPATH
+tmux has-session -t $SESSION &>/dev/null
+
+if [ $? != 0 ];  then
+    #0
+	tmux new-session -s $SESSION -n 'mysql' -d
+	tmux send-keys -t $SESSION './mc mysql -u root -proot alexopoulos' C-m
+
+    #1
+	tmux new-window -t $SESSION -n 'vim'
+	tmux send-keys -t $SESSION 'v' C-m
+
+    #2
+	tmux new-window -t $SESSION -n 'home' 
+
+    #3
+	tmux new-window -t $SESSION -n 'server' 
+	tmux send-keys -t $SESSION 'sudo docker-compose up' C-m
+
+    #4
+	tmux new-window -t $SESSION -n 'log' 
+	tmux send-keys -t $SESSION 'tail -f logs/error.log' C-m
+
+	tmux select-window -t 'vim'
+fi
+
+tmux a -t $SESSION
+
