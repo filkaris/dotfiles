@@ -11,4 +11,6 @@ xmodmap -e "keycode 94 = Shift_L NoSymbol Shift_L"
 
 xbindkeys
 
+owncloud &
+
 exec i3
