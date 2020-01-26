@@ -11,6 +11,9 @@ exec_always --no-startup-id synclient VertScrollDelta=-30
 # Autostart dunst (notification daemon)
 exec --no-startup-id dunst
 
+# Switch screens
+bindsym $mod+x move workspace to output right
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -214,7 +217,7 @@ bindsym $mod+c exec --no-startup-id ~/.dotfiles/scripts/x200/screencast.sh
 # Play macro
 #bindsym $mod+x exec --no-startup-id cat ~/tmp-macro | xmacroplay 
 # Take screenshot with firefox
-bindsym $mod+x exec --no-startup-id cat ~/.dotfiles/macros/firefox-screenshot | xmacroplay 
+#bindsym $mod+x exec --no-startup-id cat ~/.dotfiles/macros/firefox-screenshot | xmacroplay 
 
 # Shutdown menu
 set $Locker i3lock && sleep 1
