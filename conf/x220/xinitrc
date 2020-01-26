@@ -11,6 +11,9 @@ xmodmap -e "keycode 94 = Shift_L NoSymbol Shift_L"
 
 xbindkeys
 
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 owncloud &
 
 exec i3

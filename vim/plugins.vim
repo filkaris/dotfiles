@@ -74,6 +74,9 @@ Plugin 'ElmCast/elm-vim'
 " Markdown folding
 Plugin 'masukomi/vim-markdown-folding'
 
+" LSP (works only with v0.5 of nvim)
+"Plugin 'neovim/nvim-lsp'
+
 call vundle#end()		" required
 filetype plugin indent on	" required
 
