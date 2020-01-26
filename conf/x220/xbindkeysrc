@@ -9,6 +9,10 @@
     XF86MonBrightnessUp 
 "light -U 10"
     XF86MonBrightnessDown 
+"light -A 1"
+    Shift+XF86MonBrightnessUp 
+"light -U 1"
+    Shift+XF86MonBrightnessDown 
 
 # volume controls
 "amixer set Master 5%+" 
