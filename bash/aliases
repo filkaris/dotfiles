@@ -32,7 +32,7 @@ alias grc='git rebase --continue'
 function gith()
 {
     if [ -d ./.git ] && $(type dmenu &>/dev/null); then
-        git br | dmenu -l 5 | xargs git co
+        git br | sort -r | dmenu -l 7 | xargs git co
     else 
         if [ -d ./.git ] && $(type selecta &>/dev/null); then
             git br | selecta | xargs git co
