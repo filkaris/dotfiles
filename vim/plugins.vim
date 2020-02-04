@@ -42,6 +42,7 @@ Plugin 'phpactor/phpactor' "run composer install
 Plugin 'phpactor/ncm2-phpactor'
 " Simple wrapper. CSS completion is vim native
 Plugin 'ncm2/ncm2-cssomni'
+Plugin 'vim-vdebug/vdebug'
 
 " Linting
 Plugin 'w0rp/ale'
