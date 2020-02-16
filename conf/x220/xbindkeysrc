@@ -4,6 +4,10 @@
 "~/.dotfiles/scripts/x220/toggle-touchpad"
     XF86TouchpadToggle
 
+# PrintScreen
+"~/.dotfiles/scripts/x200/print-screen.sh" 
+    Print 
+
 # brightness controls
 "light -A 10"
     XF86MonBrightnessUp 
