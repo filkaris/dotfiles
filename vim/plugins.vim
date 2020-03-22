@@ -23,7 +23,8 @@ Plugin 'L9'
 Plugin 'Konfekt/FastFold'
 " Show git diffs in file
 Plugin 'airblade/vim-gitgutter'
-Plugin 'DataWraith/auto_mkdir'
+" Mkdir when saving file
+Plugin 'benizi/vim-automkdir'
 
 " SYNTAX 
 Plugin 'nginx.vim'

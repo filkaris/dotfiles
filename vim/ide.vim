@@ -152,3 +152,12 @@ iabbrev phpp <?php <CR>
             \class NewClass<CR>
             \{<CR>
             \}
+
+iabbrev tsxx import * as React from "react";<CR>
+            \<CR>
+            \interface IProps {<CR>
+            \    children: any<CR>
+            \}<CR>
+            \export default function Component(props: IProps) {<CR>
+            \   return <></>;<CR>
+            \}
