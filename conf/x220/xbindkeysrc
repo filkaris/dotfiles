@@ -8,6 +8,10 @@
 "~/.dotfiles/scripts/x200/print-screen.sh" 
     Print 
 
+# Second Screen toggle
+"~/.dotfiles/scripts/x200/toggle-screen.sh" 
+    XF86Display
+
 # brightness controls
 "light -A 10"
     XF86MonBrightnessUp 
