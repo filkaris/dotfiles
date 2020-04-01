@@ -8,14 +8,6 @@ __git_modified() {
 		echo ""
 	fi
 }
-# Is running with docker?
-running_in_docker() {
-  if [ -f /proc/self/cgroup ]; then
-      awk -F/ '$2 == "docker"' /proc/self/cgroup | read
-  else
-      return 1;
-  fi
-}
 _composer_scripts() {
     local cur prev
     _get_comp_words_by_ref -n : cur

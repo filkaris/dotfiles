@@ -6,13 +6,30 @@ alias viminit='cp ~/.dotfiles/vim/vimrc.local .vimrc'
 # CD Shortcuts
 alias d='cd ~/.dotfiles'
 
-# Edit shortcuts
-alias hosts='sudo vim /etc/hosts'
-
 #-------------
 dev() {
     source ~/.dotfiles/dev/$1
 }
+
+## Dev
+alias grc='git rebase --continue'
+
+# Git Dynamic pick branch
+function gith()
+{
+    [ -d ./.git ] && git br | sort -r | dmenu -l 7 | xargs git co
+}
+
+# Git Switch between branches
+function gitk()
+{
+    [ -d ./.git ] && git co -
+}
+function gitp()
+{
+    cd $HOME/projects/$(ls ~/projects | dmenu -l 5 -p 'Project:')  
+}
+
 # Typical code search. Maybe vim has better way?
 fcode() {
     #Ideas for improvement:
@@ -25,35 +42,3 @@ fcode2() {
     grep -rn "$1" * | sed -e "s/^\([^:]*:[0-9]*:\).*\(.\{10\}\)\($1\)\(.\{0,50\}\).*$/\1 ___ \2\3\4/" | less -r
 }
 
-## Dev
-alias grc='git rebase --continue'
-
-# Git Dynamic pick branch
-function gith()
-{
-    if [ -d ./.git ] && $(type dmenu &>/dev/null); then
-        git br | sort -r | dmenu -l 7 | xargs git co
-    else 
-        if [ -d ./.git ] && $(type selecta &>/dev/null); then
-            git br | selecta | xargs git co
-        fi
-    fi
-}
-
-# Git Switch between branches
-function gitk()
-{
-    if [ -d ./.git ]; then
-        git co -
-    fi
-}
-function gitp()
-{
-    if $(type dmenu &>/dev/null); then
-        cd $HOME/projects/$(ls ~/projects | dmenu -l 5 -p 'Project:')  
-    else 
-        if $(type selecta &>/dev/null); then
-            cd $HOME/projects/$(ls ~/projects | selecta)  
-        fi
-    fi
-}
