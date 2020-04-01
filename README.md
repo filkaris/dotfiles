@@ -42,3 +42,7 @@ sox Screencast_2020-03-30_18-14-28.mp4 out.mp4 noisered noise_c920 0.20
 ```
 
 NEED to remove flac from mp4 first and then add to it again
+
+# To investigate upscaling
+
+xrandr --output LVDS1 --scale-from 1920x1080 panning 1920x1080 
