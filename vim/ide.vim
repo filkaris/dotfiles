@@ -145,19 +145,3 @@ set statusline+=%{LinterStatus()}
 " au BufWritePost *.go !go build %
 au FileType go nnoremap <M-CR> yiw:<C-U>GoImport 0<CR>
 
-" Snippets
-iabbrev phpp <?php <CR>
-            \declare(strict_types=1);<CR>
-            \<CR>
-            \class NewClass<CR>
-            \{<CR>
-            \}
-
-iabbrev tsxx import * as React from "react";<CR>
-            \<CR>
-            \interface IProps {<CR>
-            \    children: any<CR>
-            \}<CR>
-            \export default function Component(props: IProps) {<CR>
-            \   return <></>;<CR>
-            \}
