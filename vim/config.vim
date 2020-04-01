@@ -32,9 +32,10 @@ autocmd FileType * setlocal formatoptions-=ro
 " FOLDING
 set foldmethod=syntax
 hi Folded ctermbg=8
-"" This solves foldtext problem
-"" Edited out JS folding /usr/share/vim/vim74/syntax/javascript.vim
 
+" Langmap
+" Able to use vim commands even when writing greek
+set langmap=ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ,αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz
 
 """""""""""""""""""" FILETYPE SPECIFIC """""""""""""""""""
 
@@ -50,7 +51,4 @@ if isdirectory('.git') && executable('git')
   set grepprg=git\ grep\ -nI
 endif
 
-" Langmap
-" Able to use vim commands even when writing greek
-set langmap=ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ,αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz
 
