@@ -10,6 +10,8 @@ COPY .vimrc /root/.vimrc
 
 RUN nvim -es -u /root/.vimrc -i NONE -c "PlugInstall" -c "qa"
 
+RUN npm install -g javascript-typescript-langserver
+
 # Need to install a TS server which I literally cannot do...
 
 CMD ["nvim","-u","/root/.vimrc"]

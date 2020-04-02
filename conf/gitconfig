@@ -9,3 +9,5 @@
 	hist = log --pretty=format:'%C(green)%h %C(blue)%ad%Creset | %C(normal)%s%d %C(magenta)<%an>%Creset' --graph --date=short
 [push]
 	default = current
+[rerere]
+	enabled = true
