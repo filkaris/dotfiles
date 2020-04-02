@@ -2,11 +2,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 set hidden
 
-let g:LanguageClient_serverCommands = { 'javascript': ['/usr/local/bin/javascript-typescript-stdio'] }
+let g:LanguageClient_serverCommands = { 
+	\ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+	\ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'] }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <M-CR> :call LanguageClient#textDocument_codeAction()<CR>
