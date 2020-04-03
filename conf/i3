@@ -242,3 +242,16 @@ mode "$mode_system" {
 }
 
 bindsym $mod+Pause mode "$mode_system"
+set $mode_screen Main (m) _ Secondary (s) _ Extend (e)
+mode "$mode_screen" {
+    bindsym m exec --no-startup-id ~/.dotfiles/scripts/x200/screen-main.sh, mode "default"
+    bindsym s exec --no-startup-id ~/.dotfiles/scripts/x200/screen-secondary.sh, mode "default"
+    bindsym e exec --no-startup-id ~/.dotfiles/scripts/x200/screen-extend.sh, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym q mode "default"
+}
+
+bindsym $mod+F7 mode "$mode_screen"
