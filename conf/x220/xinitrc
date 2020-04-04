@@ -18,7 +18,7 @@ owncloud &
 
 # Statusbar loop
 while true; do
-   xsetroot -name "$($HOME/.dotfiles/scripts/x220/statusbar.sh)"
+   xsetroot -name "$($HOME/.dotfiles/scripts/statusbar/statusbar.sh)"
    sleep 5s
 done &
 
