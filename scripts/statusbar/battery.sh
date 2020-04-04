@@ -21,6 +21,11 @@ if [ "$status" == "Discharging" ]; then
 	else
 		color=$red
 	fi
+else
+	# Notify if charging and >80%
+	if [ "$percentage" -gt 80 ]; then
+		color=$red
+	fi
 fi
 
 echo "B $color$percentage%$reset"

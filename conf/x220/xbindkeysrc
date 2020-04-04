@@ -8,8 +8,8 @@
 "~/.dotfiles/scripts/x200/print-screen.sh" 
     Print 
 
-# Second Screen toggle
-"~/.dotfiles/scripts/x200/toggle-screen.sh" 
+# Screen toggle
+"~/.dotfiles/scripts/screen-select.sh" 
     XF86Display
 
 # brightness controls
