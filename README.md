@@ -46,3 +46,15 @@ NEED to remove flac from mp4 first and then add to it again
 # To investigate upscaling
 
 xrandr --output LVDS1 --scale-from 1920x1080 panning 1920x1080 
+
+# Add scripts to path
+
+More preferable to have .local/bin
+
+This includes ALL subdirectories
+```
+du $HOME/.dotfiles/scripts/ | cut -f2 | tr '\n' ':'
+```
+
+a) we don't want a dir unless it's specific for our pc
+b) we don't want pc-specific stuff in general if avoidabl
