@@ -16,4 +16,11 @@ export SSH_AUTH_SOCK
 
 owncloud &
 
-exec i3
+# Statusbar loop
+while true; do
+   xsetroot -name "$($HOME/.dotfiles/scripts/x220/statusbar.sh)"
+   sleep 5s
+done &
+
+#exec i3
+exec dwm

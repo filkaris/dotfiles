@@ -80,6 +80,11 @@ command W w
 " 'command' cannot use autocomplete
 cnoreabbrev E e
 
+"" Light mode tweaks for mate terminal
+nmap <Leader>l :hi Folded ctermbg=7<CR>:hi Pmenu ctermbg=7<CR>
+"" Dark mode tweaks for mate terminal
+nmap <Leader>d :hi Folded ctermbg=0<CR>:hi Pmenu ctermbg=0<CR>
+
 "" Read all into buffer
 "nmap <Leader>r :ar *<CR>
 "" Surround braces/parens with spaces

@@ -30,7 +30,6 @@ Plugin 'benizi/vim-automkdir'
 Plugin 'nginx.vim'
 Plugin 'lumiliet/vim-twig'
 
-
 " IDE
 " FuzzyFind
 Plugin 'junegunn/fzf'

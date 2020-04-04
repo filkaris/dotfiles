@@ -15,10 +15,6 @@ set statusline+=[IDE]
 nmap <C-G>b :<C-U>!git blame %<CR>
 "" Git Rename (mv)
 nmap <C-G>m :<C-U>!git mv % %
-"" Light mode tweaks for mate terminal
-nmap <Leader>l :hi Folded ctermbg=7<CR>:hi Pmenu ctermbg=7<CR>
-"" Dark mode tweaks for mate terminal
-nmap <Leader>d :hi Folded ctermbg=0<CR>:hi Pmenu ctermbg=0<CR>
 "" Quick fix on save
 nmap <Leader>a :let b:ale_fix_on_save=0<CR>
 "" st solarized defaults for autocomplete
