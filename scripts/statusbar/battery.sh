@@ -10,6 +10,9 @@ orange="\x05"
 red="\x06"
 color="\x01"
 
+if [ "$percentage" == "" ]; then
+	exit(0);
+fi
 
 if [ "$status" == "Discharging" ]; then
 	if [ "$percentage" -gt 60 ]; then
