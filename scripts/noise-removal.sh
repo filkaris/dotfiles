@@ -13,11 +13,11 @@ ffmpeg -y -i $1 -c:a flac $base.flac
 
 
 # Custom noise profile
-#ffmpeg -i input.mp4 -acodec pcm_s16le -ar 128k -vn -ss 00:00:00.0 -t 00:00:00.5 noiseaud.wav
-#sox noiseaud.wav -n noiseprof noise.prof
+ffmpeg -i "$base.flac" -c:a flac -ss 00:00:00.0 -t 00:00:00.5 noise.flac
+sox noise.flac -n noiseprof noise.prof
 
-sox $base.flac a-$base.flac noisered ~/.dotfiles/scripts/noise_c920 0.20
+sox $base.flac a-$base.flac noisered noise.prof 0.30
 
 ffmpeg -y -i "v-$base.$ext" -itsoffset 0.500 -i "a-$base.flac" -map 0:v -map 1:a -c:v libx264 -c:a aac $base-clean.$ext
 
-rm "v-$base.$ext" "$base.flac" "a-$base.flac"
+rm "v-$base.$ext" "$base.flac" "a-$base.flac" noise.flac noise.prof
