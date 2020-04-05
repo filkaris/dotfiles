@@ -11,15 +11,23 @@ if ! pgrep ffmpeg 1>/dev/null; then
     # Record Main Screen Upscaled
     #ffmpeg -f x11grab -video_size 1920x1080 -framerate 60 -i $DISPLAY -f alsa -i hw:1 -c:v libx264 -crf 0 -preset ultrafast -c:a aac "$DIR/$NAME"
 
-    # Record Main Screen Upscaled 
+    # Record Main Screen Downscaled 
+    # ffmpeg -f x11grab \
+	    # -video_size 1280x720 \
+	    # -framerate 60 \
+	    # -i $DISPLAY \
+	    # -f alsa -i hw:1 \
+	    # -r 30 \
+	    # -c:v libx264 -crf 0 -preset ultrafast \
+	    # -c:a flac \
+	    # "$DIR/$NAME"
+
+    # Record Main Screen No Audio
     ffmpeg -f x11grab \
 	    -video_size 1280x720 \
 	    -framerate 60 \
 	    -i $DISPLAY \
-	    -f alsa -i hw:1 \
-	    -r 30 \
 	    -c:v libx264 -crf 0 -preset ultrafast \
-	    -c:a flac \
 	    "$DIR/$NAME"
 
     # Record Second Screen
