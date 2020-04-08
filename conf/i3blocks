@@ -9,6 +9,17 @@ command=~/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[eshop]
+command=~/.dotfiles/scripts/eshop_order_watch.py
+label=ESHOP 
+separator=false
+interval=300
+
+[cpu_usage]
+label=CPU 
+separator=false
+interval=15
+
 [memory]
 label=MEM 
 separator=false
