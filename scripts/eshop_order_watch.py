@@ -1,5 +1,6 @@
 #!/bin/env python
 
+import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -17,5 +18,14 @@ for item in items:
         available += 1
     if item.get_text() == "Αναμονή παραλαβής":
         waiting += 1
+
+notification = """
+   ------- ESHOP ------- 
+
+       ORDER UPDATED
+
+"""
+if available != 2 or waiting != 3:
+    os.system('notify-send "'+notification+'"')
 
 print("Av={:d},W={:d}".format( available, waiting ))
