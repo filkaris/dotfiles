@@ -1,3 +1,17 @@
+# TODO dynamic config
+
+Get Dotfiles, make install script copy (and overwrite) but with prompt
+
+This way we keep a main version in our dotfiles, and make local changes that don't affect the repo
+
+
+# TODO dynamic scripts
+
+Also todo, get our monitor and its dimensions dynamically
+
+This way we don't need to have separate scripts for each machine
+
+
 # Screencasting
 
 
