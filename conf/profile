@@ -1,0 +1,8 @@
+#!/bin/sh 
+
+export EDITOR="nvim"
+export BROWSER="firefox"
+export TERMINAL="mate-terminal"
+# xrandr --listmonitors
+export MAINSCREEN="eDP-1"
+export SECSCREEN="HDMI-1"
