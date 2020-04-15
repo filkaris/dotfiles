@@ -4,6 +4,10 @@
 "~/.dotfiles/scripts/5559/toggle-touchpad"
     F7 
 
+# Screen toggle
+"~/.dotfiles/scripts/screen-select.sh" 
+    Mod4 + p
+
 # brightness controls
 "light -A 10"
     XF86MonBrightnessUp 
