@@ -7,6 +7,8 @@
 # PrintScreen
 "~/.dotfiles/scripts/x200/print-screen.sh" 
     Print 
+"~/.dotfiles/scripts/x200/print-screen-area.sh" 
+    Shift+Print 
 
 # Screen toggle
 "~/.dotfiles/scripts/screen-select.sh" 
