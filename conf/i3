@@ -214,6 +214,10 @@ bindsym $mod+c exec --no-startup-id ~/.dotfiles/scripts/x220/screencast.sh
 # Start/Stop Webcam window
 for_window [title="video2 - mpv"] floating enable
 for_window [title="video2 - mpv"] sticky enable
+for_window [title="video1 - mpv"] floating enable
+for_window [title="video1 - mpv"] sticky enable
+for_window [title="video0 - mpv"] floating enable
+for_window [title="video0 - mpv"] sticky enable
 #bindsym $mod+c exec --no-startup-id ~/.dotfiles/scripts/camtoggle.sh
 
 # Record mouse/keyboard macro

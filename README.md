@@ -4,6 +4,8 @@ Get Dotfiles, make install script copy (and overwrite) but with prompt
 
 This way we keep a main version in our dotfiles, and make local changes that don't affect the repo
 
+vim command to open them side by side
+
 
 # TODO dynamic scripts
 
