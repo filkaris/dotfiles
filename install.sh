@@ -1,55 +1,32 @@
 #!/bin/bash
-DIR=$( pwd )
+DIR="$HOME/.dotfiles"
 PC=$(uname -n)
 
 # Make appropriate directories if necessary
-mkdir -p \ 
-	~/.config/i3 \ 
-	~/.config/xbindkeys \ 
-	~/.config/X11 \ 
-	2>/dev/null
+mkdir -p ~/.config/i3 ~/.config/phpactor ~/.config/X11 ~/.config/xbindkeys 2>/dev/null
 
 # Link all config files to home directory
-if [ ! -f ~/.gitconfig ]; then
-    cp "$DIR/config/gitconfig" ~/.gitconfig
-fi
-if [ ! -f ~/.emacs ]; then
-    cp "$DIR/config/emacs" ~/.emacs
-fi
-if [ ! -f ~/.vimrc ]; then
-    cp "$DIR/vim/vimrc" ~/.vimrc
-fi
-if [ ! -f ~/.config/phpactor/phpactor.yml ]; then
-    cp "$DIR/phpactor" ~/.config/phpactor
-fi
-if [ ! -f ~/.tmux.conf ]; then
-    cp "$DIR/config/tmux.conf" ~/.tmux.conf
-fi
-if [ ! -f ~/.ideavimrc ]; then
-    cp "$DIR/config/ideavimrc" ~/.ideavimrc
-fi
-if [ ! -f ~/.screenrc ]; then
-    cp "$DIR/config/screenrc" ~/.screenrc
-fi
-if [ ! -f ~/.Xresources ]; then
-    cp "$DIR/config/Xresources" ~/.Xresources
-fi
-if [ ! -f ~/.config/i3/config ]; then
-    cp "$DIR/config/i3" ~/.config/i3/config
-fi
-if [ ! -f ~/.config/i3blocks/config ]; then
-    cp "$DIR/config/i3blocks" ~/.config/i3blocks/config
-fi
+cp -nv "$DIR/config/gitconfig" ~/.gitconfig
+cp -nv "$DIR/config/emacs" ~/.emacs
+cp -nv "$DIR/vim/vimrc" ~/.vimrc
+cp -nv "$DIR/config/tmux.conf" ~/.tmux.conf
+cp -nv "$DIR/config/ideavimrc" ~/.ideavimrc
+cp -nv "$DIR/config/screenrc" ~/.screenrc
+cp -nv "$DIR/config/Xresources" ~/.Xresources
+cp -nv "$DIR/config/i3" ~/.config/i3/config
+cp -nv "$DIR/config/i3blocks" ~/.config/i3blocks/config
+cp -nvr $DIR/phpactor/* ~/.config/phpactor/ 
+
 if [ $PC == "archpad" ]; then
-    cp "$DIR/config/x200/xbindkeys" ~/.config/xbindkeys/config
-    cp "$DIR/config/x200/xinitrc" ~/.config/X11/xinitrc
+	 cp -nv "$DIR/config/x200/xbindkeys" ~/.config/xbindkeys/config
+	 cp -nv "$DIR/config/x200/xinitrc" ~/.config/X11/xinitrc
 fi
 if [ $PC == "archway" ]; then
-    cp "$DIR/config/x220/xbindkeys" ~/.config/xbindkeys/config
-    cp "$DIR/config/x220/xinitrc" ~/.config/X11/xinitrc
+	 cp -nv "$DIR/config/x220/xbindkeys" ~/.config/xbindkeys/config
+	 cp -nv "$DIR/config/x220/xinitrc" ~/.config/X11/xinitrc
 fi
 if [ $PC == "philip-laptop-5559" ]; then
-    cp "$DIR/config/x200/xbindkeys" ~/.config/xbindkeys/config
+	 cp -nv "$DIR/config/5559/xbindkeys" ~/.config/xbindkeys/config
 fi
 
 # If vundle doesn't exist, clone and it
