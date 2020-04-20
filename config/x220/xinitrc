@@ -9,7 +9,7 @@ setxkbmap -option caps:escape
 # Remap inconvenient "less" key to shift
 xmodmap -e "keycode 94 = Shift_L NoSymbol Shift_L"
 
-xbindkeys
+xbindkeys -f "$HOME/.config/xbindkeys/config"
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK

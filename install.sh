@@ -2,6 +2,13 @@
 DIR=$( pwd )
 PC=$(uname -n)
 
+# Make appropriate directories if necessary
+mkdir -p \ 
+	~/.config/i3 \ 
+	~/.config/xbindkeys \ 
+	~/.config/X11 \ 
+	2>/dev/null
+
 # Link all config files to home directory
 if [ ! -f ~/.gitconfig ]; then
     cp "$DIR/config/gitconfig" ~/.gitconfig
@@ -34,15 +41,15 @@ if [ ! -f ~/.config/i3blocks/config ]; then
     cp "$DIR/config/i3blocks" ~/.config/i3blocks/config
 fi
 if [ $PC == "archpad" ]; then
-    cp "$DIR/config/x200/xbindkeysrc" ~/.xbindkeysrc
-    cp "$DIR/config/x200/xinitrc" ~/.xinitrc
+    cp "$DIR/config/x200/xbindkeys" ~/.config/xbindkeys/config
+    cp "$DIR/config/x200/xinitrc" ~/.config/X11/xinitrc
 fi
 if [ $PC == "archway" ]; then
-    cp "$DIR/config/x220/xbindkeysrc" ~/.xbindkeysrc
-    cp "$DIR/config/x220/xinitrc" ~/.xinitrc
+    cp "$DIR/config/x220/xbindkeys" ~/.config/xbindkeys/config
+    cp "$DIR/config/x220/xinitrc" ~/.config/X11/xinitrc
 fi
 if [ $PC == "philip-laptop-5559" ]; then
-    cp "$DIR/config/x200/xbindkeysrc" ~/.xbindkeysrc
+    cp "$DIR/config/x200/xbindkeys" ~/.config/xbindkeys/config
 fi
 
 # If vundle doesn't exist, clone and it
