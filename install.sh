@@ -50,7 +50,7 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 # Install vim plugins 
-vim +BundleInstall +BundleClean +BundleClean +quitall
+nvim +BundleInstall +BundleClean +BundleClean +quitall
 
 # Include our files in bashrc
 # grep -q returns no output so we can only get the $? value (0=true)
