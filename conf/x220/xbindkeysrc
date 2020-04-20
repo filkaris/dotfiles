@@ -5,13 +5,13 @@
     XF86TouchpadToggle
 
 # PrintScreen
-"~/.dotfiles/scripts/x200/print-screen.sh" 
+"~/.dotfiles/scripts/print-screen" 
     Print 
-"~/.dotfiles/scripts/x200/print-screen-area.sh" 
+"~/.dotfiles/scripts/print-screen-area" 
     Shift+Print 
 
 # Screen toggle
-"~/.dotfiles/scripts/screen-select.sh" 
+"~/.dotfiles/scripts/screen-select" 
     XF86Display
 
 # brightness controls

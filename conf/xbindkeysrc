@@ -1,0 +1,29 @@
+# Brightness controls
+"light -A 10"
+    XF86MonBrightnessUp 
+"light -U 10"
+    XF86MonBrightnessDown 
+"light -A 1"
+    Shift+XF86MonBrightnessUp 
+"light -U 1"
+    Shift+XF86MonBrightnessDown 
+
+# Volume controls
+"amixer set Master 5%+" 
+    XF86AudioRaiseVolume 
+"amixer set Master 5%-" 
+    XF86AudioLowerVolume 
+"amixer set Master toggle" 
+    XF86AudioMute 
+"amixer set Capture toggle" 
+    XF86AudioMicMute 
+
+# Screen toggle
+"~/.dotfiles/scripts/screen-select.sh" 
+    XF86Display
+
+# PrintScreen
+"~/.dotfiles/scripts/print-screen.sh" 
+    Print 
+"~/.dotfiles/scripts/print-screen-area.sh" 
+    Shift+Print 

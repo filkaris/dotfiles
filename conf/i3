@@ -201,7 +201,7 @@ bindsym $mod+b exec $BROWSER
 bindsym $mod+Shift+d exec $BROWSER duckduckgo.com/?q=$(echo "" | dmenu -p "Web Search" | sed -e 's/ /%20/g')
 
 # New workspace
-bindsym $mod+n exec ~/.dotfiles/scripts/i3/new_workspace.sh
+bindsym $mod+n exec ~/.dotfiles/scripts/i3-new-workspace
 
 # Open Viber 
 bindsym $mod+v exec --no-startup-id "if [[ ! $(pgrep viber) ]]; then viber; fi" ; workspace $ws9
@@ -244,18 +244,4 @@ mode "$mode_system" {
     bindsym Escape mode "default"
     bindsym q mode "default"
 }
-
 bindsym $mod+Pause mode "$mode_system"
-set $mode_screen Main (m) _ Secondary (s) _ Extend (e)
-mode "$mode_screen" {
-    bindsym m exec --no-startup-id ~/.dotfiles/scripts/x200/screen-main.sh, mode "default"
-    bindsym s exec --no-startup-id ~/.dotfiles/scripts/x200/screen-secondary.sh, mode "default"
-    bindsym e exec --no-startup-id ~/.dotfiles/scripts/x200/screen-extend.sh, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym q mode "default"
-}
-
-bindsym $mod+F7 mode "$mode_screen"

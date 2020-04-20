@@ -19,11 +19,11 @@
 ## PrintScreen
 
 # PrintScreen
-"~/.dotfiles/scripts/x200/print-screen.sh" 
+"~/.dotfiles/scripts/print-screen" 
     Print 
 
 # PrintScreen Area
-"~/.dotfiles/scripts/x200/print-screen-area.sh" 
+"~/.dotfiles/scripts/print-screen-area" 
     Shift+Print 
 
 # volume controls
