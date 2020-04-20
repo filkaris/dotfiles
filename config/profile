@@ -1,7 +1,14 @@
 #!/bin/sh 
 
 export EDITOR="nvim"
+export TERMINAL="urxvt"
 export BROWSER="firefox"
-export TERMINAL="mate-terminal"
-export MAINSCREEN="eDP-1"
-export SECSCREEN="HDMI-1"
+export MAINSCREEN="LVDS-1"
+export SECSCREEN="VGA-1"
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.dotfiles/bin"
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+[[ -z $DISPLAY ]] && startx "$HOME/.config/X11/xinitrc"

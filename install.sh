@@ -5,7 +5,7 @@ PC=$(uname -n)
 # Make appropriate directories if necessary
 mkdir -p ~/.config/i3 ~/.config/phpactor ~/.config/X11 ~/.config/xbindkeys 2>/dev/null
 
-# Link all config files to home directory
+# Copy all config files (don't overwrite)
 cp -nv "$DIR/config/gitconfig" ~/.gitconfig
 cp -nv "$DIR/config/emacs" ~/.emacs
 cp -nv "$DIR/vim/vimrc" ~/.vimrc
@@ -28,6 +28,13 @@ fi
 if [ $PC == "philip-laptop-5559" ]; then
 	 cp -nv "$DIR/config/5559/xbindkeys" ~/.config/xbindkeys/config
 fi
+
+# Manually update:
+
+diff ~/.profile ~/.dotfiles/config/profile 1>/dev/null || nvim -d ~/.profile ~/.dotfiles/config/profile
+
+# .bashrc
+# .xinirc
 
 # If vundle doesn't exist, clone and it
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
