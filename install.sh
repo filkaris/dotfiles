@@ -4,45 +4,45 @@ PC=$(uname -n)
 
 # Link all conf files to home directory
 if [ ! -f ~/.gitconfig ]; then
-    ln -s "$DIR/conf/gitconfig" ~/.gitconfig
+    cp "$DIR/conf/gitconfig" ~/.gitconfig
 fi
 if [ ! -f ~/.emacs ]; then
-    ln -s "$DIR/conf/emacs" ~/.emacs
+    cp "$DIR/conf/emacs" ~/.emacs
 fi
 if [ ! -f ~/.vimrc ]; then
-    ln -s "$DIR/vim/vimrc" ~/.vimrc
+    cp "$DIR/vim/vimrc" ~/.vimrc
 fi
 if [ ! -f ~/.config/phpactor/phpactor.yml ]; then
-    ln -s "$DIR/phpactor" ~/.config/phpactor
+    cp "$DIR/phpactor" ~/.config/phpactor
 fi
 if [ ! -f ~/.tmux.conf ]; then
-    ln -s "$DIR/conf/tmux.conf" ~/.tmux.conf
+    cp "$DIR/conf/tmux.conf" ~/.tmux.conf
 fi
 if [ ! -f ~/.ideavimrc ]; then
-    ln -s "$DIR/conf/ideavimrc" ~/.ideavimrc
+    cp "$DIR/conf/ideavimrc" ~/.ideavimrc
 fi
 if [ ! -f ~/.screenrc ]; then
-    ln -s "$DIR/conf/screenrc" ~/.screenrc
+    cp "$DIR/conf/screenrc" ~/.screenrc
 fi
 if [ ! -f ~/.Xresources ]; then
-    ln -s "$DIR/conf/Xresources" ~/.Xresources
+    cp "$DIR/conf/Xresources" ~/.Xresources
 fi
 if [ ! -f ~/.config/i3/config ]; then
-    ln -s "$DIR/conf/i3" ~/.config/i3/config
+    cp "$DIR/conf/i3" ~/.config/i3/config
 fi
 if [ ! -f ~/.config/i3blocks/config ]; then
-    ln -s "$DIR/conf/i3blocks" ~/.config/i3blocks/config
+    cp "$DIR/conf/i3blocks" ~/.config/i3blocks/config
 fi
 if [ $PC == "archpad" ]; then
-    ln -sf "$DIR/conf/x200/xbindkeysrc" ~/.xbindkeysrc
-    ln -sf "$DIR/conf/x200/xinitrc" ~/.xinitrc
+    cp "$DIR/conf/x200/xbindkeysrc" ~/.xbindkeysrc
+    cp "$DIR/conf/x200/xinitrc" ~/.xinitrc
 fi
 if [ $PC == "archway" ]; then
-    ln -sf "$DIR/conf/x220/xbindkeysrc" ~/.xbindkeysrc
-    ln -sf "$DIR/conf/x220/xinitrc" ~/.xinitrc
+    cp "$DIR/conf/x220/xbindkeysrc" ~/.xbindkeysrc
+    cp "$DIR/conf/x220/xinitrc" ~/.xinitrc
 fi
 if [ $PC == "philip-laptop-5559" ]; then
-    ln -sf "$DIR/conf/x200/xbindkeysrc" ~/.xbindkeysrc
+    cp "$DIR/conf/x200/xbindkeysrc" ~/.xbindkeysrc
 fi
 
 # If vundle doesn't exist, clone and it

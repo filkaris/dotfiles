@@ -1,0 +1,12 @@
+#!/bin/sh
+
+SCREEN="$1"
+[ "$SCREEN" == "" ] && SCREEN="$MAINSCREEN"
+[ "$SCREEN" == "" ] && exit 1
+
+DEFAULT=$( xrandr | grep "$SCREEN" -A 1 | grep *+ | egrep -o "[0-9]+x[0-9]+" )
+NEWRES=$( printf "auto\n1920x1080\n1366x768\n1280x720" | dmenu -l 5 -p "$SCREEN:" )
+
+[ "$NEWRES" == "auto" ] && NEWRES="$DEFAULT"
+
+xrandr --output $SCREEN --scale-from $NEWRES --panning $NEWRES
