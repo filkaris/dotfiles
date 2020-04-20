@@ -1,17 +1,17 @@
 ## x220 bindings
 
 # touchpad toggle
-"~/.dotfiles/scripts/x220/toggle-touchpad"
+"~/.dotfiles/bin/x220/toggle-touchpad"
     XF86TouchpadToggle
 
 # PrintScreen
-"~/.dotfiles/scripts/print-screen" 
+"~/.dotfiles/bin/print-screen" 
     Print 
-"~/.dotfiles/scripts/print-screen-area" 
+"~/.dotfiles/bin/print-screen-area" 
     Shift+Print 
 
 # Screen toggle
-"~/.dotfiles/scripts/screen-select" 
+"~/.dotfiles/bin/screen-select" 
     XF86Display
 
 # brightness controls

@@ -7,7 +7,7 @@ setxkbmap -layout us,gr -option grp:alt_shift_toggle
 # Calibrate Touchscreen (finger)
 # Initial (set 13 resetarea)
 # xsetwacom set 13 area 0 0 26312 16520
-~/.dotfiles/scripts/x200/touch-calibrate.sh
+~/.dotfiles/bin/x200/touch-calibrate.sh
 
 xbindkeys
 

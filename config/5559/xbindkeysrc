@@ -1,11 +1,11 @@
 ## 5559 bindings
 
 # touchpad disable
-"~/.dotfiles/scripts/5559/toggle-touchpad"
+"~/.dotfiles/bin/5559/toggle-touchpad"
     F7 
 
 # Screen toggle
-"~/.dotfiles/scripts/screen-select" 
+"~/.dotfiles/bin/screen-select" 
     Mod4 + p
 
 # brightness controls

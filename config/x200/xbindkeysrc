@@ -1,29 +1,29 @@
 ## x200 Tablet Buttons
 
 # Reload - Undo (for pinta)
-"~/.dotfiles/scripts/x200/tablet-button-1.sh" 
+"~/.dotfiles/bin/x200/tablet-button-1.sh" 
     XF86Launch5 
 
 # Rotate - Screen rotate toggle
-"~/.dotfiles/scripts/x200/tablet-button-2.sh" 
+"~/.dotfiles/bin/x200/tablet-button-2.sh" 
     XF86Launch6 
 
 # Shortcut - Cycle through brightnes
-"~/.dotfiles/scripts/x200/tablet-button-3.sh" 
+"~/.dotfiles/bin/x200/tablet-button-3.sh" 
     XF86Launch7 
 
 # Lockpad - Open pinta workspace
-"~/.dotfiles/scripts/x200/tablet-button-4.sh" 
+"~/.dotfiles/bin/x200/tablet-button-4.sh" 
     XF86Launch8 
 
 ## PrintScreen
 
 # PrintScreen
-"~/.dotfiles/scripts/print-screen" 
+"~/.dotfiles/bin/print-screen" 
     Print 
 
 # PrintScreen Area
-"~/.dotfiles/scripts/print-screen-area" 
+"~/.dotfiles/bin/print-screen-area" 
     Shift+Print 
 
 # volume controls

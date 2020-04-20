@@ -10,7 +10,7 @@ separator_block_width=15
 markup=none
 
 [eshop]
-command=~/.dotfiles/scripts/eshop_order_watch
+command=~/.dotfiles/bin/eshop_order_watch
 label=ESHOP 
 separator=false
 interval=300

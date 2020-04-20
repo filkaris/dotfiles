@@ -4,7 +4,7 @@
 selection=$( printf "(e) Extend Screen\n(m) Main Screen\n(s) Secondary Screen" | dmenu -l 3 )
 
 case "$selection" in
-	\(e*) ~/.dotfiles/scripts/screen-extend;;
-	\(m*) ~/.dotfiles/scripts/screen-main;;
-	\(s*) ~/.dotfiles/scripts/screen-secondary;;
+	\(e*) ~/.dotfiles/bin/screen-extend;;
+	\(m*) ~/.dotfiles/bin/screen-main;;
+	\(s*) ~/.dotfiles/bin/screen-secondary;;
 esac

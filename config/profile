@@ -5,6 +5,3 @@ export BROWSER="firefox"
 export TERMINAL="mate-terminal"
 export MAINSCREEN="eDP-1"
 export SECSCREEN="HDMI-1"
-
-# Add to path
-export PATH="$PATH:$HOME/.dotfiles/bin"

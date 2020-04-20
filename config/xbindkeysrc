@@ -19,11 +19,11 @@
     XF86AudioMicMute 
 
 # Screen toggle
-"~/.dotfiles/scripts/screen-select.sh" 
+"~/.dotfiles/bin/screen-select.sh" 
     XF86Display
 
 # PrintScreen
-"~/.dotfiles/scripts/print-screen.sh" 
+"~/.dotfiles/bin/print-screen.sh" 
     Print 
-"~/.dotfiles/scripts/print-screen-area.sh" 
+"~/.dotfiles/bin/print-screen-area.sh" 
     Shift+Print 
