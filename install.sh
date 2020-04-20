@@ -1,37 +1,37 @@
 #!/bin/bash
-DIR="$HOME/.dotfiles"
+DOTFILES="$HOME/.dotfiles"
 PC=$(uname -n)
 
 # Make appropriate directories if necessary
 mkdir -p ~/.config/i3 ~/.config/phpactor ~/.config/X11 ~/.config/xbindkeys 2>/dev/null
 
 # Copy all config files (don't overwrite)
-cp -nv "$DIR/config/gitconfig" ~/.gitconfig
-cp -nv "$DIR/config/emacs" ~/.emacs
-cp -nv "$DIR/vim/vimrc" ~/.vimrc
-cp -nv "$DIR/config/tmux.conf" ~/.tmux.conf
-cp -nv "$DIR/config/ideavimrc" ~/.ideavimrc
-cp -nv "$DIR/config/screenrc" ~/.screenrc
-cp -nv "$DIR/config/Xresources" ~/.Xresources
-cp -nv "$DIR/config/i3" ~/.config/i3/config
-cp -nv "$DIR/config/i3blocks" ~/.config/i3blocks/config
-cp -nvr $DIR/phpactor/* ~/.config/phpactor/ 
+cp -nv "$DOTFILES/config/gitconfig" ~/.gitconfig
+cp -nv "$DOTFILES/config/emacs" ~/.emacs
+cp -nv "$DOTFILES/vim/vimrc" ~/.vimrc
+cp -nv "$DOTFILES/config/tmux.conf" ~/.tmux.conf
+cp -nv "$DOTFILES/config/ideavimrc" ~/.ideavimrc
+cp -nv "$DOTFILES/config/screenrc" ~/.screenrc
+cp -nv "$DOTFILES/config/Xresources" ~/.Xresources
+cp -nv "$DOTFILES/config/i3" ~/.config/i3/config
+cp -nv "$DOTFILES/config/i3blocks" ~/.config/i3blocks/config
+cp -nvr $DOTFILES/phpactor/* ~/.config/phpactor/ 
 
 if [ $PC == "archpad" ]; then
-	 cp -nv "$DIR/config/x200/xbindkeys" ~/.config/xbindkeys/config
-	 cp -nv "$DIR/config/x200/xinitrc" ~/.config/X11/xinitrc
+	 cp -nv "$DOTFILES/config/x200/xbindkeys" ~/.config/xbindkeys/config
+	 cp -nv "$DOTFILES/config/x200/xinitrc" ~/.config/X11/xinitrc
 fi
 if [ $PC == "archway" ]; then
-	 cp -nv "$DIR/config/x220/xbindkeys" ~/.config/xbindkeys/config
-	 cp -nv "$DIR/config/x220/xinitrc" ~/.config/X11/xinitrc
+	 cp -nv "$DOTFILES/config/x220/xbindkeys" ~/.config/xbindkeys/config
+	 cp -nv "$DOTFILES/config/x220/xinitrc" ~/.config/X11/xinitrc
 fi
 if [ $PC == "philip-laptop-5559" ]; then
-	 cp -nv "$DIR/config/5559/xbindkeys" ~/.config/xbindkeys/config
+	 cp -nv "$DOTFILES/config/5559/xbindkeys" ~/.config/xbindkeys/config
 fi
 
 # Manually update:
 
-diff ~/.profile ~/.dotfiles/config/profile 1>/dev/null || nvim -d ~/.profile ~/.dotfiles/config/profile
+diff ~/.profile $DOTFILES/config/profile 1>/dev/null || nvim -d ~/.profile $DOTFILES/config/profile
 
 # .bashrc
 # .xinirc
