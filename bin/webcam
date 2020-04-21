@@ -1,7 +1,8 @@
 #!/bin/sh
+COMMAND="mpv --geometry=-0-0 --autofit=30% --demuxer-lavf-o=framerate=30:video_size=640x480:input_format=rawvideo"
 
 # Settings for x220 first, fallback to 5559. First with c920, then native
-mpv --geometry=-0-0 --autofit=30% --profile=low-latency /dev/video2 || \
-	mpv --geometry=-0-0 --autofit=30% --profile=low-latency /dev/video0 || \
-	mpv --geometry=-0-0 --autofit=30% /dev/video1 || \
-	mpv --geometry=-0-0 --autofit=30% /dev/video0
+$COMMAND /dev/video2 --profile=low-latency || \
+	$COMMAND /dev/video0 --profile=low-latency || \
+	$COMMAND /dev/video1 || \
+	$COMMAND /dev/video0
