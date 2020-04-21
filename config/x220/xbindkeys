@@ -1,20 +1,4 @@
-## x220 bindings
-
-# touchpad toggle
-"~/.dotfiles/bin/x220/toggle-touchpad"
-    XF86TouchpadToggle
-
-# PrintScreen
-"~/.dotfiles/bin/print-screen" 
-    Print 
-"~/.dotfiles/bin/print-screen-area" 
-    Shift+Print 
-
-# Screen toggle
-"~/.dotfiles/bin/screen-select" 
-    XF86Display
-
-# brightness controls
+# Brightness controls
 "light -A 10"
     XF86MonBrightnessUp 
 "light -U 10"
@@ -24,7 +8,7 @@
 "light -U 1"
     Shift+XF86MonBrightnessDown 
 
-# volume controls
+# Volume controls
 "amixer set Master 5%+" 
     XF86AudioRaiseVolume 
 "amixer set Master 5%-" 
@@ -34,11 +18,21 @@
 "amixer set Capture toggle" 
     XF86AudioMicMute 
 
-#"mate-screenshot -a"
-    #Shift+Print 
-#"mate-screenshot"
-    #Print
+# Webcam
+"~/.dotfiles/bin/webcam" 
+    XF86WebCam
 
-# Extra key to shift
-#"xdotool key shift"
-    #less
+# Screen Select
+"~/.dotfiles/bin/screen-select" 
+    XF86Display
+
+# PrintScreen
+"~/.dotfiles/bin/print-screen" 
+    Print 
+"~/.dotfiles/bin/print-screen-area" 
+    Shift+Print 
+
+# touchpad toggle
+"~/.dotfiles/bin/x220/toggle-touchpad"
+    XF86TouchpadToggle
+

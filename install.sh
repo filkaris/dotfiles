@@ -15,6 +15,7 @@ cp -nv "$DOTFILES/config/screenrc" ~/.screenrc
 cp -nv "$DOTFILES/config/Xresources" ~/.Xresources
 cp -nv "$DOTFILES/config/i3" ~/.config/i3/config
 cp -nv "$DOTFILES/config/i3blocks" ~/.config/i3blocks/config
+cp -nv "$DOTFILES/config/xbindkeys" ~/.config/xbindkeys/config
 cp -nvr $DOTFILES/phpactor/* ~/.config/phpactor/ 
 
 if [ $PC == "archpad" ]; then
@@ -22,7 +23,6 @@ if [ $PC == "archpad" ]; then
 	 cp -nv "$DOTFILES/config/x200/xinitrc" ~/.config/X11/xinitrc
 fi
 if [ $PC == "archway" ]; then
-	 cp -nv "$DOTFILES/config/x220/xbindkeys" ~/.config/xbindkeys/config
 	 cp -nv "$DOTFILES/config/x220/xinitrc" ~/.config/X11/xinitrc
 fi
 if [ $PC == "philip-laptop-5559" ]; then
@@ -32,7 +32,8 @@ fi
 # Manually update:
 
 diff ~/.profile $DOTFILES/config/profile 1>/dev/null || nvim -d ~/.profile $DOTFILES/config/profile
-
+diff ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys 1>/dev/null \
+	|| nvim -d ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys
 # .bashrc
 # .xinirc
 

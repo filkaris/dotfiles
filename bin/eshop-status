@@ -14,7 +14,6 @@ notification = """
    ------- ESHOP ------- 
 
        ORDER UPDATED
-
 """
 if currentStage != 3:
     os.system('notify-send "'+notification+'"')

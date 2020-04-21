@@ -18,7 +18,11 @@
 "amixer set Capture toggle" 
     XF86AudioMicMute 
 
-# Screen toggle
+# Webcam
+"~/.dotfiles/bin/webcam" 
+    XF86WebCam
+
+# Screen Select
 "~/.dotfiles/bin/screen-select" 
     XF86Display
 

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Settings for x220 first, fallback to 5559. First with c920, then native
+mpv --geometry=-0-0 --autofit=30% --profile=low-latency /dev/video2 || \
+	mpv --geometry=-0-0 --autofit=30% --profile=low-latency /dev/video0 || \
+	mpv --geometry=-0-0 --autofit=30% /dev/video1 || \
+	mpv --geometry=-0-0 --autofit=30% /dev/video0
