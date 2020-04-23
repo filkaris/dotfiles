@@ -26,6 +26,7 @@ if [ $PC == "archway" ]; then
 	 cp -nv "$DOTFILES/config/x220/xinitrc" ~/.config/X11/xinitrc
 fi
 if [ $PC == "philip-laptop-5559" ]; then
+	 cp -nv "$DOTFILES/config/x220/xinitrc" ~/.config/X11/xinitrc
 	 cp -nv "$DOTFILES/config/5559/xbindkeys" ~/.config/xbindkeys/config
 fi
 
