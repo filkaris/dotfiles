@@ -1,0 +1,21 @@
+key_bindings:
+  - { key: F6,       command: { program: "notify-send", args: ["hit"]}  }
+  - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
+  - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
+  - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
+
+schemes:
+  dark: &dark
+    primary:
+      background: '#212121'
+      foreground: '#f1f1f1'
+  light: &light
+    primary:
+      background: '#292C3E'
+      foreground: '#EBEBEB'
+
+colors: *dark

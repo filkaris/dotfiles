@@ -14,8 +14,10 @@ cp -nv "$DOTFILES/config/ideavimrc" ~/.ideavimrc
 cp -nv "$DOTFILES/config/screenrc" ~/.screenrc
 cp -nv "$DOTFILES/config/Xresources" ~/.Xresources
 cp -nv "$DOTFILES/config/i3" ~/.config/i3/config
+cp -nv "$DOTFILES/config/alacritty.yml" ~/.config/alacritty/alacritty.yml
 cp -nv "$DOTFILES/config/i3blocks" ~/.config/i3blocks/config
 cp -nv "$DOTFILES/config/xbindkeys" ~/.config/xbindkeys/config
+cp -nv "$DOTFILES/config/xinitrc" ~/.config/X11/xinitrc
 cp -nvr $DOTFILES/phpactor/* ~/.config/phpactor/ 
 
 if [ $PC == "archpad" ]; then
@@ -36,7 +38,6 @@ diff ~/.profile $DOTFILES/config/profile 1>/dev/null || nvim -d ~/.profile $DOTF
 diff ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys 1>/dev/null \
 	|| nvim -d ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys
 # .bashrc
-# .xinirc
 
 # If vundle doesn't exist, clone and it
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
