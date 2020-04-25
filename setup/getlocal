@@ -1,11 +1,10 @@
 case "$1" in
 	emacs) LOCAL="$HOME/.emacs";;
-	vim) LOCAL="$HOME/.config/nvim/init.vim";;
 	tmux) LOCAL="$HOME/.tmux.conf";;
 	ideavimrc) LOCAL="$HOME/.ideavimrc";;
 	screenrc) LOCAL="$HOME/.screenrc";;
-	Xresources) LOCAL="$HOME/.Xresources";;
 	profile) LOCAL="$HOME/.profile";;
+	vim) LOCAL="$HOME/.config/nvim/init.vim";;
 	i3) LOCAL="$HOME/.config/i3/config";;
 	i3blocks) LOCAL="$HOME/.config/i3blocks/config";;
 	alacritty) LOCAL="$HOME/.config/alacritty/alacritty.yml";;

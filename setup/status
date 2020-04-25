@@ -2,7 +2,7 @@
 
 
 DOTFILES="$HOME/.dotfiles"
-CONFIGS="alacritty emacs git i3 i3blocks ideavimrc profile screenrc tmux vim xbindkeys xinitrc Xresources"
+CONFIGS="alacritty emacs git i3 i3blocks ideavimrc profile screenrc tmux vim xbindkeys xinitrc"
 
 source "$DOTFILES/bin/colors"
 
