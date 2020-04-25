@@ -13,6 +13,7 @@ schemes:
     primary:
       background: '#212121'
       foreground: '#f1f1f1'
+
   light: &light
     primary:
       background: '#292C3E'
