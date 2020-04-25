@@ -9,7 +9,6 @@ mkdir -p ~/.config/i3 ~/.config/i3blocks ~/.config/phpactor ~/.config/X11 ~/.con
 cp -nv "$DOTFILES/config/emacs" $( $DOTFILES/setup/getlocal emacs )
 cp -nv "$DOTFILES/config/vim" $( $DOTFILES/setup/getlocal vim )
 cp -nv "$DOTFILES/config/tmux" $( $DOTFILES/setup/getlocal tmux )
-cp -nv "$DOTFILES/config/ideavimrc" $( $DOTFILES/setup/getlocal ideavimrc )
 cp -nv "$DOTFILES/config/screenrc" $( $DOTFILES/setup/getlocal screenrc )
 cp -nv "$DOTFILES/config/i3" $( $DOTFILES/setup/getlocal i3 )
 cp -nv "$DOTFILES/config/i3blocks" $( $DOTFILES/setup/getlocal i3blocks )
