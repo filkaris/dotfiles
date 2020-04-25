@@ -6,6 +6,8 @@ export BROWSER="firefox"
 export MAINSCREEN="LVDS-1"
 export SECSCREEN="VGA-1"
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.dotfiles/bin"
 
