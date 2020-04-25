@@ -8,7 +8,7 @@ mkdir -p ~/.config/i3 ~/.config/phpactor ~/.config/X11 ~/.config/xbindkeys ~/.co
 # Copy all config files (don't overwrite)
 cp -nv "$DOTFILES/config/gitconfig" ~/.gitconfig
 cp -nv "$DOTFILES/config/emacs" ~/.emacs
-cp -nv "$DOTFILES/vim/vimrc" ~/.vimrc
+cp -nv "$DOTFILES/config/vim" ~/.vimrc
 cp -nv "$DOTFILES/config/tmux" ~/.tmux.conf
 cp -nv "$DOTFILES/config/ideavimrc" ~/.ideavimrc
 cp -nv "$DOTFILES/config/screenrc" ~/.screenrc
