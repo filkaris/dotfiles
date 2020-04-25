@@ -1,6 +1,6 @@
 case "$1" in
 	emacs) LOCAL="$HOME/.emacs";;
-	vim) LOCAL="$HOME/.vimrc";;
+	vim) LOCAL="$HOME/.config/nvim/init.vim";;
 	tmux) LOCAL="$HOME/.tmux.conf";;
 	ideavimrc) LOCAL="$HOME/.ideavimrc";;
 	screenrc) LOCAL="$HOME/.screenrc";;
