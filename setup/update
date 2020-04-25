@@ -7,9 +7,13 @@
 DOTFILES="$HOME/.dotfiles"
 
 CONF=$( ls $DOTFILES/config | dmenu -i -l 5 )
-[ "$CONF" == "" ] && exit 1
+[ "$CONF" = "" ] && exit 0
 
 GIT="$DOTFILES/config/$CONF"
 LOCAL=$( $DOTFILES/setup/getlocal $CONF )
 
-diff "$LOCAL" "$GIT" 1>/dev/null || nvim -d "$LOCAL" "$GIT"
+if diff "$LOCAL" "$GIT" 1>/dev/null; then
+	echo "Files are in sync"
+else
+	nvim -d "$LOCAL" "$GIT"
+fi
