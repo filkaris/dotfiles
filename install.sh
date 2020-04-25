@@ -3,7 +3,7 @@ DOTFILES="$HOME/.dotfiles"
 PC=$(uname -n)
 
 # Make appropriate directories if necessary
-mkdir -p ~/.config/i3 ~/.config/phpactor ~/.config/X11 ~/.config/xbindkeys 2>/dev/null
+mkdir -p ~/.config/i3 ~/.config/phpactor ~/.config/X11 ~/.config/xbindkeys ~/.config/alacritty 2>/dev/null
 
 # Copy all config files (don't overwrite)
 cp -nv "$DOTFILES/config/gitconfig" ~/.gitconfig
@@ -34,9 +34,9 @@ fi
 
 # Manually update:
 
-diff ~/.profile $DOTFILES/config/profile 1>/dev/null || nvim -d ~/.profile $DOTFILES/config/profile
-diff ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys 1>/dev/null \
-	|| nvim -d ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys
+#diff ~/.profile $DOTFILES/config/profile 1>/dev/null || nvim -d ~/.profile $DOTFILES/config/profile
+#diff ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys 1>/dev/null \
+	#|| nvim -d ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys
 # .bashrc
 
 # If vundle doesn't exist, clone and it
