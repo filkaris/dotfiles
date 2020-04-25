@@ -1,5 +1,0 @@
-# This file is called by the display manager, before the X session starts
-# It works with lightDM in 5559, to test if this works with startx as well
-# We can probably source it manually
-
-# We can run stuff like xbindkeys, and anything else to be run before X starts
