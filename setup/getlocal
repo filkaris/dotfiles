@@ -1,15 +1,15 @@
 case "$1" in
-	gitconfig) LOCAL="$HOME/.gitconfig";;
 	emacs) LOCAL="$HOME/.emacs";;
 	vim) LOCAL="$HOME/.vimrc";;
 	tmux) LOCAL="$HOME/.tmux.conf";;
 	ideavimrc) LOCAL="$HOME/.ideavimrc";;
 	screenrc) LOCAL="$HOME/.screenrc";;
 	Xresources) LOCAL="$HOME/.Xresources";;
+	profile) LOCAL="$HOME/.profile";;
 	i3) LOCAL="$HOME/.config/i3/config";;
 	i3blocks) LOCAL="$HOME/.config/i3blocks/config";;
 	alacritty) LOCAL="$HOME/.config/alacritty/alacritty.yml";;
-	profile) LOCAL="$HOME/.profile";;
+	git) LOCAL="$HOME/.config/git/config";;
 	xbindkeys) LOCAL="$HOME/.config/xbindkeys/config";;
 	xinitrc) LOCAL="$HOME/.config/X11/xinitrc";;
 esac

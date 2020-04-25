@@ -6,18 +6,19 @@ PC=$(uname -n)
 mkdir -p ~/.config/i3 ~/.config/phpactor ~/.config/X11 ~/.config/xbindkeys ~/.config/alacritty 2>/dev/null
 
 # Copy all config files (don't overwrite)
-cp -nv "$DOTFILES/config/gitconfig" ~/.gitconfig
-cp -nv "$DOTFILES/config/emacs" ~/.emacs
-cp -nv "$DOTFILES/config/vim" ~/.vimrc
-cp -nv "$DOTFILES/config/tmux" ~/.tmux.conf
-cp -nv "$DOTFILES/config/ideavimrc" ~/.ideavimrc
-cp -nv "$DOTFILES/config/screenrc" ~/.screenrc
-cp -nv "$DOTFILES/config/Xresources" ~/.Xresources
-cp -nv "$DOTFILES/config/i3" ~/.config/i3/config
-cp -nv "$DOTFILES/config/alacritty" ~/.config/alacritty/alacritty.yml
-cp -nv "$DOTFILES/config/i3blocks" ~/.config/i3blocks/config
-cp -nv "$DOTFILES/config/xbindkeys" ~/.config/xbindkeys/config
-cp -nv "$DOTFILES/config/xinitrc" ~/.config/X11/xinitrc
+cp -nv "$DOTFILES/config/emacs" $( $DOTFILES/setup/getlocal emacs )
+cp -nv "$DOTFILES/config/vim" $( $DOTFILES/setup/getlocal vim )
+cp -nv "$DOTFILES/config/tmux" $( $DOTFILES/setup/getlocal tmux )
+cp -nv "$DOTFILES/config/ideavimrc" $( $DOTFILES/setup/getlocal ideavimrc )
+cp -nv "$DOTFILES/config/screenrc" $( $DOTFILES/setup/getlocal screenrc )
+cp -nv "$DOTFILES/config/Xresources" $( $DOTFILES/setup/getlocal Xresources )
+cp -nv "$DOTFILES/config/i3" $( $DOTFILES/setup/getlocal i3 )
+cp -nv "$DOTFILES/config/i3blocks" $( $DOTFILES/setup/getlocal i3blocks )
+cp -nv "$DOTFILES/config/git" $( $DOTFILES/setup/getlocal git )
+cp -nv "$DOTFILES/config/alacritty" $( $DOTFILES/setup/getlocal alacritty )
+cp -nv "$DOTFILES/config/i3blocks" $( $DOTFILES/setup/getlocal i3blocks )
+cp -nv "$DOTFILES/config/xbindkeys" $( $DOTFILES/setup/getlocal xbindkeys )
+cp -nv "$DOTFILES/config/xinitrc" $( $DOTFILES/setup/getlocal xinitrc )
 cp -nvr $DOTFILES/phpactor/* ~/.config/phpactor/ 
 
 if [ $PC == "archpad" ]; then
