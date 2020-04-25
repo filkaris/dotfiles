@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Here we diff our config with the vanilla config
+# It takes an argument. If (all), then it does all.
+# Also autocompletes
+
+DOTFILES="$HOME/.dotfiles"
+
+CONF=$( ls $DOTFILES/config | dmenu -i -l 5 )
+[ "$CONF" == "" ] && exit 1
+
+GIT="$DOTFILES/config/$CONF"
+LOCAL=$( $DOTFILES/setup/getlocal $CONF )
+
+diff "$LOCAL" "$GIT" 1>/dev/null || nvim -d "$LOCAL" "$GIT"

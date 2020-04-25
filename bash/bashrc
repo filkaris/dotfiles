@@ -30,11 +30,6 @@ export PROMPT_DIRTRIM=3
 dev_list=$( ls ~/.dotfiles/dev )
 complete -W "$dev_list" 'dev'
 
-# Handle update autocompletion
-CONFIGS=$( ls ~/.dotfiles/config )
-#CONFIGS="$CONFIGS all"
-complete -W "$CONFIGS" './update.sh'
-
 # Composer autocompletion
 complete -F _composer_scripts composer
 

@@ -32,13 +32,6 @@ if [ $PC == "philip-laptop-5559" ]; then
 	 cp -nv "$DOTFILES/config/5559/xbindkeys" ~/.config/xbindkeys/config
 fi
 
-# Manually update:
-
-#diff ~/.profile $DOTFILES/config/profile 1>/dev/null || nvim -d ~/.profile $DOTFILES/config/profile
-#diff ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys 1>/dev/null \
-	#|| nvim -d ~/.config/xbindkeys/config $DOTFILES/config/xbindkeys
-# .bashrc
-
 # If vundle doesn't exist, clone and it
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
