@@ -14,7 +14,7 @@ cp -nv "$DOTFILES/config/ideavimrc" ~/.ideavimrc
 cp -nv "$DOTFILES/config/screenrc" ~/.screenrc
 cp -nv "$DOTFILES/config/Xresources" ~/.Xresources
 cp -nv "$DOTFILES/config/i3" ~/.config/i3/config
-cp -nv "$DOTFILES/config/alacritty.yml" ~/.config/alacritty/alacritty.yml
+cp -nv "$DOTFILES/config/alacritty" ~/.config/alacritty/alacritty.yml
 cp -nv "$DOTFILES/config/i3blocks" ~/.config/i3blocks/config
 cp -nv "$DOTFILES/config/xbindkeys" ~/.config/xbindkeys/config
 cp -nv "$DOTFILES/config/xinitrc" ~/.config/X11/xinitrc
