@@ -9,7 +9,6 @@ mkdir -p ~/.config/i3 ~/.config/i3blocks ~/.config/phpactor ~/.config/X11 ~/.con
 cp -nv "$DOTFILES/config/emacs" $( $DOTFILES/setup/getlocal emacs )
 cp -nv "$DOTFILES/config/vim" $( $DOTFILES/setup/getlocal vim )
 cp -nv "$DOTFILES/config/tmux" $( $DOTFILES/setup/getlocal tmux )
-cp -nv "$DOTFILES/config/screenrc" $( $DOTFILES/setup/getlocal screenrc )
 cp -nv "$DOTFILES/config/i3" $( $DOTFILES/setup/getlocal i3 )
 cp -nv "$DOTFILES/config/i3blocks" $( $DOTFILES/setup/getlocal i3blocks )
 cp -nv "$DOTFILES/config/git" $( $DOTFILES/setup/getlocal git )
@@ -18,6 +17,9 @@ cp -nv "$DOTFILES/config/i3blocks" $( $DOTFILES/setup/getlocal i3blocks )
 cp -nv "$DOTFILES/config/xbindkeys" $( $DOTFILES/setup/getlocal xbindkeys )
 cp -nv "$DOTFILES/config/xinitrc" $( $DOTFILES/setup/getlocal xinitrc )
 cp -nvr $DOTFILES/phpactor/* ~/.config/phpactor/ 
+
+# Uncomment if needed, not part of regular install
+#cp -nv "$DOTFILES/config/screenrc" $( $DOTFILES/setup/getlocal screenrc )
 
 if [ $PC == "archpad" ]; then
 	 cp -nv "$DOTFILES/config/x200/xbindkeys" ~/.config/xbindkeys/config
