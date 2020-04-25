@@ -1,23 +1,18 @@
-# Make sure to clone the repo to have the scripts available i3blocks-contrib
+# For more https://github.com/vivien/i3blocks-contrib
 
-# Global properties
-#
-# The top properties below are applied to every block, but can be overridden.
-# Each block command defaults to the script name to avoid boilerplate.
-# Change $SCRIPT_DIR to the location of your scripts!
-command=~/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+command=~/.dotfiles/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[eshop]
-command=~/.dotfiles/bin/eshop-status
-label=ESHOP 
-separator=false
-interval=300
+[volume]
+label=VOL 
+separator=true
+interval=once
+signal=10
 
 [cpu_usage]
 label=CPU 
-separator=false
+separator=true
 interval=15
 
 [memory]
