@@ -1,6 +1,8 @@
 #!/bin/sh 
 
 export EDITOR="nvim"
+# If no gl acc for alacritty
+#export LIBGL_ALWAYS_SOFTWARE=1
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 export MAINSCREEN="LVDS-1"

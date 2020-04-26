@@ -17,7 +17,7 @@ for x in $CONFIGS; do
 	diff "$LOCAL" "$DOTFILES/config/$x" >/dev/null 2>&1 || SAME="${FG_YELLOW}no$NC"
 
 	EXISTS=yes
-	[ -f $LOCAL ] || EXISTS="${FG_RED}no$NC" SAME=- SYMLINK=- 
+	[ -f $LOCAL ] || EXISTS="${FG_RED}no$NC"
 
 	printf "%-10s\t%s\t%s\t%s\n" $x $EXISTS $SYMLINK $SAME
 done
