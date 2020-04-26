@@ -183,8 +183,8 @@ exec --no-startup-id nm-applet
 # Don'f focus a window just on mouse hover
 focus_follows_mouse no
 
-# Assign Pinta to Ws 10
-for_window [class="Pinta"] move workspace $ws10
+# Assign Gimp to Ws 10
+for_window [class="Gimp"] move workspace $ws10
 
 # Assign Viber to Ws 9
 for_window [class="Viber"] move workspace $ws9
