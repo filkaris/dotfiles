@@ -3,8 +3,8 @@
 MODE=$(cat ~/.tablet-mode)
 
 if [ $MODE = "normal" ]; then
-    if [[ ! $(pgrep gimp) ]]; then 
-        gimp; 
+    if [[ ! $(pgrep pinta) ]]; then 
+        pinta; 
     fi; 
     i3-msg workspace 10
 else
