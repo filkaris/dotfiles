@@ -1,0 +1,52 @@
+#!/bin/bash
+DOTFILES="$HOME/.dotfiles"
+PC=$(uname -n)
+
+# Make appropriate directories if necessary
+mkdir -p ~/.config/i3 ~/.config/i3blocks ~/.config/phpactor ~/.config/X11 ~/.config/xbindkeys ~/.config/alacritty ~/.config/git ~/.config/nvim ~/.config/tmux 2>/dev/null
+
+# Copy all config files (don't overwrite)
+cp -nv "$DOTFILES/config/emacs" $( $DOTFILES/setup/getlocal emacs )
+cp -nv "$DOTFILES/config/vim" $( $DOTFILES/setup/getlocal vim )
+cp -nv "$DOTFILES/config/tmux" $( $DOTFILES/setup/getlocal tmux )
+cp -nv "$DOTFILES/config/i3" $( $DOTFILES/setup/getlocal i3 )
+cp -nv "$DOTFILES/config/i3blocks" $( $DOTFILES/setup/getlocal i3blocks )
+cp -nv "$DOTFILES/config/git" $( $DOTFILES/setup/getlocal git )
+cp -nv "$DOTFILES/config/alacritty" $( $DOTFILES/setup/getlocal alacritty )
+cp -nv "$DOTFILES/config/i3blocks" $( $DOTFILES/setup/getlocal i3blocks )
+cp -nv "$DOTFILES/config/xbindkeys" $( $DOTFILES/setup/getlocal xbindkeys )
+cp -nv "$DOTFILES/config/xinitrc" $( $DOTFILES/setup/getlocal xinitrc )
+cp -nvr $DOTFILES/phpactor/* ~/.config/phpactor/ 
+
+# Uncomment if needed, not part of regular install
+#cp -nv "$DOTFILES/config/screenrc" $( $DOTFILES/setup/getlocal screenrc )
+
+if [ $PC == "archpad" ]; then
+	 cp -nv "$DOTFILES/config/x200/xbindkeys" ~/.config/xbindkeys/config
+	 cp -nv "$DOTFILES/config/x200/xinitrc" ~/.config/X11/xinitrc
+fi
+if [ $PC == "archway" ]; then
+	 cp -nv "$DOTFILES/config/x220/xinitrc" ~/.config/X11/xinitrc
+fi
+if [ $PC == "philip-laptop-5559" ]; then
+	 cp -nv "$DOTFILES/config/x220/xinitrc" ~/.config/X11/xinitrc
+	 cp -nv "$DOTFILES/config/5559/xbindkeys" ~/.config/xbindkeys/config
+fi
+
+# If vundle doesn't exist, clone and it
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+# Install vim plugins 
+nvim +BundleInstall +BundleClean +BundleClean +quitall
+
+# Include our files in bashrc
+# grep -q returns no output so we can only get the $? value (0=true)
+# grep -E is like egrep. Extended regex. I use it to be able to use |
+if ! grep -Eq '(source|\.) ~/.dotfiles/bash/bashrc' ~/.bashrc; then
+	echo 'source ~/.dotfiles/bash/bashrc' >> ~/.bashrc
+fi
+if ! grep -Eq '(source|\.) ~/.dotfiles/bash/aliases' ~/.bashrc; then
+	echo 'source ~/.dotfiles/bash/aliases' >> ~/.bashrc
+fi
+

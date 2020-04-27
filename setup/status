@@ -1,0 +1,25 @@
+#!/bin/sh
+
+
+DOTFILES="$HOME/.dotfiles"
+CONFIGS="alacritty emacs git i3 i3blocks profile screenrc tmux vim xbindkeys xinitrc"
+
+. "$DOTFILES/bin/colors"
+
+printf "%-10s\t%s\t%s\t%s\n" "" EXISTS SYMLINK SAME
+for x in $CONFIGS; do 
+	LOCAL=$( $DOTFILES/setup/getlocal $x )
+
+	SYMLINK="${FG_RED}yes$NC"
+	[ -L $LOCAL ] || SYMLINK=no
+
+	SAME=yes
+	diff "$LOCAL" "$DOTFILES/config/$x" >/dev/null 2>&1 || SAME="${FG_YELLOW}no$NC"
+
+	EXISTS=yes
+	[ -f $LOCAL ] || EXISTS="${FG_RED}no$NC"
+
+	printf "%-10s\t%s\t%s\t%s\n" $x $EXISTS $SYMLINK $SAME
+done
+
+

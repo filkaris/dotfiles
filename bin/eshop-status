@@ -1,0 +1,21 @@
+#!/bin/env python
+
+import os
+import requests
+
+URL = 'https://www.e-shop.gr/status.phtml?id=2003311246099471162254'
+page = requests.get(URL).content.decode('iso-8859-7')
+
+stages = 6
+checkmarks = page.count("check_ok.png")
+currentStage = (checkmarks + 1) % stages
+
+notification = """
+   ------- ESHOP ------- 
+
+       ORDER UPDATED
+"""
+if currentStage != 3:
+    os.system('notify-send "'+notification+'"')
+
+print("{:d}/{:d} ({:d})".format( checkmarks, stages, currentStage ))

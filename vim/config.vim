@@ -22,6 +22,8 @@ set laststatus=2
 set statusline=%f 
 " Color status line
 hi StatusLine ctermfg=5
+" Color Diff
+hi DiffAdd ctermbg=20
 " Disable annoying bells
 set visualbell
 set t_vb=

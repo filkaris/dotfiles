@@ -26,7 +26,7 @@ export PROMPT_DIRTRIM=3
 # Add this for permanence
 #XKBOPTIONS="caps:escape"
 
-# Handle /dev autocompletion
+# Handle dev autocompletion
 dev_list=$( ls ~/.dotfiles/dev )
 complete -W "$dev_list" 'dev'
 

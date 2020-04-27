@@ -1,10 +1,14 @@
 #!/bin/sh 
 
 export EDITOR="nvim"
-export TERMINAL="urxvt"
+# If no gl acc for alacritty
+#export LIBGL_ALWAYS_SOFTWARE=1
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 export MAINSCREEN="LVDS-1"
 export SECSCREEN="VGA-1"
+
+export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.dotfiles/bin"

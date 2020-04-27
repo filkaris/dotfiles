@@ -1,0 +1,15 @@
+case "$1" in
+	emacs) LOCAL="$HOME/.emacs";;
+	screenrc) LOCAL="$HOME/.screenrc";;
+	profile) LOCAL="$HOME/.profile";;
+	tmux) LOCAL="$HOME/.config/tmux/tmux.conf";;
+	vim) LOCAL="$HOME/.config/nvim/init.vim";;
+	i3) LOCAL="$HOME/.config/i3/config";;
+	i3blocks) LOCAL="$HOME/.config/i3blocks/config";;
+	alacritty) LOCAL="$HOME/.config/alacritty/alacritty.yml";;
+	git) LOCAL="$HOME/.config/git/config";;
+	xbindkeys) LOCAL="$HOME/.config/xbindkeys/config";;
+	xinitrc) LOCAL="$HOME/.config/X11/xinitrc";;
+esac
+
+echo $LOCAL

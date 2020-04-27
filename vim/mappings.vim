@@ -1,10 +1,3 @@
-" Include plugins (Download Vundle first): git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-source ~/.dotfiles/vim/functions.vim
-source ~/.dotfiles/vim/config.vim
-source ~/.dotfiles/vim/plugins.vim
-source ~/.dotfiles/vim/php.vim
-source ~/.dotfiles/vim/js.vim
-
 """""""""""""""""""" KEY MAPPINGS"""""""""""""""""""
 
 """""" LEADER MAPPINGS """"""
