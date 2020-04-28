@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ip a | grep inet.192 | awk '{print $2;}'
