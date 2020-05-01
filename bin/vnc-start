@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# start vnc server
+
+$HOME/.dotfiles/bin/localip
+x0vncserver -rfbauth ~/.vnc/passwd
