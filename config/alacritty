@@ -1,5 +1,7 @@
+font:
+  size: 16.0
 key_bindings:
-  - { key: F6,       command: { program: "notify-send", args: ["hit"]}  }
+  #- { key: F6,       command: { program: "notify-send", args: ["hit"]}  }
   - { key: V,        mods: Control|Shift, action: Paste            }
   - { key: C,        mods: Control|Shift, action: Copy             }
   - { key: Key0,     mods: Control,       action: ResetFontSize    }

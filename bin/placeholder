@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Set window as placeholder for webcam
+
+#TODO set position and size here with xdotool
+
+
+# Set window name, then from i3 get position and size
+xdotool getactivewindow set_window --name "placeholder"
+
