@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Set target machine ip hostname for easy access
+
+sed -i "s/^.*target$/$1\ttarget/g" /etc/hosts
