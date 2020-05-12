@@ -219,7 +219,11 @@ for_window [title="video1 - mpv"] floating enable
 for_window [title="video1 - mpv"] sticky enable
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
-#bindsym $mod+c exec --no-startup-id ~/.dotfiles/bin/camtoggle.sh
+
+for_window [title="placeholder"] sticky enable
+for_window [title="placeholder"] floating enable
+for_window [title="placeholder"] resize set width 565 height 424
+for_window [title="placeholder"] move position 1492 758
 
 # Record mouse/keyboard macro
 #bindsym $mod+z exec --no-startup-id xmacrorec2 -k 9 > ~/tmp-macro

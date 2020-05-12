@@ -1,3 +1,6 @@
+# Netcat sending
+TODO https://nakkaya.com/2009/04/15/using-netcat-for-file-transfers/
+
 # Organization
 
 1) use ONE name for the script
