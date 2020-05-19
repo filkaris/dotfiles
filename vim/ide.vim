@@ -1,4 +1,4 @@
-source ~/.vimrc
+source ~/.config/nvim/init.vim
 
 " Set a mark on statusline to know we are using this config
 set statusline+=[IDE]
