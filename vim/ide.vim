@@ -10,6 +10,9 @@ set statusline+=[IDE]
 " https://stackoverflow.com/questions/5244871/vim-errorformat-for-phpunit
 "set errorformat=%E%n)\ %.%#,%Z%f:%l,%C%m,%C,%-G%.%#
 
+" Simple plugin to do the same with phpstan
+" https://github.com/phpstan/vim-phpstan
+
 " Plugin configuration
 "" Git Blame
 nmap <C-G>b :<C-U>!git blame %<CR>
