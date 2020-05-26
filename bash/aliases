@@ -14,6 +14,11 @@ dev() {
 ## Dev
 alias grc='git rebase --continue'
 
+# Open File
+function gitj()
+{
+    ls | dmenu -l 7 | xargs xdg-open
+}
 # Git Dynamic pick branch
 function gith()
 {

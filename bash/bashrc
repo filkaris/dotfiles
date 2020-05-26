@@ -44,6 +44,10 @@ complete -F _composer_scripts composer
 # This messes up greek in arch. not needed for readline commands
 #bind 'set convert-meta on'
 
+# Open File
+if type gitj &>/dev/null; then
+    bind '"\C-j": "\C-e\C-ugitj"'
+fi
 # Dmenu branches
 if type gith &>/dev/null; then
     bind '"\C-h": "\C-e\C-ugith\n"'
