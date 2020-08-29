@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Wacom one, hardcoded in shredder
+ID=9
+
+# Get the current orientation of the tablet
+current=$(xsetwacom get "$ID" Rotate)
+
+if [ $current == "none" ]; then
+	next=half
+else
+	next=none
+fi
+
+xsetwacom set "$ID" Rotate "$next" && notify-send "Wacom One:" "Orientation $next"
+
+
