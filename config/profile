@@ -9,6 +9,7 @@ export MAINSCREEN="LVDS-1"
 export SECSCREEN="VGA-1"
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export SUDO_ASKPASS="/usr/lib/ssh/x11-ssh-askpass"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.dotfiles/bin"
