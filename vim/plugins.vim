@@ -73,6 +73,9 @@ Plugin 'ncm2/ncm2-go'
 " ELM
 Plugin 'ElmCast/elm-vim'
 
+" Svelte
+Plugin 'evanleck/vim-svelte'
+
 " Markdown folding
 Plugin 'masukomi/vim-markdown-folding'
 
