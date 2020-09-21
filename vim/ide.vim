@@ -1,4 +1,4 @@
-source ~/.vimrc
+source ~/.config/nvim/init.vim
 
 " Set a mark on statusline to know we are using this config
 set statusline+=[IDE]
@@ -9,6 +9,9 @@ set statusline+=[IDE]
 "TODO Only matches first match, should match last
 " https://stackoverflow.com/questions/5244871/vim-errorformat-for-phpunit
 "set errorformat=%E%n)\ %.%#,%Z%f:%l,%C%m,%C,%-G%.%#
+
+" Simple plugin to do the same with phpstan
+" https://github.com/phpstan/vim-phpstan
 
 " Plugin configuration
 "" Git Blame
