@@ -1,6 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
-# TODO
-# sudo mount -U 43FA-6B87 /mnt/usb
-# sudo mount -U ??? /mnt/sd
-# make into command to use via dmenu, copy luke
+DEVICES=$( lsblk -lno NAME,SIZE,PKNAME,MOUNTPOINT | awk '{if ($3 && !$4) print $1,$2;}' )
+
+DEVICE=$( echo "$DEVICES" | dmenu -l 9 -p 'Device: ' | cut -d' ' -f 1 )
+
+find /mnt -mindepth 1 -maxdepth 1 | sort > /tmp/mountpoints
+lsblk -lno MOUNTPOINT | awk 'NF' | sort > /tmp/mounted
+MOUNTPOINTS=$( comm -23 /tmp/mountpoints /tmp/mounted )
+rm /tmp/mountpoints /tmp/mounted
+
+MOUNTPOINT=$( echo "$MOUNTPOINTS" | dmenu -l 9 -p 'Mountpoint: ' )
+
+export SUDO_ASKPASS="/usr/lib/ssh/ssh-askpass"
+sudo -A mount "/dev/$DEVICE" "$MOUNTPOINT" && notify-send "$DEVICE mounted successfully to $MOUNTPOINT"

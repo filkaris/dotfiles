@@ -1,0 +1,9 @@
+#!/bin/bash
+
+MOUNTPOINTS=$( lsblk -lno MOUNTPOINT | awk 'NF' | sort | grep /mnt )
+
+MOUNTPOINT=$( echo "$MOUNTPOINTS" | dmenu -l 9 -p 'Unmount: ' )
+
+export SUDO_ASKPASS="/usr/lib/ssh/ssh-askpass"
+sudo -A umount "$MOUNTPOINT" && notify-send "$MOUNTPOINT successfully unmounted"
+
