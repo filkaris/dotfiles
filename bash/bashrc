@@ -45,9 +45,9 @@ complete -F _composer_scripts composer
 #bind 'set convert-meta on'
 
 # Open File
-if type gitj &>/dev/null; then
-    bind '"\C-j": "\C-e\C-ugitj"'
-fi
+#if type gitj &>/dev/null; then
+    #bind '"\C-j": "\C-e\C-ugitj"'
+#fi
 # Dmenu branches
 if type gith &>/dev/null; then
     bind '"\C-h": "\C-e\C-ugith\n"'
