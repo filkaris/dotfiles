@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+sudo -A sed -i "s/#HandleLidSwitch=ignore/HandleLidSwitch=ignore/" /etc/systemd/logind.conf
+sudo -A systemctl kill -s HUP systemd-logind
+notify-send "When lid is closed, system will IGNORE"

@@ -1,3 +1,8 @@
+
+# Makes seahorse work, related to keyring? no clue...
+# Some pcs need it, some don't
+dbus-update-activation-environment --systemd DISPLAY
+
 # Set keyboard language
 setxkbmap -layout us,gr -option grp:alt_shift_toggle
 
