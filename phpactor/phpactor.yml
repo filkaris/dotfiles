@@ -1,4 +1,5 @@
 code_transform.refactor.generate_accessor.prefix: ''
 
 code_transform.class_new.variants:
-  "Unit Test": phpunit_test
+  "Unit Test": unit_test
+  "Functional Test": functional_test

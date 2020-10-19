@@ -1,0 +1,23 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ prototype.namespace }};
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;                                                                                                 
+
+{% for class in prototype.classes %}
+class {{ class.name }} extends WebTestCase
+{
+    public function setUp(): void
+    {
+	    $client = static::createClient();                                                                                                            
+	    $this->connection = self::$container->get('doctrine.dbal.default_connection');                                                       
+    }
+
+    /** @test */
+    public function itWorks()
+    {
+    }
+}
+{% endfor %}
