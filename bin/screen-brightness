@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# deps: xrandr, bc (maybe find a better way)
+
+# usage: screen-brightness main up
+
+# Simulate brightness via gamma (software) for screens with no hardware solution (or if you're bored)
+
+function toAbs()
+{
+	echo "$1*100/1" | bc
+}
+function toAbsI()
+{
+	awk '{print $1"*100/1"}' | bc
+}
+function toPercent()
+{
+	bc -l <<< "$1/100"
+}
+
+export MAINSCREEN="DP-1"
+
+[ "$MAINSCREEN" == "" ] && exit 1
+
+[ "$1" == "$MAINSCREEN" ] || [ "$1" == "$SECSCREEN" ] || [ "$1" == "main" ] || [ "$1" == "secondary" ] || exit 1
+[ "$2" == "up" ] || [ "$2" == "down" ] || [ "$2" == "reset" ] || exit 1
+
+[ "$1" == "$MAINSCREEN" ] || [ "$1" == "main" ] && SCREEN="$MAINSCREEN"
+[ "$1" == "$SECSCREEN" ] || [ "$1" == "secondary" ] && SCREEN="$SECSCREEN"
+
+BRIGHTNESS=$( xrandr --verbose | grep Brightness | cut -d' ' -f 2 | toAbsI )
+[ "$2" == "up" ] && TARGET=$( bc <<< "$BRIGHTNESS + 10" )
+[ "$2" == "down" ] && TARGET=$( bc <<< "$BRIGHTNESS - 10" )
+[ "$2" == "reset" ] && TARGET=100
+
+[ $TARGET -lt 10 ] && TARGET=10
+
+xrandr --output "$SCREEN" --brightness $(toPercent $TARGET)
+
