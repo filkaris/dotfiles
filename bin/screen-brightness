@@ -36,5 +36,5 @@ BRIGHTNESS=$( xrandr --verbose | grep Brightness | cut -d' ' -f 2 | toAbsI )
 
 [ $TARGET -lt 10 ] && TARGET=10
 
-xrandr --output "$SCREEN" --brightness $(toPercent $TARGET)
+xrandr --output "$SCREEN" --brightness $(toPercent $TARGET) 2>&1|notify-pipe
 
