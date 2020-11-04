@@ -257,7 +257,7 @@ mode "$mode_brightness" {
     bindsym h exec --no-startup-id screen-brightness main reset
     bindsym Up exec --no-startup-id screen-brightness secondary up
     bindsym Down exec --no-startup-id screen-brightness secondary down
-    bindsym Right exec --no-startup-id screen-brightness secondary reset
+    bindsym Left exec --no-startup-id screen-brightness secondary reset
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

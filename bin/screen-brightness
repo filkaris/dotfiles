@@ -29,12 +29,14 @@ export MAINSCREEN="DP-1"
 [ "$1" == "$MAINSCREEN" ] || [ "$1" == "main" ] && SCREEN="$MAINSCREEN"
 [ "$1" == "$SECSCREEN" ] || [ "$1" == "secondary" ] && SCREEN="$SECSCREEN"
 
-BRIGHTNESS=$( xrandr --verbose | grep Brightness | cut -d' ' -f 2 | toAbsI )
+[ "$1" == "$MAINSCREEN" ] || [ "$1" == "main" ] && BRIGHTNESS=$( xrandr --verbose | grep Brightness | cut -d' ' -f 2 | toAbsI | head -n 1 )
+[ "$1" == "$SECSCREEN" ] || [ "$1" == "secondary" ] && BRIGHTNESS=$( xrandr --verbose | grep Brightness | cut -d' ' -f 2 | toAbsI | tail -n 1 )
+
 [ "$2" == "up" ] && TARGET=$( bc <<< "$BRIGHTNESS + 10" )
 [ "$2" == "down" ] && TARGET=$( bc <<< "$BRIGHTNESS - 10" )
 [ "$2" == "reset" ] && TARGET=100
 
-[ $TARGET -lt 10 ] && TARGET=10
+# [ $TARGET -lt 10 ] && TARGET=10
 
 xrandr --output "$SCREEN" --brightness $(toPercent $TARGET) 2>&1|notify-pipe
 
