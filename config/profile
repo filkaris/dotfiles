@@ -15,4 +15,4 @@ export PATH="$PATH:$HOME/.dotfiles/bin"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-[[ -z $DISPLAY ]] && startx "$HOME/.config/X11/xinitrc"
+[[ -z $DISPLAY ]] && [[ -z $SSH_TTY ]] && startx "$HOME/.config/X11/xinitrc"
