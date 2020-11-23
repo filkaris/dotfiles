@@ -79,8 +79,8 @@ Plugin 'evanleck/vim-svelte'
 " Markdown folding
 Plugin 'masukomi/vim-markdown-folding'
 
-" LSP (works only with v0.5 of nvim)
-"Plugin 'neovim/nvim-lsp'
+" Elixir
+Plugin 'elixir-editors/vim-elixir'
 
 call vundle#end()		" required
 filetype plugin indent on	" required
