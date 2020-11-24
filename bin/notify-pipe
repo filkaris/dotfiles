@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
 read notification
-notify-send "Command Failed" "$notification" "$@"
+[ ! -z $notification  ] && notify-send "Command Failed" "$notification" "$@"
