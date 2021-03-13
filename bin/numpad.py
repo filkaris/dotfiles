@@ -1,0 +1,94 @@
+#!/bin/env python3
+
+import os
+import subprocess
+from evdev import InputDevice, categorize, ecodes
+
+# In case it changes, run this
+# cat /proc/bus/input/devices | grep HCT -A 4
+# and find the appropriate eventXX number
+devicePath = os.system("cat /proc/bus/input/devices | grep HCT -A 4 | head -5 | tail -1 | cut -d' ' -f 5");
+
+dev = InputDevice(devicePath)
+dev.grab()
+
+for event in dev.read_loop():
+    if event.type == ecodes.EV_KEY:
+        key = categorize(event)
+        if key.keystate == key.key_down:
+            # Dev fund4all
+            if key.keycode == "KEY_NUMLOCK":
+                os.system('i3-msg workspace 1 && i3-msg exec alacritty && sleep 0.5 && xdotool type "dev fund4all\n" && firefox http://localhost:8080 &')
+            if key.keycode == "KEY_KPSLASH":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KPASTERISK":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KPMINUS":
+                os.system('/usr/bin/notify-send TODO')
+
+            if key.keycode == "KEY_KP7":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KP8":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KP9":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KPPLUS":
+                os.system('/usr/bin/notify-send TODO')
+
+            if key.keycode == "KEY_KP4":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KP5":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KP6":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_BACKSPACE":
+                os.system('/usr/bin/notify-send TODO')
+
+            if key.keycode == "KEY_KP1":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KP2":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KP3":
+                os.system('/usr/bin/notify-send TODO')
+
+            if key.keycode == "KEY_KP0":
+                os.system('/usr/bin/notify-send TODO')
+            # WARNING, 000 just presses KEY_0 3 times. hard to map a macro here
+            if key.keycode == "KEY_0":
+                os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KPDOT":
+                os.system('/usr/bin/notify-send TODO')
+            # Kill all open apps
+            if key.keycode == "KEY_KPENTER":
+                os.system('i3-msg [class=".*"] kill')
+
+
+# Ways to call OS commands
+# os.system('/usr/bin/notify-send '+key.keycode)
+# subprocess.call(['/usr/bin/notify-send','hi'])
+# subprocess.Popen(['/usr/bin/notify-send','hi'])
+
+# Key Reference
+# KEY_NUMLOCK
+# KEY_KPSLASH
+# KEY_KPASTERISK
+# KEY_KPMINUS
+
+# KEY_KP7
+# KEY_KP8
+# KEY_KP9
+# KEY_KPPLUS
+
+# KEY_KP4
+# KEY_KP5
+# KEY_KP6
+# KEY_BACKSPACE
+
+# KEY_KP1
+# KEY_KP2
+# KEY_KP3
+
+# KEY_KP0
+# KEY_KPDOT
+# KEY_KPENTER
+
