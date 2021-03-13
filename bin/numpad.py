@@ -7,11 +7,18 @@ from evdev import InputDevice, categorize, ecodes
 # In case it changes, run this
 # cat /proc/bus/input/devices | grep HCT -A 4
 # and find the appropriate eventXX number
-devicePath = os.system("cat /proc/bus/input/devices | grep HCT -A 4 | head -5 | tail -1 | cut -d' ' -f 5");
+command = "cat /proc/bus/input/devices | grep HCT -A 4 | head -5 | tail -1 | cut -d' ' -f 5"
+eventNum = subprocess.check_output([command],shell=True).decode("utf-8").rstrip()
 
-dev = InputDevice(devicePath)
+# No HCT device
+if not eventNum:
+    print("No HCT Device found")
+    quit()
+
+dev = InputDevice('/dev/input/'+eventNum)
 dev.grab()
 
+print("Listening for Input")
 for event in dev.read_loop():
     if event.type == ecodes.EV_KEY:
         key = categorize(event)
