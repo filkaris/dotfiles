@@ -28,7 +28,7 @@ for event in dev.read_loop():
             if key.keycode == "KEY_NUMLOCK":
                 os.system('i3-msg workspace 1 && i3-msg exec alacritty && sleep 0.5 && xdotool type "dev fund4all\n" && firefox http://localhost:8080 &')
             if key.keycode == "KEY_KPSLASH":
-                os.system('/usr/bin/pavucontrol')
+                os.system('toggle-headphones')
             if key.keycode == "KEY_KPASTERISK":
                 os.system('/usr/bin/notify-send TODO')
             if key.keycode == "KEY_KPMINUS":
