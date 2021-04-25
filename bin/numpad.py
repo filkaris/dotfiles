@@ -1,6 +1,7 @@
 #!/bin/env python3
 
 import os
+import binascii
 import subprocess
 from evdev import InputDevice, categorize, ecodes
 
@@ -27,7 +28,7 @@ for event in dev.read_loop():
             if key.keycode == "KEY_NUMLOCK":
                 os.system('i3-msg workspace 1 && i3-msg exec alacritty && sleep 0.5 && xdotool type "dev fund4all\n" && firefox http://localhost:8080 &')
             if key.keycode == "KEY_KPSLASH":
-                os.system('/usr/bin/notify-send TODO')
+                os.system('/usr/bin/pavucontrol')
             if key.keycode == "KEY_KPASTERISK":
                 os.system('/usr/bin/notify-send TODO')
             if key.keycode == "KEY_KPMINUS":
@@ -59,7 +60,7 @@ for event in dev.read_loop():
                 os.system('/usr/bin/notify-send TODO')
 
             if key.keycode == "KEY_KP0":
-                os.system('/usr/bin/notify-send TODO')
+                os.system('xdotool type "fil\tphil.230+'+binascii.b2a_hex(os.urandom(3)).decode()+'@gmail.com\tasdfasdf\tasdfasdf\t "')
             # WARNING, 000 just presses KEY_0 3 times. hard to map a macro here
             if key.keycode == "KEY_0":
                 os.system('/usr/bin/notify-send TODO')

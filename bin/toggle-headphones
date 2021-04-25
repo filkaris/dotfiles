@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# alsa_output.pci-0000_07_00.6.analog-stereo
+# alsa_output.usb-audio-technica_AT2020USB_-00.analog-stereo
+DEFAULT=$( pacmd info | grep Default.sink | cut -d':' -f 2 )
+
+if [[ $DEFAULT == " alsa_output.pci-0000_07_00.6.analog-stereo" ]]; then
+	NEW="alsa_output.usb-audio-technica_AT2020USB_-00.analog-stereo"
+else
+	NEW="alsa_output.pci-0000_07_00.6.analog-stereo"
+fi
+
+pacmd set-default-sink "$NEW"
