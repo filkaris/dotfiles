@@ -1,0 +1,11 @@
+#!/bin/sh
+
+BTC_SYM="BTC-EUR"
+ETH_SYM="ETH-EUR"
+ADA_SYM="ADA-EUR"
+
+BTC=$( curl -s https://api.pro.coinbase.com/products/$BTC_SYM/ticker | jq '.price' )
+ETH=$( curl -s https://api.pro.coinbase.com/products/$ETH_SYM/ticker | jq '.price' )
+ADA=$( curl -s https://api.pro.coinbase.com/products/$ADA_SYM/ticker | jq '.price' )
+
+notify-send "Crypto Prices" "BTC - $BTC\nETH - $ETH\nADA - $ADA"

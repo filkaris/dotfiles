@@ -32,7 +32,7 @@ for event in dev.read_loop():
             if key.keycode == "KEY_KPASTERISK":
                 os.system('/usr/bin/notify-send TODO')
             if key.keycode == "KEY_KPMINUS":
-                os.system('/usr/bin/notify-send TODO')
+                os.system('crypto-status')
 
             if key.keycode == "KEY_KP7":
                 os.system('/usr/bin/notify-send TODO')
