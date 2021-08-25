@@ -26,20 +26,23 @@ for event in dev.read_loop():
         if key.keystate == key.key_down:
             # Dev fund4all
             if key.keycode == "KEY_NUMLOCK":
-                os.system('i3-msg workspace 1 && i3-msg exec alacritty && sleep 0.5 && xdotool type "dev fund4all\n" && firefox http://localhost:8080 &')
-            if key.keycode == "KEY_KPSLASH":
-                os.system('toggle-headphones')
-            if key.keycode == "KEY_KPASTERISK":
+                # os.system('i3-msg workspace 1 && i3-msg exec alacritty && sleep 0.5 && xdotool type "dev fund4all\n" && firefox http://localhost:8080 &')
                 os.system('/usr/bin/notify-send TODO')
+            if key.keycode == "KEY_KPSLASH":
+                os.system('pacmd set-default-sink alsa_output.pci-0000_07_00.6.analog-stereo')
+                os.system('notify-send "Default Audio: SPEAKERS"')
+            if key.keycode == "KEY_KPASTERISK":
+                os.system('pacmd set-default-sink alsa_output.usb-audio-technica_AT2020USB_-00.analog-stereo')
+                os.system('notify-send "Default Audio: HEADSET"')
             if key.keycode == "KEY_KPMINUS":
                 os.system('crypto-status')
 
             if key.keycode == "KEY_KP7":
-                os.system('/usr/bin/notify-send TODO')
+                os.system('screen-landscape')
             if key.keycode == "KEY_KP8":
-                os.system('/usr/bin/notify-send TODO')
+                os.system('screen-portrait')
             if key.keycode == "KEY_KP9":
-                os.system('/usr/bin/notify-send TODO')
+                os.system('screen-select')
             if key.keycode == "KEY_KPPLUS":
                 os.system('/usr/bin/notify-send TODO')
 
@@ -53,11 +56,13 @@ for event in dev.read_loop():
                 os.system('/usr/bin/notify-send TODO')
 
             if key.keycode == "KEY_KP1":
-                os.system('/usr/bin/notify-send TODO')
+                # TODO ICON
+                os.system('xdotool mousedown 3')
             if key.keycode == "KEY_KP2":
-                os.system('/usr/bin/notify-send TODO')
+                # TODO ICON
+                os.system('xdotool mouseup 3')
             if key.keycode == "KEY_KP3":
-                os.system('/usr/bin/notify-send TODO')
+                os.system('setxkbmap -layout us,gr -option grp:alt_shift_toggle; setxkbmap -option caps:escape ')
 
             if key.keycode == "KEY_KP0":
                 os.system('xdotool type "fil\tphil.230+'+binascii.b2a_hex(os.urandom(3)).decode()+'@gmail.com\tasdfasdf\tasdfasdf\t "')
@@ -68,7 +73,8 @@ for event in dev.read_loop():
                 os.system('/usr/bin/notify-send TODO')
             # Kill all open apps
             if key.keycode == "KEY_KPENTER":
-                os.system('i3-msg [class=".*"] kill')
+                # os.system('i3-msg [class=".*"] kill')
+                os.system('/usr/bin/notify-send TODO')
 
 
 # Ways to call OS commands

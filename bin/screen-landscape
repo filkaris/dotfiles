@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ "$SECSCREEN" == "" ] && exit 1
+
+xrandr --output "$SECSCREEN" --rotate normal
