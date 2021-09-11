@@ -47,9 +47,9 @@ for event in dev.read_loop():
                 os.system('/usr/bin/notify-send TODO')
 
             if key.keycode == "KEY_KP4":
-                os.system('curl desktimer/on')
+                os.system('curl desktimer/on && notify-send "Timer set: 25min"')
             if key.keycode == "KEY_KP5":
-                os.system('curl desktimer/off')
+                os.system('curl desktimer/off && notify-send "Clear Timer"')
             if key.keycode == "KEY_KP6":
                 os.system('/usr/bin/notify-send TODO')
             if key.keycode == "KEY_BACKSPACE":

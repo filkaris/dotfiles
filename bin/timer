@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Trigger LED Timer with custom time
+
+MIN=$( echo | dmenu -p "Timer Minutes" )
+SEC=$( expr $MIN \* 60 )
+
+curl desktimer/on?t=$SEC
