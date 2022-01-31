@@ -100,7 +100,7 @@ set statusline+=%{gutentags#statusline('\ [',']')}
 " ALE
 let g:ale_enabled=1
 let g:ale_linters={'php':['php','phpcs','phpstan'], 'javascript':['eslint'], 'typescript':['eslint','tsserver'], 'bash':['shellcheck'], 'go':['golangci-lint']}
-let g:ale_fixers={'php':['phpcbf'],'javascript':['prettier'],'typescript':['prettier'], 'go':['gofmt'], 'elixir':['mix_format']}
+let g:ale_fixers={'php':['phpcbf', 'php_cs_fixer'],'javascript':['prettier'],'typescript':['prettier'],'typescriptreact':['prettier'], 'go':['gofmt'], 'elixir':['mix_format']}
 let g:ale_fix_on_save = 1
 "let g:ale_php_phpcs_executable='php vendor/bin/phpcs'
 let g:ale_php_phpstan_executable='vendor/bin/phpstan'

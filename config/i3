@@ -211,7 +211,7 @@ bindsym $mod+v exec --no-startup-id "if [[ ! $(pgrep viber) ]]; then viber; fi" 
 bindsym $mod+q exec --no-startup-id "setxkbmap -option caps:escape; setxkbmap -layout us,gr -option grp:alt_shift_toggle"
 
 # Start/Stop Screencast (Capture)
-bindsym $mod+c exec --no-startup-id ~/.dotfiles/bin/x220/screencast.sh
+#bindsym $mod+c exec --no-startup-id ~/.dotfiles/bin/x220/screencast.sh
 # Start/Stop Webcam window
 for_window [title="video2 - mpv"] floating enable
 for_window [title="video2 - mpv"] sticky enable

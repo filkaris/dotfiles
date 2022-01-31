@@ -27,7 +27,8 @@ for event in dev.read_loop():
             # Dev fund4all
             if key.keycode == "KEY_NUMLOCK":
                 # os.system('i3-msg workspace 1 && i3-msg exec alacritty && sleep 0.5 && xdotool type "dev fund4all\n" && firefox http://localhost:8080 &')
-                os.system('/usr/bin/notify-send TODO')
+                os.system('firefox --new-tab https://docs.google.com/spreadsheets/d/1FheyOErdQJP9LcyHEr6rQx_piurxKX1zURJ6Y6jKQDw/edit#gid=510445374')
+                os.system('firefox --new-tab https://calendar.google.com/calendar/u/0/r/month')
             if key.keycode == "KEY_KPSLASH":
                 os.system('pacmd set-default-sink alsa_output.pci-0000_07_00.6.analog-stereo')
                 os.system('notify-send "Default Audio: SPEAKERS"')
@@ -65,7 +66,11 @@ for event in dev.read_loop():
                 os.system('setxkbmap -layout us,gr -option grp:alt_shift_toggle; setxkbmap -option caps:escape ')
 
             if key.keycode == "KEY_KP0":
-                os.system('xdotool type "fil\tphil.230+'+binascii.b2a_hex(os.urandom(3)).decode()+'@gmail.com\tasdfasdf\tasdfasdf\t "')
+                # os.system('xdotool type "fil\tphil.230+'+binascii.b2a_hex(os.urandom(3)).decode()+'@gmail.com\tasdfasdf\tasdfasdf\t "')
+                os.system('xdotool type "Καραϊλανίδης Φίλιππος\tphil.230@gmail.com\tphil.230@gmail.com\tΚαλησπέρα σας! Ενδιαφέρομαι να μάθω περισσότερα για τον χώρο σας, καθώς θέλουμε να οργανώσουμε μια εκδήλωση γάμου για το φθινώπορο του 2022. Σκεφτόμαστε για Οκτώβριο και περίπου 150 καλεσμένους. Μήπως έχετε κάποιο ενημερωτικό φυλάδιο σχετικά με τα πακέτα που προσφέρετε; Θα μπορούσαμε να κανονίσουμε κάποια επίσκεψη ώστε να δούμε και τον χώρο από κοντά; Σας ευχαριστώ πολύ, Φίλιππος Καραϊλανίδης\t6949256270\t15/10/2022"')
+                # os.system('xdotool type "Καραϊλανίδης Φίλιππος\t6949256270\tphil.230@gmail.com\tΚαλησπέρα σας! Ενδιαφέρομαι να μάθω περισσότερα για τον χώρο σας, καθώς θέλουμε να οργανώσουμε μια εκδήλωση γάμου για το φθινώπορο του 2022. Σκεφτόμαστε για Οκτώβριο και περίπου 150 καλεσμένους. Μήπως έχετε κάποιο ενημερωτικό φυλάδιο σχετικά με τα πακέτα που προσφέρετε; Θα μπορούσαμε να κανονίσουμε κάποια επίσκεψη ώστε να δούμε και τον χώρο από κοντά; Σας ευχαριστώ πολύ, Φίλιππος Καραϊλανίδης"')
+                # os.system('xdotool type "Καραϊλανίδης Φίλιππος\tphil.230@gmail.com\t6949256270\t15/10/2022\tΚαλησπέρα σας! Ενδιαφέρομαι να μάθω περισσότερα για τον χώρο σας, καθώς θέλουμε να οργανώσουμε μια εκδήλωση γάμου για το φθινώπορο του 2022. Σκεφτόμαστε για Οκτώβριο και περίπου 150 καλεσμένους. Μήπως έχετε κάποιο ενημερωτικό φυλάδιο σχετικά με τα πακέτα που προσφέρετε; Θα μπορούσαμε να κανονίσουμε κάποια επίσκεψη ώστε να δούμε και τον χώρο από κοντά; Σας ευχαριστώ πολύ, Φίλιππος Καραϊλανίδης"')
+
             # WARNING, 000 just presses KEY_0 3 times. hard to map a macro here
             if key.keycode == "KEY_0":
                 os.system('/usr/bin/notify-send TODO')

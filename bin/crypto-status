@@ -7,5 +7,15 @@ ADA_SYM="ADA-EUR"
 BTC=$( curl -s https://api.pro.coinbase.com/products/$BTC_SYM/ticker | jq '.price' )
 ETH=$( curl -s https://api.pro.coinbase.com/products/$ETH_SYM/ticker | jq '.price' )
 ADA=$( curl -s https://api.pro.coinbase.com/products/$ADA_SYM/ticker | jq '.price' )
+VUAA=$( curl -s "https://query1.finance.yahoo.com/v7/finance/quote?symbols=VUAA.DE&fields=regularMarketPrice" | jq '.quoteResponse.result[0].regularMarketPrice' )
 
-notify-send "Crypto Prices" "BTC - $BTC / 38558.05 / 24974.81\nETH - $ETH / 1682.93 / 1474.31\nADA - $ADA / 1.0647"
+notify-send "Crypto Prices" "BTC - $BTC / 38769.54 / 24974.81\nETH - $ETH / 1682.93 / 1474.31\nADA - $ADA / 1.0647"
+
+#   2500
+#   500  ADA
+#   400  ETH
+#   1600 BTC
+# + 1000
+# + 400 BTC
+# + 100 ETH
+# + 500 ?
