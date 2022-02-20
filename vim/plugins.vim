@@ -82,6 +82,9 @@ Plugin 'masukomi/vim-markdown-folding'
 " Elixir
 Plugin 'elixir-editors/vim-elixir'
 
+" NEW lsp
+"Plugin 'neovim/nvim-lspconfig'
+
 call vundle#end()		" required
 filetype plugin indent on	" required
 
