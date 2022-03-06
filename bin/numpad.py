@@ -3,6 +3,7 @@
 import os
 import binascii
 import subprocess
+from datetime import date
 from evdev import InputDevice, categorize, ecodes
 
 # In case it changes, run this
@@ -27,8 +28,12 @@ for event in dev.read_loop():
             # Dev fund4all
             if key.keycode == "KEY_NUMLOCK":
                 # os.system('i3-msg workspace 1 && i3-msg exec alacritty && sleep 0.5 && xdotool type "dev fund4all\n" && firefox http://localhost:8080 &')
-                os.system('firefox --new-tab https://docs.google.com/spreadsheets/d/1FheyOErdQJP9LcyHEr6rQx_piurxKX1zURJ6Y6jKQDw/edit#gid=510445374')
-                os.system('firefox --new-tab https://calendar.google.com/calendar/u/0/r/month')
+                #os.system('firefox --new-tab https://docs.google.com/spreadsheets/d/1FheyOErdQJP9LcyHEr6rQx_piurxKX1zURJ6Y6jKQDw/edit#gid=510445374')
+                #os.system('firefox --new-tab https://calendar.google.com/calendar/u/0/r/month')
+                year = date.today().strftime("%Y")
+                month = date.today().strftime("%m")
+                day = date.today().strftime("%d")
+                os.system(f"alacritty -e nvim ~/projects/journal/content/{year}/{month}/{day}-new.md")
             if key.keycode == "KEY_KPSLASH":
                 os.system('pacmd set-default-sink alsa_output.pci-0000_07_00.6.analog-stereo')
                 os.system('notify-send "Default Audio: SPEAKERS"')
