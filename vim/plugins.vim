@@ -31,6 +31,8 @@ Plugin 'nginx.vim'
 Plugin 'lumiliet/vim-twig'
 
 " IDE
+" LSP config
+Plugin 'neovim/nvim-lspconfig'
 " FuzzyFind
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
