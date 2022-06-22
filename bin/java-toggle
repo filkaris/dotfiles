@@ -1,0 +1,8 @@
+#!/bin/bash
+
+CURRENT=$(sudo archlinux-java status | grep default)
+if [[ "$CURRENT" == "  java-11-openjdk (default)" ]]; then
+	sudo archlinux-java set java-8-openjdk/jre
+else
+	sudo archlinux-java set java-11-openjdk
+fi
