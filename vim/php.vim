@@ -1,7 +1,7 @@
 " Go to error
 autocmd FileType php nnoremap <silent> <F2> :call GoToError()<CR>
 " Syntax Check
-autocmd FileType php nnoremap <F5> :!php -l %<CR> 
+" autocmd FileType php nnoremap <F5> :!php -l %<CR> 
 autocmd FileType php nnoremap <silent><buffer> <S-Tab> :<C-U>set foldlevel=1<CR>
 
 " 4 space ident
