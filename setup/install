@@ -50,3 +50,6 @@ if ! grep -Eq '(source|\.) ~/.dotfiles/bash/aliases' ~/.bashrc; then
 	echo 'source ~/.dotfiles/bash/aliases' >> ~/.bashrc
 fi
 
+# Utilities needed
+# sudo pacman -S git maim light xbindkeys acpi i3wm i3blocks bash-completion owncloud-client keepassxc tlp network-manager-applet alsautils pulseaudio pavucontrol gvfs-smb
+
