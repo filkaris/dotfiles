@@ -34,7 +34,7 @@ for event in dev.read_loop():
                 month = date.today().strftime("%m")
                 day = date.today().strftime("%d")
                 #os.system(f"alacritty --working-directory ~/projects/journal -e nvim ~/projects/journal/content/{year}/{month}/{day}-new.md")
-                os.system(f"alacritty --working-directory ~/projects/journal -e nvim")
+                os.system(f"alacritty --working-directory ~/projects/journal -e make")
             if key.keycode == "KEY_KPSLASH":
                 os.system('pacmd set-default-sink alsa_output.pci-0000_07_00.6.analog-stereo')
                 os.system('notify-send "Default Audio: SPEAKERS"')

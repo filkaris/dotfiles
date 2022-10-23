@@ -84,6 +84,9 @@ Plugin 'masukomi/vim-markdown-folding'
 " Elixir
 Plugin 'elixir-editors/vim-elixir'
 
+" Openscad
+Plugin 'sirtaj/vim-openscad'
+
 " NEW lsp
 "Plugin 'neovim/nvim-lspconfig'
 
