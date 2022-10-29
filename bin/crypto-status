@@ -1,5 +1,22 @@
 #!/bin/sh
 
+if ! command -v dunst &> /dev/null
+then
+    echo "dunst could not be found"
+    exit
+fi
+if ! command -v curl &> /dev/null
+then
+    notify-send "curl could not be found"
+    exit
+fi
+if ! command -v jq &> /dev/null
+then
+    notify-send "jq could not be found"
+    exit
+fi
+
+
 BTC_SYM="BTC-EUR"
 ETH_SYM="ETH-EUR"
 ADA_SYM="ADA-EUR"
