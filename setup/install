@@ -51,5 +51,29 @@ if ! grep -Eq '(source|\.) ~/.dotfiles/bash/aliases' ~/.bashrc; then
 fi
 
 # Utilities needed
-# sudo pacman -S git maim light xbindkeys acpi i3wm i3blocks bash-completion owncloud-client keepassxc tlp network-manager-applet alsautils pulseaudio pavucontrol gvfs-smb
+# sudo pacman -S git 
+# sudo pacman -S maim 
+# Backlight
+# sudo pacman -S light 
+# Key bindings
+# sudo pacman -S xbindkeys 
+# Battery
+# sudo pacman -S acpi 
+# sudo pacman -S i3wm 
+# sudo pacman -S i3blocks 
+# sudo pacman -S bash-completion 
+# sudo pacman -S owncloud-client 
+# sudo pacman -S keepassxc 
+# sudo pacman -S tlp 
+# sudo pacman -S network-manager-applet 
+# Audio
+# sudo pacman -S alsautils 
+# sudo pacman -S pulseaudio 
+# sudo pacman -S pavucontrol 
+# SMB support in pcmanfm
+# sudo pacman -S gvfs-smb 
+# Notification manager
+# sudo pacman -S dunst 
+# Archive in pcmanfm
+# sudo pacman -S file-roller
 
