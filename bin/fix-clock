@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo ntpd -q
+sudo hwclock --systohc
+sudo hwclock --show
