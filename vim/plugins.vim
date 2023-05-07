@@ -90,6 +90,9 @@ Plugin 'sirtaj/vim-openscad'
 " NEW lsp
 "Plugin 'neovim/nvim-lspconfig'
 
+" Theme
+Plugin 'EdenEast/nightfox.nvim'
+
 call vundle#end()		" required
 filetype plugin indent on	" required
 

@@ -5,4 +5,3 @@ source ~/.dotfiles/vim/config.vim
 source ~/.dotfiles/vim/plugins.vim
 source ~/.dotfiles/vim/php.vim
 source ~/.dotfiles/vim/js.vim
-
