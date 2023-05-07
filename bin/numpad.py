@@ -42,7 +42,8 @@ for event in dev.read_loop():
                 os.system('pacmd set-default-sink alsa_output.usb-audio-technica_AT2020USB_-00.analog-stereo')
                 os.system('notify-send "Default Audio: HEADSET"')
             if key.keycode == "KEY_KPMINUS":
-                os.system('crypto-status')
+                os.system('pacmd set-default-sink bluez_sink.00_42_79_C7_AD_DD.a2dp_sink')
+                os.system('notify-send "Default Audio: BLUETOOTH"')
 
             if key.keycode == "KEY_KP7":
                 os.system('screen-landscape')
@@ -51,7 +52,7 @@ for event in dev.read_loop():
             if key.keycode == "KEY_KP9":
                 os.system('screen-select')
             if key.keycode == "KEY_KPPLUS":
-                os.system('/usr/bin/notify-send TODO')
+                os.system('crypto-status')
 
             if key.keycode == "KEY_KP4":
                 os.system('curl desktimer/on && notify-send "Timer set: 25min"')
