@@ -1,5 +1,4 @@
 """""""""""""""""""" EDITOR OPTIONS """""""""""""""""""
-colorscheme nordfox
 syntax on
 set ruler
 set number
