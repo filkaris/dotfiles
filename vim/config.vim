@@ -1,5 +1,5 @@
 """""""""""""""""""" EDITOR OPTIONS """""""""""""""""""
-colorscheme peachpuff
+colorscheme nordfox
 syntax on
 set ruler
 set number
