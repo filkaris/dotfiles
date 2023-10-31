@@ -3,3 +3,4 @@
 sudo ntpd -q
 sudo hwclock --systohc
 sudo hwclock --show
+notify-send "Clock Fixed"

@@ -7,6 +7,6 @@ if [ ! -e $DIR ]; then
     mkdir -p $DIR
 fi
 
-maim -s > $DIR/$NAME
+maim -s $DIR/$NAME
+xclip -selection clipboard -t image/png -i $DIR/$NAME
 notify-send "Screenshot Saved"
-    
