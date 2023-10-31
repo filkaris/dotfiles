@@ -96,6 +96,8 @@ Plugin 'EdenEast/nightfox.nvim'
 call vundle#end()		" required
 filetype plugin indent on	" required
 
+colorscheme nordfox
+
 " Defaults: override in IDE
 " disable gutentags
 let g:gutentags_enabled=0

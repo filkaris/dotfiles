@@ -1,5 +1,4 @@
 """""""""""""""""""" EDITOR OPTIONS """""""""""""""""""
-colorscheme peachpuff
 syntax on
 set ruler
 set number
