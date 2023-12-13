@@ -59,7 +59,8 @@ for event in dev.read_loop():
             if key.keycode == "KEY_KP5":
                 os.system('curl desktimer/off && notify-send "Clear Timer"')
             if key.keycode == "KEY_KP6":
-                os.system('/usr/bin/notify-send TODO')
+                # non-blocking
+                subprocess.Popen('redshift-gtk')
             if key.keycode == "KEY_BACKSPACE":
                 os.system('/usr/bin/notify-send TODO')
 
