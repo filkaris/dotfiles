@@ -9,11 +9,11 @@
     Shift+XF86MonBrightnessDown 
 
 # Volume controls
-"amixer set Master 5%+" 
+"pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks"
     XF86AudioRaiseVolume 
-"amixer set Master 5%-" 
+"pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks"
     XF86AudioLowerVolume 
-"amixer set Master toggle" 
+"pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks"
     XF86AudioMute 
 "amixer set Capture toggle" 
     XF86AudioMicMute 
