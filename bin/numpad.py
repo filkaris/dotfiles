@@ -36,7 +36,7 @@ for event in dev.read_loop():
                 #os.system(f"alacritty --working-directory ~/projects/journal -e nvim ~/projects/journal/content/{year}/{month}/{day}-new.md")
                 os.system(f"alacritty --working-directory ~/projects/journal -e make")
             if key.keycode == "KEY_KPSLASH":
-                os.system('pacmd set-default-sink alsa_output.pci-0000_07_00.6.analog-stereo')
+                os.system('pacmd set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo')
                 os.system('notify-send "Default Audio: SPEAKERS"')
             if key.keycode == "KEY_KPASTERISK":
                 os.system('pacmd set-default-sink alsa_output.usb-audio-technica_AT2020USB_-00.analog-stereo')
