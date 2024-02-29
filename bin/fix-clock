@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo ntpd -q
+sudo ntpd -gq
 sudo hwclock --systohc
 sudo hwclock --show
 notify-send "Clock Fixed"

@@ -93,6 +93,12 @@ Plugin 'sirtaj/vim-openscad'
 " Theme
 Plugin 'EdenEast/nightfox.nvim'
 
+" AI Autocomlete
+" Tabby plugin
+Plugin 'TabbyML/vim-tabby'
+" Add config here. Example config:
+"let g:tabby_keybinding_accept = '<Tab>'
+
 call vundle#end()		" required
 filetype plugin indent on	" required
 
