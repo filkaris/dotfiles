@@ -34,7 +34,9 @@ for event in dev.read_loop():
                 month = date.today().strftime("%m")
                 day = date.today().strftime("%d")
                 #os.system(f"alacritty --working-directory ~/projects/journal -e nvim ~/projects/journal/content/{year}/{month}/{day}-new.md")
-                os.system(f"alacritty --working-directory ~/projects/journal -e make")
+                # os.system(f"alacritty --working-directory ~/projects/journal -e make")
+                os.system('pacmd set-default-sink bluez_sink.28_11_A5_45_28_72.a2dp_sink')
+                os.system('notify-send "Default Audio: BLUETOOTH HEADSET"')
             if key.keycode == "KEY_KPSLASH":
                 os.system('pacmd set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo')
                 os.system('notify-send "Default Audio: SPEAKERS"')

@@ -72,6 +72,15 @@ command Q q
 command W w
 " 'command' cannot use autocomplete
 cnoreabbrev E e
+" Define a custom command :Jq to format JSON using jq
+command! Jq call FormatJsonWithJq()
+function! FormatJsonWithJq()
+  if executable('jq')
+    %!jq .
+  else
+    echo "jq is not installed. Please install jq to use this command."
+  endif
+endfunction
 
 "" Light mode tweaks for mate terminal
 nmap <Leader>l :hi Folded ctermbg=7<CR>:hi Pmenu ctermbg=7<CR>
