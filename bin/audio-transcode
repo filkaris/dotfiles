@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Move the audio from a video file to another
+# !! This overwrites all audio channels, it does not add
+
+# Extract audio
+ffmpeg -i video_with_target_audio.mkv -vn -acodec copy audio.ac3
+# Overwrite in another video
+ffmpeg -i video_with_target_picture.mkv -i audio.ac3 -c:v copy -map 0:v -map 1:a -shortest output.mkv
