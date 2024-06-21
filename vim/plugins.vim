@@ -33,28 +33,34 @@ Plugin 'lumiliet/vim-twig'
 " IDE
 " LSP config
 Plugin 'neovim/nvim-lspconfig'
+Plugin 'williamboman/mason.nvim'
+Plugin 'williamboman/mason-lspconfig.nvim'
 " FuzzyFind
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-" Ctags
-Plugin 'ludovicchabant/vim-gutentags' "install ctags binary
-" Autocompletion
-Plugin 'ncm2/ncm2'
-Plugin 'roxma/nvim-yarp'
-Plugin 'phpactor/phpactor' "run composer install
-Plugin 'phpactor/ncm2-phpactor'
-" Simple wrapper. CSS completion is vim native
-Plugin 'ncm2/ncm2-cssomni'
-Plugin 'vim-vdebug/vdebug'
 
 " Linting
 Plugin 'w0rp/ale'
-" Quickfix PHPUnit TODO
-"Bundle 'joonty/vim-phpunitqf.git'
-"Plugin 'afternoon/vim-phpunit'
-" EditorConfig (.editorconfig)
-"Plugin 'editorconfig/editorconfig-vim'
 
+" Markdown folding
+Plugin 'masukomi/vim-markdown-folding'
+
+" Theme
+Plugin 'EdenEast/nightfox.nvim'
+
+" AI Autocomlete
+" Tabby plugin
+Plugin 'TabbyML/vim-tabby'
+" Add config here. Example config:
+"let g:tabby_keybinding_accept = '<Tab>'
+
+" To Deprecate ------------------
+" Svelte
+Plugin 'evanleck/vim-svelte'
+" Elixir
+Plugin 'elixir-editors/vim-elixir'
+" Openscad
+Plugin 'sirtaj/vim-openscad'
 " JSX IDE
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -67,37 +73,21 @@ Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'Quramy/tsuquyomi'
 " Omni-complete dependency
 Plugin 'Shougo/vimproc.vim' "run make
-
 " GoLang IDE
 Plugin 'fatih/vim-go'
 Plugin 'ncm2/ncm2-go'
-
 " ELM
 Plugin 'ElmCast/elm-vim'
-
-" Svelte
-Plugin 'evanleck/vim-svelte'
-
-" Markdown folding
-Plugin 'masukomi/vim-markdown-folding'
-
-" Elixir
-Plugin 'elixir-editors/vim-elixir'
-
-" Openscad
-Plugin 'sirtaj/vim-openscad'
-
-" NEW lsp
-"Plugin 'neovim/nvim-lspconfig'
-
-" Theme
-Plugin 'EdenEast/nightfox.nvim'
-
-" AI Autocomlete
-" Tabby plugin
-Plugin 'TabbyML/vim-tabby'
-" Add config here. Example config:
-"let g:tabby_keybinding_accept = '<Tab>'
+" Ctags
+Plugin 'ludovicchabant/vim-gutentags' "install ctags binary
+" Autocompletion
+Plugin 'ncm2/ncm2'
+Plugin 'roxma/nvim-yarp'
+Plugin 'phpactor/phpactor' "run composer install
+Plugin 'phpactor/ncm2-phpactor'
+" Simple wrapper. CSS completion is vim native
+Plugin 'ncm2/ncm2-cssomni'
+Plugin 'vim-vdebug/vdebug'
 
 call vundle#end()		" required
 filetype plugin indent on	" required
