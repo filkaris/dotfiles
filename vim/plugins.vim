@@ -93,6 +93,7 @@ call vundle#end()		" required
 filetype plugin indent on	" required
 
 colorscheme nordfox
+"colorscheme peachpuff
 
 " Defaults: override in IDE
 " disable gutentags
