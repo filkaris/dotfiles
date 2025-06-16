@@ -184,11 +184,12 @@ exec --no-startup-id nm-applet
 # Don'f focus a window just on mouse hover
 focus_follows_mouse no
 
-# Assign Gimp to Ws 10
-for_window [class="Gimp"] move workspace $ws10
 
-# Assign Viber to Ws 9
+# Assign Apps to Workspaces
+for_window [class="LM Studio"] move workspace $ws7
+for_window [class="Joplin"] move workspace $ws8
 for_window [class="Viber"] move workspace $ws9
+for_window [class="Gimp"] move workspace $ws10
 
 
 ## KeyBinds

@@ -50,7 +50,7 @@ Plugin 'EdenEast/nightfox.nvim'
 
 " AI Autocomlete
 " Tabby plugin
-Plugin 'TabbyML/vim-tabby'
+" Plugin 'TabbyML/vim-tabby'
 " Add config here. Example config:
 "let g:tabby_keybinding_accept = '<Tab>'
 

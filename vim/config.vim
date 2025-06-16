@@ -26,6 +26,8 @@ hi DiffAdd ctermbg=20
 " Disable annoying bells
 set visualbell
 set t_vb=
+" " Shared clipboard
+" set clipboard=unnamedplus
 
 " Disable automatic commenting when pressing o
 autocmd FileType * setlocal formatoptions-=ro
@@ -50,6 +52,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " grep settings
 if isdirectory('.git') && executable('git')
   set grepprg=git\ grep\ -nI
+  set grepformat=%f:%l:%m
 endif
 
 

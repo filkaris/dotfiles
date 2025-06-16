@@ -38,7 +38,8 @@ for event in dev.read_loop():
                 os.system('pacmd set-default-sink bluez_sink.28_11_A5_45_28_72.a2dp_sink')
                 os.system('notify-send "Default Audio: BLUETOOTH HEADSET"')
             if key.keycode == "KEY_KPSLASH":
-                os.system('pacmd set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo')
+                os.system('pacmd set-card-profile alsa_card.pci-0000_01_00.1 output:hdmi-stereo-extra1')
+                os.system('pacmd set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1')
                 os.system('notify-send "Default Audio: SPEAKERS"')
             if key.keycode == "KEY_KPASTERISK":
                 os.system('pacmd set-default-sink alsa_output.usb-audio-technica_AT2020USB_-00.analog-stereo')
